@@ -16,8 +16,8 @@ npm install -save-dev "eslint"
 Create a `.eslintrc.json` file at the root of the project with the following content:
 ```json
 {
-    "extends": "eslint-config-atomic",
-    "ignorePatterns": ["dist/", "node_modules/"]
+  "extends": "eslint-config-atomic",
+  "ignorePatterns": ["dist/", "node_modules/"]
 }
 ```
 `ignorePatterns` is the Eslint ignore paths.
