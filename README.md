@@ -22,6 +22,12 @@ Create a `.eslintrc.json` file at the root of the project with the following con
 ```
 `ignorePatterns` is the Eslint ignore paths.
 
+
+Add a lint script to your `package.json`:
+```json
+"lint": "eslint . --fix"
+```
+
 ## Behind the scenes
 
 This configuration lints JavaScript, TypeScript, CoffeeScript, JSON, and YAML.
