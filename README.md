@@ -28,11 +28,30 @@ Add a lint script to your `package.json`:
 "lint": "eslint . --fix"
 ```
 
-## Strict Version
+### Options
+- **strict**:
 You can instead use the `strict` version which throws errors instead of warning:
 ```json
 {
   "extends": "eslint-config-atomic/strict",
+  "ignorePatterns": ["dist/", "node_modules/"]
+}
+```
+
+- **react**:
+It supports react using `eslint-plugin-react`.
+```json
+{
+  "extends": "eslint-config-atomic/react",
+  "ignorePatterns": ["dist/", "node_modules/"]
+}
+```
+
+- **strict-react**:
+Same as the react version but it is strict:
+```json
+{
+  "extends": "eslint-config-atomic/strict-react",
   "ignorePatterns": ["dist/", "node_modules/"]
 }
 ```
