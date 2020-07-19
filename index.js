@@ -73,5 +73,10 @@ module.exports = {
       "plugins": ["yaml"],
       "extends": ["plugin:yaml/recommended"]
     }
-  ]
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }
