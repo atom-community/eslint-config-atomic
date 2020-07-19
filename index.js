@@ -21,7 +21,7 @@ module.exports = {
     "sourceType": "module"
   },
   "plugins": ["prettier", "only-warn"],
-  "extends": ["prettier", "eslint:recommended", "plugin:react/recommended"],
+  "extends": ["prettier", "eslint:recommended"],
   "ignorePatterns": ["node_modules/"],
   "overrides": [
     {
