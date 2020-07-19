@@ -21,7 +21,7 @@ module.exports = {
     "sourceType": "module"
   },
   "plugins": ["prettier", "only-warn"],
-  "extends": ["prettier", "eslint:recommended"],
+  "extends": ["prettier", "eslint:recommended", "plugin:react/recommended"],
   "ignorePatterns": ["node_modules/"],
   "overrides": [
     {
@@ -33,6 +33,7 @@ module.exports = {
       "extends": [
         "prettier",
         "eslint:recommended",
+        "plugin:react/recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended"
       ],
