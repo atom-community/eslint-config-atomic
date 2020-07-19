@@ -32,6 +32,7 @@ module.exports = {
       "plugins": ["prettier", "@typescript-eslint", "only-warn"],
       "extends": [
         "prettier",
+        "prettier/@typescript-eslint",
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/eslint-recommended",
