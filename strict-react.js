@@ -20,8 +20,8 @@ module.exports = {
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["prettier"],
-  "extends": ["prettier", "eslint:recommended"],
+  "plugins": ["prettier", "react"],
+  "extends": ["prettier", "eslint:recommended", "plugin:react/recommended"],
   "ignorePatterns": ["node_modules/"],
   "overrides": [
     {
@@ -29,7 +29,7 @@ module.exports = {
       // TypeScript files
       "files": ["**/*.ts", "**/*.tsx"],
       "parser": "@typescript-eslint/parser",
-      "plugins": ["prettier", "@typescript-eslint"],
+      "plugins": ["prettier", "react", "@typescript-eslint"],
       "extends": [
         "prettier",
         "prettier/@typescript-eslint",
@@ -73,5 +73,10 @@ module.exports = {
       "plugins": ["yaml"],
       "extends": ["plugin:yaml/recommended"]
     }
-  ]
+  ],
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  }
 }
