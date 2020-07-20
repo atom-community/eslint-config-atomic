@@ -5,7 +5,7 @@ on:
     - cron: "0 0 * * *"
 
 jobs:
-  build:
+  bump:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -20,6 +20,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           commit-message:  Update dependencies
-          title: "[AUTO] Update dependencies"
+          title: "chore: [AUTO] Update dependencies"
           labels: Dependencies
           branch: "Bump"
