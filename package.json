@@ -7,7 +7,10 @@
   "keywords": [
     "eslint",
     "config",
-    "atomic"
+    "atomic",
+    "plugin",
+    "lint",
+    "prettier"
   ],
   "repository": "https://github.com/atom-ide-community/eslint-config-atomic",
   "license": "MIT",
