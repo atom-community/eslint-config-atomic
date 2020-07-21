@@ -1,7 +1,7 @@
 {
   "name": "eslint-config-atomic",
   "main": "index.js",
-  "version": "0.1.0",
+  "version": "1.2.3",
   "author": "Amin Yahyaabadi",
   "description": "Eslint config used in atom-ide-community",
   "keywords": [
