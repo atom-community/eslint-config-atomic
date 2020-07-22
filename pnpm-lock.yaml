@@ -10,7 +10,7 @@ dependencies:
   eslint-plugin-only-warn: 1.0.2
   eslint-plugin-prettier: 3.1.4_eslint@7.5.0+prettier@2.0.5
   eslint-plugin-react: 7.20.3_eslint@7.5.0
-  eslint-plugin-yaml: 0.2.0
+  eslint-plugin-yaml: 0.3.0
   prettier: 2.0.5
   typescript: 3.9.7
 devDependencies:
@@ -1399,13 +1399,13 @@ packages:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7
     resolution:
       integrity: sha512-txbo090buDeyV0ugF3YMWrzLIUqpYTsWSDZV9xLSmExE1P/Kmgg9++PD931r+KEWS66O1c9R4srLVVHmeHpoAg==
-  /eslint-plugin-yaml/0.2.0:
+  /eslint-plugin-yaml/0.3.0:
     dependencies:
       js-yaml: 3.14.0
       jshint: 2.11.1
     dev: false
     resolution:
-      integrity: sha512-ZgIG89/Jucm+r6Qlya/H/EGC+2AJ76u/yr4UIJjAReM6gxo8PE1pOjtRic3bbS11MJjiAINKVqm4k4Fqsg8knw==
+      integrity: sha512-m8CUdHAxaTA6rtjOIXNnifR3mz4sKrLHvtofXedZBW4MK8faHq8VNprQ73KH9uw2qoqOxzeF8TiZVNBxYFdaAg==
   /eslint-scope/3.7.3:
     dependencies:
       esrecurse: 4.2.1
@@ -3834,7 +3834,7 @@ specifiers:
   eslint-plugin-only-warn: ^1.0.2
   eslint-plugin-prettier: ^3.1.4
   eslint-plugin-react: ^7.20.3
-  eslint-plugin-yaml: ^0.2.0
+  eslint-plugin-yaml: ^0.3.0
   npm-check-updates: 7.0.2
   prettier: ^2.0.5
   typescript: ^3.9.7
