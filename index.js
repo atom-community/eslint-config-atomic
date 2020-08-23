@@ -21,7 +21,7 @@ module.exports = {
     "sourceType": "module"
   },
   "plugins": ["only-warn"],
-  "extends": ["prettier", "eslint:recommended"],
+  "extends": ["eslint:recommended", "prettier"],
   "ignorePatterns": ["node_modules/"],
   "overrides": [
     {
@@ -31,12 +31,12 @@ module.exports = {
       "parser": "@typescript-eslint/parser",
       "plugins": ["@typescript-eslint", "only-warn"],
       "extends": [
-        "prettier",
-        "prettier/@typescript-eslint",
         "eslint:recommended",
         "plugin:react/recommended",
         "plugin:@typescript-eslint/eslint-recommended",
-        "plugin:@typescript-eslint/recommended"
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
+        "prettier/@typescript-eslint"
       ],
       "rules": {
         "@typescript-eslint/explicit-function-return-type": "off",
