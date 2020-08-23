@@ -20,7 +20,7 @@ module.exports = {
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["prettier"],
+  "plugins": [],
   "extends": ["prettier", "eslint:recommended"],
   "ignorePatterns": ["node_modules/"],
   "overrides": [
@@ -29,7 +29,7 @@ module.exports = {
       // TypeScript files
       "files": ["**/*.ts", "**/*.tsx"],
       "parser": "@typescript-eslint/parser",
-      "plugins": ["prettier", "@typescript-eslint"],
+      "plugins": ["@typescript-eslint"],
       "extends": [
         "prettier",
         "prettier/@typescript-eslint",
