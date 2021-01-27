@@ -4,7 +4,7 @@
   "files": [
     "*.js"
   ],
-  "version": "1.5.1",
+  "version": "1.6.0",
   "author": "Amin Yahyaabadi",
   "description": "Eslint config used in atom-ide-community",
   "keywords": [
