@@ -1,5 +1,7 @@
 {
   "name": "eslint-config-atomic",
+  "version": "1.7.1",
+  "author": "Amin Yahyaabadi",
   "main": "index.js",
   "react": "react.js",
   "strict": "strict.js",
@@ -7,8 +9,6 @@
   "files": [
     "*.js"
   ],
-  "version": "1.6.0",
-  "author": "Amin Yahyaabadi",
   "description": "Eslint config used in atom-ide-community",
   "keywords": [
     "eslint",
