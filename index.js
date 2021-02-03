@@ -17,7 +17,7 @@ module.exports = {
     "ecmaFeatures": {
       "jsx": true
     },
-    "ecmaVersion": 2018,
+    "ecmaVersion": 2021,
     "sourceType": "module"
   },
   "plugins": ["only-warn"],
@@ -32,7 +32,6 @@ module.exports = {
       "plugins": ["@typescript-eslint", "only-warn"],
       "extends": [
         "eslint:recommended",
-        "plugin:react/recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:optimize-regex/all",
@@ -44,7 +43,9 @@ module.exports = {
         "@typescript-eslint/explicit-module-boundary-types": "off",
         "@typescript-eslint/camelcase": "off",
         "@typescript-eslint/no-use-before-define": "off",
-        "@typescript-eslint/member-delimiter-style": "off"
+        "@typescript-eslint/member-delimiter-style": "off",
+        "@typescript-eslint/no-inferrable-types": "off",
+        "@typescript-eslint/no-non-null-assertion": "off"
       }
     },
     {
@@ -62,24 +63,17 @@ module.exports = {
       }
     },
     {
-      // CoffeeScript files
-      "files": ["**/*.coffee"],
+      // CoffeeScript and CSON files
+      "files": ["**/*.coffee", "**/*.cson"],
       "parser": "eslint-plugin-coffee",
       "plugins": ["coffee", "only-warn"],
-      "extends": ["plugin:coffee/eslint-recommended", "plugin:optimize-regex/all"]
+      "extends": ["plugin:coffee/eslint-recommended", "plugin:optimize-regex/all", "plugin:coffee/prettier"]
     },
     {
       // YAML files
       "files": ["*.yaml", "*.yml"],
       "plugins": ["yaml"],
       "extends": ["plugin:yaml/recommended"]
-    },
-    // CSON files (use coffee)
-    {
-      "files": ["**/*.cson"],
-      "parser": "eslint-plugin-coffee",
-      "plugins": ["coffee", "only-warn"],
-      "extends": ["plugin:coffee/eslint-recommended"]
     }
   ]
 }
