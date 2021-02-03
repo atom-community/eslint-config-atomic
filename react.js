@@ -2,6 +2,7 @@ const base = require("./index.js")
 
 let overrides = base.overrides
 overrides[0] = {
+  ...overrides[0],
   "plugins": ["react", "@typescript-eslint", "only-warn"],
   "extends": [
     "eslint:recommended",
