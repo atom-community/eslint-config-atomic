@@ -61,8 +61,8 @@ module.exports = {
       }
     },
     {
-      // CoffeeScript files
-      "files": ["**/*.coffee"],
+      // CoffeeScript and CSON files
+      "files": ["**/*.coffee", "**/*.cson"],
       "parser": "eslint-plugin-coffee",
       "plugins": ["coffee", "only-warn"],
       "extends": ["plugin:coffee/eslint-recommended", "plugin:optimize-regex/all"]
@@ -72,13 +72,6 @@ module.exports = {
       "files": ["*.yaml", "*.yml"],
       "plugins": ["yaml"],
       "extends": ["plugin:yaml/recommended"]
-    },
-    // CSON files (use coffee)
-    {
-      "files": ["**/*.cson"],
-      "parser": "eslint-plugin-coffee",
-      "plugins": ["coffee", "only-warn"],
-      "extends": ["plugin:coffee/eslint-recommended"]
     }
   ]
 }
