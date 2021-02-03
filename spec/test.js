@@ -31,7 +31,7 @@ const testRepos = [
     }
 
     await execa(`pnpm add "${packedPkg}" --ignore-scripts`, {cwd: distFolder})
-    await execa(`pnpm lint`, {cwd: distFolder, stdout: 'inherit'})
+    await execa("eslint .", {cwd: distFolder, stdout: 'inherit'})
   }
   rm("-rf", packedPkg)
 
