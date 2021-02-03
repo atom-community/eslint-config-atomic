@@ -32,6 +32,7 @@
     "eslint-plugin-coffee": "^0.1.13",
     "eslint-plugin-json": "^2.1.2",
     "eslint-plugin-only-warn": "^1.0.2",
+    "eslint-plugin-optimize-regex": "^1.2.0",
     "eslint-config-prettier": "^7.2.0",
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-yaml": "^0.3.0",
