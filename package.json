@@ -1,6 +1,9 @@
 {
   "name": "eslint-config-atomic",
   "main": "index.js",
+  "react": "react.js",
+  "strict": "strict.js",
+  "strict-react": "strict-react.js",
   "files": [
     "*.js"
   ],
