@@ -22,6 +22,7 @@
   "license": "MIT",
   "scripts": {
     "format": "prettier --write .",
+    "lint": "eslint . --fix",
     "build.strict": "node ./scripts/build.strict.js",
     "prepare": "npm run build.strict",
     "bump": "ncu -u -x coffeescript"
