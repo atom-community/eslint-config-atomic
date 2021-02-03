@@ -15,9 +15,10 @@ const testRepos = [
   const root = resolve(dirname(__dirname))
   const packedPkg = join(root, `${pkg.name}-${pkg.version}.tgz`)
   rm("-rf", packedPkg)
-  exec("pnpm pack", {cwd: root})
+  exec("pnpm pack", {cwd: root, silent: true})
 
   for (const testRepo of testRepos) {
+  	console.log(`Testing ${testRepo}`)
 
     const source = await download(testRepo)
 
