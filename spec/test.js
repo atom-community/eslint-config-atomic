@@ -6,8 +6,8 @@ const { download, extract } = require("gitly");
 const { existsSync } = require("fs");
 
 const testRepos = [
-  "atom-community/terminal",
   "atom-community/atom-ide-hyperclick",
+  "atom-community/terminal",
   "atom-minimap/minimap",
   "steelbrain/linter",
   "steelbrain/linter-ui-default",
