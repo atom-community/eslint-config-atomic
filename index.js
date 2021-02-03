@@ -67,7 +67,7 @@ module.exports = {
       "files": ["**/*.coffee", "**/*.cson"],
       "parser": "eslint-plugin-coffee",
       "plugins": ["coffee", "only-warn"],
-      "extends": ["plugin:coffee/eslint-recommended", "plugin:optimize-regex/all"]
+      "extends": ["plugin:coffee/eslint-recommended", "plugin:optimize-regex/all", "plugin:coffee/prettier"]
     },
     {
       // YAML files
