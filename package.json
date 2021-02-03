@@ -21,6 +21,7 @@
   "repository": "https://github.com/atom-ide-community/eslint-config-atomic",
   "license": "MIT",
   "scripts": {
+    "format": "prettier --write .",
     "build.strict": "node ./scripts/build.strict.js",
     "prepare": "npm run build.strict",
     "bump": "ncu -u -x coffeescript"
