@@ -17,7 +17,7 @@ const testRepos = [
   const root = resolve(dirname(__dirname))
   const packedPkg = join(root, `${pkg.name}-${pkg.version}.tgz`)
   rm("-rf", packedPkg)
-  await execa("pnpm pack", {cwd: root})
+  await execa("pnpm pack", {cwd: root, shell: true})
 
   for (const testRepo of testRepos) {
   	console.log(`Testing ${testRepo}`)
@@ -30,8 +30,8 @@ const testRepos = [
       await extract(source, distFolder)
     }
 
-    await execa(`pnpm add "${packedPkg}" --ignore-scripts`, {cwd: distFolder})
-    await execa("eslint .", {cwd: distFolder, stdout: 'inherit'})
+    await execa(`pnpm add "${packedPkg}" --ignore-scripts`, {cwd: distFolder, shell: true})
+    await execa("eslint .", {cwd: distFolder, stdout: 'inherit', shell: true})
   }
   rm("-rf", packedPkg)
 
