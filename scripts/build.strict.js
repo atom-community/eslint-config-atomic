@@ -16,7 +16,7 @@ const fileMap = {
 
   filesPaths.forEach(async (filePath) => {
     const text = (await readFile(filePath)).toString()
-    const newText = text.replace(/"only-warn"/g, "")
+    const newText = text.replace(/"only-warn"/g, "").replace("index.js", "strict.js")
     await writeFile(join(root, fileMap[basename(filePath)]), newText)
   })
 })()
