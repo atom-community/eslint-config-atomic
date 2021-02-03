@@ -21,7 +21,7 @@ module.exports = {
     "sourceType": "module"
   },
   "plugins": ["only-warn"],
-  "extends": ["eslint:recommended", "prettier"],
+  "extends": ["eslint:recommended", "plugin:optimize-regex/all", "prettier"],
   "ignorePatterns": ["node_modules/"],
   "overrides": [
     {
@@ -35,6 +35,7 @@ module.exports = {
         "plugin:react/recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
+        "plugin:optimize-regex/all",
         "prettier",
         "prettier/@typescript-eslint"
       ],
@@ -65,7 +66,7 @@ module.exports = {
       "files": ["**/*.coffee"],
       "parser": "eslint-plugin-coffee",
       "plugins": ["coffee", "only-warn"],
-      "extends": ["plugin:coffee/eslint-recommended"]
+      "extends": ["plugin:coffee/eslint-recommended", "plugin:optimize-regex/all"]
     },
     {
       // YAML files
