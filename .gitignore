@@ -14,3 +14,4 @@ dist
 
 strict.js
 strict-react.js
+spec/fixtures

@@ -23,6 +23,7 @@
   "scripts": {
     "format": "prettier --write .",
     "lint": "eslint . --fix",
+    "test": "node ./spec/test.js",
     "build.strict": "node ./scripts/build.strict.js",
     "prepare": "npm run build.strict",
     "bump": "ncu -u -x coffeescript"
@@ -48,6 +49,8 @@
   },
   "devDependencies": {
     "eslint": "^7.4.0",
-    "npm-check-updates": "11.1.1"
+    "gitly": "^2.0.2",
+    "npm-check-updates": "11.1.1",
+    "shelljs": "^0.8.4"
   }
 }
