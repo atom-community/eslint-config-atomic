@@ -17,7 +17,7 @@ const testRepos = [
   const root = resolve(dirname(__dirname))
   const packedPkg = join(root, `${pkg.name}-${pkg.version}.tgz`)
   rm("-rf", packedPkg)
-  await execa.commandSync("pnpm pack", {cwd: root, shell: true})
+  await execa.commandSync("pnpm pack", {cwd: root})
 
   for (const testRepo of testRepos) {
   	console.log(`Testing ${testRepo}`)
@@ -31,7 +31,7 @@ const testRepos = [
     }
 
     await execa.commandSync(`pnpm add "${packedPkg}" --ignore-scripts`, {cwd: distFolder, shell: true})
-    await execa.commandSync("eslint .", {cwd: distFolder, stdout: 'inherit', shell: true})
+    await execa.commandSync("eslint .", {cwd: distFolder, stdout: 'inherit'})
   }
   rm("-rf", packedPkg)
 
