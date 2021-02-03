@@ -1,11 +1,13 @@
-const { exec, mkdir, rm  } = require("shelljs")
+const { mkdir, rm  } = require("shelljs")
+const execa = require('execa');
 const { resolve, dirname, join } = require("path")
 const pkg = require("../package.json")
-const { download, extract } = require("gitly")
+const { download, extract } = require("gitly");
+const { existsSync } = require("fs");
 
 const testRepos = [
+  "atom-community/terminal",
   "atom-community/atom-ide-hyperclick",
-  "atom-community/atom-ide-signature-help",
   "atom-minimap/minimap",
   "steelbrain/linter",
   "steelbrain/linter-ui-default",
@@ -15,21 +17,21 @@ const testRepos = [
   const root = resolve(dirname(__dirname))
   const packedPkg = join(root, `${pkg.name}-${pkg.version}.tgz`)
   rm("-rf", packedPkg)
-  exec("pnpm pack", {cwd: root, silent: true})
+  await execa("pnpm pack", {cwd: root})
 
   for (const testRepo of testRepos) {
   	console.log(`Testing ${testRepo}`)
 
-    const source = await download(testRepo)
-
     const distFolder = resolve(join(__dirname, "fixtures", testRepo))
-    rm("-rf", distFolder)
-    mkdir("-p", distFolder)
 
-    await extract(source, distFolder)
+    if (!existsSync(distFolder)) {
+      const source = await download(testRepo)
+      mkdir("-p", distFolder)
+      await extract(source, distFolder)
+    }
 
-    exec(`pnpm add "${packedPkg}" --ignore-scripts`, {cwd: distFolder, silent: true})
-    exec(`pnpm lint`, {cwd: distFolder})
+    await execa(`pnpm add "${packedPkg}" --ignore-scripts`, {cwd: distFolder})
+    await execa(`pnpm lint`, {cwd: distFolder, stdout: 'inherit'})
   }
   rm("-rf", packedPkg)
 
