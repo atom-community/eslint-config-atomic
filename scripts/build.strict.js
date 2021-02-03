@@ -5,10 +5,10 @@ const { join, dirname, basename } = require("path")
 
 const fileMap = {
   "index.js": "strict.js",
-  "react.js": "strict-react.js"
+  "react.js": "strict-react.js",
 }
 
-;(async function main(){
+;(async function main() {
   const root = dirname(__dirname)
   const files = ["index.js", "react.js"]
 
