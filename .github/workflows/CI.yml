@@ -27,6 +27,15 @@ jobs:
         run: |
           apm install
 
+      - name: Setup PNPM
+        uses: pnpm/action-setup@v1.2.1
+        with:
+          version: latest
+
+      - name: Tests
+        run: |
+          pnpm test
+
   Release:
     needs: [Test]
     if: github.ref == 'refs/heads/master' &&
