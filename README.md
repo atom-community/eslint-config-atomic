@@ -68,3 +68,22 @@ Add a lint script to your `package.json`:
 ## Behind the scenes
 
 This configuration lints JavaScript, TypeScript, CoffeeScript, JSON, and YAML.
+
+The list of used plugins and dependencies:
+```
+  "@typescript-eslint/eslint-plugin": "^4.14.2",
+  "@typescript-eslint/parser": "^4.14.2",
+  "babel-eslint": "^10.1.0",
+  "eslint-plugin-coffee": "^0.1.13",
+  "eslint-plugin-json": "^2.1.2",
+  "eslint-plugin-node": "^11.1.0",
+  "eslint-plugin-only-warn": "^1.0.2",
+  "eslint-plugin-optimize-regex": "^1.2.0",
+  "eslint-config-prettier": "^7.2.0",
+  "eslint-plugin-react": "^7.22.0",
+  "eslint-plugin-yaml": "^0.3.0",
+  "prettier": "^2",
+  "typescript": "^4",
+  "coffeescript": "^1",
+  "@babel/core": "^7"
+```
