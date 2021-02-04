@@ -1,9 +1,9 @@
-const { mkdir, rm  } = require("shelljs")
-const execa = require('execa');
+const { mkdir, rm } = require("shelljs")
+const execa = require("execa")
 const { resolve, dirname, join } = require("path")
 const pkg = require("../package.json")
-const { download, extract } = require("gitly");
-const { existsSync } = require("fs");
+const { download, extract } = require("gitly")
+const { existsSync } = require("fs")
 
 const testRepos = [
   "atom-community/atom-ide-hyperclick",
@@ -17,10 +17,10 @@ const testRepos = [
   const root = resolve(dirname(__dirname))
   const packedPkg = join(root, `${pkg.name}-${pkg.version}.tgz`)
   rm("-rf", packedPkg)
-  await execa.command("pnpm pack", {cwd: root})
+  await execa.command("pnpm pack", { cwd: root })
 
   for (const testRepo of testRepos) {
-  	console.log(`Testing ${testRepo}`)
+    console.log(`Testing ${testRepo}`)
 
     const distFolder = resolve(join(__dirname, "fixtures", testRepo))
 
@@ -30,9 +30,8 @@ const testRepos = [
       await extract(source, distFolder)
     }
 
-    await execa.command(`pnpm add "${packedPkg}" --ignore-scripts`, {cwd: distFolder, shell: true})
-    await execa.command("eslint .", {cwd: distFolder, stdout: 'inherit'})
+    await execa.command(`pnpm add "${packedPkg}" --ignore-scripts`, { cwd: distFolder, shell: true })
+    await execa.command("eslint .", { cwd: distFolder, stdout: "inherit" })
   }
   rm("-rf", packedPkg)
-
 })()
