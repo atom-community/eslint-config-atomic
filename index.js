@@ -1,3 +1,13 @@
+const pluginNodeRules = {
+  "node/no-exports-assign": "error",
+  "node/process-exit-as-throw": "error",
+  "node/shebang": "error",
+  "node/no-deprecated-api": "error",
+  // "node/file-extension-in-import": ["warn", "always"],
+  "node/prefer-promises/dns": "error",
+  "node/prefer-promises/fs": "error",
+}
+
 module.exports = {
   // JS Files
   root: true,
@@ -20,16 +30,19 @@ module.exports = {
     ecmaVersion: 2021,
     sourceType: "module",
   },
-  plugins: ["only-warn"],
+  plugins: ["node", "only-warn"],
   extends: ["eslint:recommended", "plugin:optimize-regex/all", "prettier"],
   ignorePatterns: ["node_modules/"],
+  rules: {
+    ...pluginNodeRules,
+  },
   overrides: [
     {
       // Bundled node version with atom has an old ESLint
       // TypeScript files
       files: ["**/*.ts", "**/*.tsx"],
       parser: "@typescript-eslint/parser",
-      plugins: ["@typescript-eslint", "only-warn"],
+      plugins: ["@typescript-eslint", "node", "only-warn"],
       extends: [
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
@@ -46,6 +59,7 @@ module.exports = {
         "@typescript-eslint/member-delimiter-style": "off",
         "@typescript-eslint/no-inferrable-types": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
+        ...pluginNodeRules,
       },
     },
     {
@@ -66,8 +80,11 @@ module.exports = {
       // CoffeeScript and CSON files
       files: ["**/*.coffee", "**/*.cson"],
       parser: "eslint-plugin-coffee",
-      plugins: ["coffee", "only-warn"],
+      plugins: ["coffee", "node", "only-warn"],
       extends: ["plugin:coffee/eslint-recommended", "plugin:optimize-regex/all", "plugin:coffee/prettier"],
+      rules: {
+        ...pluginNodeRules,
+      },
     },
     {
       // YAML files
