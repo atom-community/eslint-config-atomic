@@ -8,7 +8,12 @@ const { existsSync } = require("fs")
 const testRepos = [
   "atom-community/atom-ide-hyperclick",
   "atom-community/terminal",
+  "atom-community/atom-ide-outline",
+  "atom-community/atom-ide-datatip",
+  // "atom-community/atom-ide-console",
+  // "atom-community/atom-ide-debugger",
   "atom-minimap/minimap",
+  "aminya/solid-simple-table",
   "steelbrain/linter",
   "steelbrain/linter-ui-default",
 ]
