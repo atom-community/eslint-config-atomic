@@ -22,6 +22,7 @@ module.exports = {
   extends: ["eslint:recommended", "plugin:react/recommended", "prettier", "prettier/react"],
   overrides: overrides,
   settings: {
+    ...(base.settings || {}),
     react: {
       version: "detect",
     },
