@@ -30,8 +30,14 @@ module.exports = {
     ecmaVersion: 2021,
     sourceType: "module",
   },
-  plugins: ["node", "only-warn"],
-  extends: ["eslint:recommended", "plugin:optimize-regex/all", "prettier"],
+  plugins: ["node", "import", "only-warn"],
+  extends: [
+    "eslint:recommended",
+    "plugin:optimize-regex/all",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "prettier",
+  ],
   ignorePatterns: ["node_modules/"],
   rules: {
     ...pluginNodeRules,
@@ -42,12 +48,15 @@ module.exports = {
       // TypeScript files
       files: ["**/*.ts", "**/*.tsx"],
       parser: "@typescript-eslint/parser",
-      plugins: ["@typescript-eslint", "node", "only-warn"],
+      plugins: ["@typescript-eslint", "node", "import", "only-warn"],
       extends: [
         "eslint:recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
         "plugin:optimize-regex/all",
+        "plugin:import/errors",
+        "plugin:import/warnings",
+        "plugin:import/typescript",
         "prettier",
         "prettier/@typescript-eslint",
       ],
