@@ -70,6 +70,7 @@ Add a lint script to your `package.json`:
 This configuration lints JavaScript, TypeScript, CoffeeScript, JSON, and YAML.
 
 The list of used plugins and dependencies:
+
 ```
   "@typescript-eslint/eslint-plugin": "^4.14.2",
   "@typescript-eslint/parser": "^4.14.2",
