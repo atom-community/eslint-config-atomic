@@ -100,4 +100,7 @@ module.exports = {
       extends: ["plugin:yaml/recommended"],
     },
   ],
+  settings: {
+    "import/core-modules": ["atom", "electron"],
+  },
 }
