@@ -1,27 +1,21 @@
 const base = require("./index.js")
 
 let overrides = base.overrides
+// TypeScript:
 overrides[0] = {
   ...overrides[0],
-  plugins: ["react", "@typescript-eslint", "only-warn"],
-  extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "prettier",
-    "prettier/@typescript-eslint",
-    "prettier/react",
-  ],
+  plugins: ["react", ...overrides[0].plugins],
+  extends: ["plugin:react/recommended", ...overrides[0].extends, "prettier/react"],
   rules: overrides[0].rules,
 }
 
 module.exports = {
   ...base,
-  plugins: ["react", "only-warn"],
-  extends: ["eslint:recommended", "plugin:react/recommended", "prettier", "prettier/react"],
+  plugins: ["react", ...base.plugins],
+  extends: ["plugin:react/recommended", ...base.extends, "prettier/react"],
   overrides: overrides,
   settings: {
+    ...(base.settings || {}),
     react: {
       version: "detect",
     },
