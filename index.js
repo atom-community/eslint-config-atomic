@@ -3,9 +3,25 @@ const pluginNodeRules = {
   "node/process-exit-as-throw": "error",
   "node/shebang": "error",
   "node/no-deprecated-api": "error",
-  // "node/file-extension-in-import": ["warn", "always"],
   "node/prefer-promises/dns": "error",
   "node/prefer-promises/fs": "error",
+}
+
+const pluginImportExtraRules = {
+  "import/no-absolute-path": "error",
+  "import/no-useless-path-segments": "error",
+  "import/no-deprecated": "error",
+  "import/no-extraneous-dependencies": "error",
+  "import/no-unassigned-import": "warn",
+  "import/no-mutable-exports": "warn",
+  "import/no-anonymous-default-export": "error",
+  "import/no-amd": "error",
+  //// might be to restrictive:
+  // "import/no-commonjs": "warn",
+  // "import/no-dynamic-require": "warn", // prevent abusing dynamic require
+  //// don't work properly:
+  // "import/unambiguous": "error",
+  // "import/no-unused-modules": ["warn", {"missingExports": true}],
 }
 
 module.exports = {
@@ -35,6 +51,7 @@ module.exports = {
   ignorePatterns: ["node_modules/"],
   rules: {
     ...pluginNodeRules,
+    ...pluginImportExtraRules,
   },
   overrides: [
     {
@@ -62,6 +79,7 @@ module.exports = {
         "@typescript-eslint/no-inferrable-types": "off",
         "@typescript-eslint/no-non-null-assertion": "off",
         ...pluginNodeRules,
+        ...pluginImportExtraRules,
       },
     },
     {
@@ -91,6 +109,7 @@ module.exports = {
       ],
       rules: {
         ...pluginNodeRules,
+        ...pluginImportExtraRules,
       },
     },
     {
