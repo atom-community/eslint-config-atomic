@@ -16,7 +16,7 @@ const pluginImportExtraRules = {
   "import/no-mutable-exports": "warn",
   "import/no-anonymous-default-export": "error",
   "import/no-amd": "error",
-  //// might be to restrictive:
+  //// might be too restrictive:
   // "import/no-commonjs": "warn",
   // "import/no-dynamic-require": "warn", // prevent abusing dynamic require
   //// don't work properly:

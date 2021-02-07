@@ -76,6 +76,7 @@ The list of used plugins and dependencies:
   "@typescript-eslint/parser": "^4.14.2",
   "babel-eslint": "^10.1.0",
   "eslint-plugin-coffee": "^0.1.13",
+  "eslint-plugin-import": "^2.22.1",
   "eslint-plugin-json": "^2.1.2",
   "eslint-plugin-node": "^11.1.0",
   "eslint-plugin-only-warn": "^1.0.2",
