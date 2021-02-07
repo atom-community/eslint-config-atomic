@@ -22,7 +22,9 @@
   "license": "MIT",
   "scripts": {
     "format": "prettier --write .",
+    "test.format": "prettier . --check",
     "lint": "eslint . --fix",
+    "test.lint": "eslint .",
     "test": "node ./spec/test.js",
     "clean": "shx rm -rf ./spec/fixtures/atom-community ./spec/fixtures/atom-minimap ./spec/fixtures/steelbrain ./strict.js ./strict-react.js",
     "build.strict": "node ./scripts/build.strict.js",
