@@ -47,13 +47,7 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["node", "import", "only-warn"],
-  extends: [
-    "eslint:recommended",
-    "plugin:optimize-regex/all",
-    "plugin:import/recommended",
-    "plugin:coffee/import",
-    "prettier",
-  ],
+  extends: ["eslint:recommended", "plugin:optimize-regex/all", "plugin:import/recommended", "prettier"],
   ignorePatterns: ["node_modules/"],
   rules: {
     ...pluginNodeRules,
@@ -72,8 +66,6 @@ module.exports = {
         "plugin:@typescript-eslint/recommended",
         "plugin:optimize-regex/all",
         "plugin:import/recommended",
-        "plugin:import/typescript",
-        "plugin:coffee/import",
         "prettier",
         "prettier/@typescript-eslint",
       ],
@@ -108,12 +100,7 @@ module.exports = {
       files: ["**/*.coffee", "**/*.cson"],
       parser: "eslint-plugin-coffee",
       plugins: ["coffee", "node", "only-warn"],
-      extends: [
-        "plugin:coffee/eslint-recommended",
-        "plugin:optimize-regex/all",
-        "plugin:coffee/import",
-        "plugin:coffee/prettier",
-      ],
+      extends: ["plugin:coffee/eslint-recommended", "plugin:optimize-regex/all", "plugin:coffee/prettier"],
       rules: {
         ...pluginNodeRules,
         ...pluginImportExtraRules,
@@ -128,5 +115,16 @@ module.exports = {
   ],
   settings: {
     "import/core-modules": ["atom", "electron"],
+    // support TypeScript and Coffee importing
+    "import/extensions": [".ts", ".tsx", ".d.ts", ".js", ".jsx", ".coffee"],
+    "import/external-module-folders": ["node_modules", "node_modules/@types"],
+    "import/parsers": {
+      "@typescript-eslint/parser": [".ts", ".tsx", ".d.ts"],
+    },
+    "import/resolver": {
+      node: {
+        extensions: [".ts", ".tsx", ".d.ts", ".js", ".jsx", ".coffee"],
+      },
+    },
   },
 }
