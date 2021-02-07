@@ -47,7 +47,13 @@ module.exports = {
     sourceType: "module",
   },
   plugins: ["node", "import", "only-warn"],
-  extends: ["eslint:recommended", "plugin:optimize-regex/all", "plugin:import/recommended", "prettier"],
+  extends: [
+    "eslint:recommended",
+    "plugin:optimize-regex/all",
+    "plugin:import/recommended",
+    "plugin:coffee/import",
+    "prettier",
+  ],
   ignorePatterns: ["node_modules/"],
   rules: {
     ...pluginNodeRules,
@@ -67,6 +73,7 @@ module.exports = {
         "plugin:optimize-regex/all",
         "plugin:import/recommended",
         "plugin:import/typescript",
+        "plugin:coffee/import",
         "prettier",
         "prettier/@typescript-eslint",
       ],
