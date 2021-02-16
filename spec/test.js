@@ -18,6 +18,8 @@ const testRepos = [
   "steelbrain/linter-ui-default",
 ]
 
+const testWorkspaces = ["atom-community/atom-ide-base"]
+
 /** a function that tests linting of a package */
 async function testLint(packedPkg, testRepo, isWorkspace = false) {
   console.log(`Testing ${testRepo}`)
@@ -47,5 +49,9 @@ async function testLint(packedPkg, testRepo, isWorkspace = false) {
   for (const testRepo of testRepos) {
     await testLint(packedPkg, testRepo, false)
   }
+  for (const testWorkspace of testWorkspaces) {
+    await testLint(packedPkg, testWorkspace, true)
+  }
+
   rm("-rf", packedPkg)
 })()
