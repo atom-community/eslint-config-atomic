@@ -1,4 +1,4 @@
-// script to generate the strict versions (without only-warn)
+console.log("Running script to generate the strict versions (without only-warn)")
 
 const { readFile, writeFile } = require("fs").promises
 const { join, dirname, basename } = require("path")
