@@ -79,6 +79,10 @@ module.exports = {
         "@typescript-eslint/no-non-null-assertion": "off",
         ...pluginNodeRules,
         ...pluginImportExtraRules,
+        // Buggy on TypeScript:
+        "import/no-unresolved": "off",
+        "import/named": "off",
+        "import/namespace": "off",
       },
     },
     {
