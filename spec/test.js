@@ -7,8 +7,8 @@ const { existsSync } = require("fs")
 
 const testRepos = [
   "atom-community/atom-ide-hyperclick",
-  "atom-community/terminal",
   "atom-community/atom-languageclient",
+  "atom-community/terminal",
   "atom-community/atom-ide-outline",
   "atom-community/atom-ide-datatip",
   // "atom-community/atom-ide-console",
