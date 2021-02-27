@@ -8,6 +8,7 @@ const { existsSync } = require("fs")
 const testRepos = [
   "atom-community/atom-ide-hyperclick",
   "atom-community/terminal",
+  "atom-community/atom-languageclient",
   "atom-community/atom-ide-outline",
   "atom-community/atom-ide-datatip",
   // "atom-community/atom-ide-console",
@@ -32,10 +33,15 @@ async function testLint(packedPkg, testRepo, isWorkspace = false, isSilent = fal
     await extract(source, distFolder)
   }
 
-  await execa.command(`pnpm add "${packedPkg}" --ignore-scripts ${isWorkspace ? "-w" : ""}`, {
-    cwd: distFolder,
-    shell: true,
-  })
+  try {
+    await execa.command(`pnpm add "${packedPkg}" --ignore-scripts ${isWorkspace ? "-w" : ""}`, {
+      cwd: distFolder,
+      shell: true,
+    })
+  } catch (e) {
+    console.log("\nPlease rerun pnpm test. This error happens because pnpm cannot delete locked files \n")
+    throw e
+  }
 
   await execa.command("eslint .", { cwd: distFolder, stdout: !isSilent ? "inherit" : "pipe" })
 }
