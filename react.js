@@ -5,14 +5,14 @@ let overrides = base.overrides
 overrides[0] = {
   ...overrides[0],
   plugins: ["react", ...overrides[0].plugins],
-  extends: ["plugin:react/recommended", ...overrides[0].extends, "prettier/react"],
+  extends: ["plugin:react/recommended", ...overrides[0].extends],
   rules: overrides[0].rules,
 }
 
 module.exports = {
   ...base,
   plugins: ["react", ...base.plugins],
-  extends: ["plugin:react/recommended", ...base.extends, "prettier/react"],
+  extends: ["plugin:react/recommended", ...base.extends],
   overrides: overrides,
   settings: {
     ...(base.settings || {}),

@@ -67,7 +67,6 @@ module.exports = {
         "plugin:optimize-regex/all",
         "plugin:import/recommended",
         "prettier",
-        "prettier/@typescript-eslint",
       ],
       rules: {
         "@typescript-eslint/explicit-function-return-type": "off",
@@ -89,7 +88,7 @@ module.exports = {
       // JSON files
       files: ["*.json"],
       plugins: ["json"],
-      extends: ["prettier", "plugin:json/recommended"],
+      extends: ["plugin:json/recommended", "prettier"],
       rules: {
         "json/*": [
           "error",
