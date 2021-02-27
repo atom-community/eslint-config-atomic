@@ -125,6 +125,9 @@ module.exports = {
       "@typescript-eslint/parser": [".ts", ".tsx", ".d.ts"],
     },
     "import/resolver": {
+      typescript: {
+        alwaysTryTypes: true,
+      },
       node: {
         extensions: [".ts", ".tsx", ".d.ts", ".js", ".jsx", ".coffee"],
       },
