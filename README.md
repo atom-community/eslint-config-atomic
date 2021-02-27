@@ -2,6 +2,8 @@
 
 This includes the Eslint configuration used in atom-ide-community.
 
+[![CI](https://github.com/atom-community/eslint-config-atomic/actions/workflows/CI.yml/badge.svg)](https://github.com/atom-community/eslint-config-atomic/actions/workflows/CI.yml)
+
 ## Installation
 
 ```
