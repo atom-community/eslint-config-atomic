@@ -5,7 +5,7 @@
 exports.eslintRulesExtra = {
   // Source https://eslint.org/docs/rules/#possible-errors
   "no-await-in-loop": "error", // disallow `await` inside of loops
-  "no-console": ["error", { allow: ["warn", "error"] }], // disallow the use of `console`
+  // "no-console": ["error", { allow: ["warn", "error"] }], // disallow the use of `console`  // console.log is useful in CLI tools
   "no-loss-of-precision": "error", // disallow literal numbers that lose precision
   "no-promise-executor-return": "error", // disallow returning values from Promise executor functions
   "no-template-curly-in-string": "warn", // disallow template literal placeholder syntax in regular strings
