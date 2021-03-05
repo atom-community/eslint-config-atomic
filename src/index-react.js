@@ -1,19 +1,21 @@
 const base = require("./index.js")
-
-let overrides = base.overrides
-// TypeScript:
-overrides[0] = {
-  ...overrides[0],
-  plugins: ["react", ...overrides[0].plugins],
-  extends: ["plugin:react/recommended", ...overrides[0].extends],
-  rules: overrides[0].rules,
-}
+const { tsConfig } = require("./typescript")
 
 module.exports = {
   ...base,
   plugins: ["react", ...base.plugins],
   extends: ["plugin:react/recommended", ...base.extends],
-  overrides: overrides,
+  overrides: [
+    // TypeScript:
+    {
+      ...tsConfig,
+      plugins: ["react", ...tsConfig.plugins],
+      extends: ["plugin:react/recommended", ...tsConfig.extends],
+      rules: tsConfig.rules,
+    },
+    // The rest is the same
+    ...base.overrides.slice(1),
+  ],
   settings: {
     ...(base.settings || {}),
     react: {
