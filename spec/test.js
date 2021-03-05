@@ -43,7 +43,10 @@ async function testLint(packedPkg, testRepo, isWorkspace = false, isSilent = fal
     throw e
   }
 
-  await execa.command("eslint .", { cwd: distFolder, stdout: !isSilent ? "inherit" : "pipe" })
+  const result = await execa.command("eslint .", { cwd: distFolder, stdout: !isSilent ? "inherit" : "pipe" })
+  if (result.failed) {
+    throw new Error("An error happened")
+  }
 }
 
 /** main entry */
