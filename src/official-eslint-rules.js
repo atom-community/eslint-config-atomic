@@ -93,7 +93,7 @@ exports.eslintRulesExtra = {
 
   // Source: https://eslint.org/docs/rules/#ecmascript-6
   "no-confusing-arrow": "error", // disallow arrow functions where they could be confused with comparisons
-  "no-duplicate-imports": "error", // disallow duplicate module imports
+  // "no-duplicate-imports": "error", // disallow duplicate module imports // Buggy with Flow and TypeScript
   // "no-restricted-exports": "error", // disallow specified names in exports
   // "no-restricted-imports": "error", // disallow specified modules when loaded by `import`
   "no-useless-computed-key": "error", // disallow unnecessary computed property keys in objects and classes
