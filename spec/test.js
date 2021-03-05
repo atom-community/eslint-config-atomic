@@ -57,10 +57,11 @@ async function testLint(packedPkg, testRepo, isWorkspace = false, isSilent = fal
   await execa.command("pnpm pack", { cwd: root })
 
   for (const testRepo of testRepos) {
-    await testLint(packedPkg, testRepo, false)
+    // We want to observe the output in order, so we await inside loop
+    await testLint(packedPkg, testRepo, false) // eslint-disable-line no-await-in-loop
   }
   for (const testWorkspace of testWorkspaces) {
-    await testLint(packedPkg, testWorkspace, true, true)
+    await testLint(packedPkg, testWorkspace, true, true) // eslint-disable-line no-await-in-loop
   }
 
   rm("-rf", packedPkg)
