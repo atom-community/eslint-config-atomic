@@ -3,6 +3,17 @@
  * The rules that might be useful in future are commented.
  */
 exports.eslintRulesExtra = {
+  // Source https://eslint.org/docs/rules/#possible-errors
+  "no-await-in-loop": "error", // disallow `await` inside of loops
+  "no-console": ["error", { allow: ["warn", "error"] }], // disallow the use of `console`
+  "no-loss-of-precision": "error", // disallow literal numbers that lose precision
+  "no-promise-executor-return": "error", // disallow returning values from Promise executor functions
+  "no-template-curly-in-string": "warn", // disallow template literal placeholder syntax in regular strings
+  "no-unreachable-loop": "error", // disallow loops with a body that allows only one iteration
+  "no-unsafe-optional-chaining": "error", // disallow use of optional chaining in contexts where the `undefined` value is not allowed
+  "no-useless-backreference": "error", // disallow useless backreferences in regular expressions
+  "require-atomic-updates": "error", // disallow assignments that can lead to race conditions due to usage of `await` or `yield`
+
   // Source https://eslint.org/docs/rules/#best-practices
   // "accessor-pairs": "error", // enforce getter and setter pairs in objects and classes
   "array-callback-return": "error", // enforce `return` statements in callbacks of array methods
