@@ -6,11 +6,10 @@ if (nonStrictConfig.plugins[nonStrictConfig.plugins.length - 1] === "only-warn")
 }
 
 // remove only-warn from overrides
-nonStrictConfig.overrides.forEach(overrides => {
+nonStrictConfig.overrides.forEach((overrides) => {
   if (overrides.plugins[overrides.plugins.length - 1] === "only-warn") {
     overrides.plugins.pop()
   }
 })
-
 
 module.exports = nonStrictConfig
