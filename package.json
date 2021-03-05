@@ -7,6 +7,7 @@
   "strict": "strict.js",
   "strict-react": "strict-react.js",
   "files": [
+    "src",
     "*.js"
   ],
   "description": "Eslint config used in atom-ide-community",
