@@ -27,8 +27,6 @@
     "test.lint": "eslint .",
     "test": "node ./spec/test.js",
     "clean": "shx rm -rf ./spec/fixtures/atom-community ./spec/fixtures/atom-minimap ./spec/fixtures/steelbrain ./strict.js ./strict-react.js",
-    "build.strict": "node ./scripts/build.strict.js",
-    "prepare": "npm run build.strict",
     "bump": "ncu -u -x coffeescript"
   },
   "dependencies": {

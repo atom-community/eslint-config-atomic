@@ -1,4 +1,4 @@
 {
-  "extends": ".",
+  "extends": "./strict",
   "ignorePatterns": ["dist/", "node_modules/"]
 }

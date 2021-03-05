@@ -12,8 +12,6 @@ package-lock.json
 # Build directories
 dist
 
-strict.js
-strict-react.js
 spec/fixtures/atom-community
 spec/fixtures/atom-minimap
 spec/fixtures/aminya
