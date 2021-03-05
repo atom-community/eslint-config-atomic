@@ -1,3 +1,4 @@
+const { eslintRulesExtra } = require("./official-eslint-rules")
 const { pluginImportRulesExtra, pluginImportTypeScriptRulesExtra } = require("./plugin-import-rules")
 const { pluginNodeRules } = require("./plugin-node-rules")
 
@@ -25,6 +26,7 @@ exports.tsConfig = {
     "prettier",
   ],
   rules: {
+    ...eslintRulesExtra,
     ...pluginTypeScriptRulesExtra,
     ...pluginNodeRules,
     ...pluginImportRulesExtra,
