@@ -64,7 +64,7 @@ jobs:
         run: pnpm test.lint
 
   Release:
-    needs: [Test]
+    needs: [Test, Lint]
     if: github.ref == 'refs/heads/master' &&
       github.event.repository.fork == false
     runs-on: ubuntu-latest
