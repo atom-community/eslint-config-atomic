@@ -10,7 +10,7 @@ exports.eslintRulesExtra = {
   "no-promise-executor-return": "error", // disallow returning values from Promise executor functions
   "no-template-curly-in-string": "warn", // disallow template literal placeholder syntax in regular strings
   "no-unreachable-loop": "error", // disallow loops with a body that allows only one iteration
-  "no-unsafe-optional-chaining": "error", // disallow use of optional chaining in contexts where the `undefined` value is not allowed
+  // "no-unsafe-optional-chaining": "error", // disallow use of optional chaining in contexts where the `undefined` value is not allowed   // TODO doesn't work
   "no-useless-backreference": "error", // disallow useless backreferences in regular expressions
   "require-atomic-updates": "error", // disallow assignments that can lead to race conditions due to usage of `await` or `yield`
 
@@ -53,7 +53,7 @@ exports.eslintRulesExtra = {
   "no-new": "error", // disallow `new` operators outside of assignments or comparisons
   "no-new-func": "error", // disallow `new` operators with the `Function` object
   "no-new-wrappers": "error", // disallow `new` operators with the `String`, `Number`, and `Boolean` objects
-  // "no-nonoctal-decimal-escape": "error", // disallow `\8` and `\9` escape sequences in string literals
+  // "no-nonoctal-decimal-escape": "error", // disallow `\8` and `\9` escape sequences in string literals  // TODO doesn't work
   "no-octal-escape": "error", // disallow octal escape sequences in string literals
   "no-param-reassign": ["error", { props: false }], // disallow reassigning `function` parameters
   "no-proto": "error", // disallow the use of the `__proto__` property
