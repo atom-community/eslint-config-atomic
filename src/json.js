@@ -1,4 +1,4 @@
-exports.jsonOverides = {
+exports.jsonConfig = {
   // JSON files
   files: ["*.json"],
   plugins: ["json"],

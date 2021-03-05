@@ -1,7 +1,8 @@
 const { jsConfig } = require("./javascript")
 const { tsConfig } = require("./typescript")
-const { coffeConfig } = require("./coffeescript")
-const { jsonOverides } = require("./json")
+const { coffeeConfig } = require("./coffeescript")
+const { jsonConfig } = require("./json")
+const { csonConfig } = require("./cson")
 const { yamlConfig } = require("./yaml")
 const { pluginImportSettings } = require("./plugin-import-rules")
 
@@ -19,7 +20,7 @@ module.exports = {
     measure: "readonly",
   },
   ...jsConfig,
-  overrides: [tsConfig, coffeConfig, jsonOverides, yamlConfig],
+  overrides: [tsConfig, coffeeConfig, jsonConfig, csonConfig, yamlConfig],
   settings: {
     ...pluginImportSettings,
   },
