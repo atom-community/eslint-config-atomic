@@ -88,7 +88,9 @@ exports.eslintRulesExtra = {
   // "init-declarations": "error", //require or disallow initialization in variable declarations
   "no-label-var": "error", //disallow labels that share a name with a variable
   // "no-restricted-globals": "error", //disallow specified global variables
-  "no-shadow": ["error", { builtinGlobals: true, hoist: "all", allow: [] }], //disallow variable declarations from shadowing variables declared in the outer scope
+  "no-shadow": ["error", { builtinGlobals: false, hoist: "all", allow: [] }], //disallow variable declarations from shadowing variables declared in the outer scope
+  // TODO Atom's Range, Notification, Window cause this rule to error. In Atom env, these should error once not imported.
+
   // "no-use-before-define": "error", // disallow the use of variables before they are defined
 
   // Source: https://eslint.org/docs/rules/#ecmascript-6
