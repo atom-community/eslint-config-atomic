@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-atomic",
-  "version": "1.10.0",
+  "version": "1.11.1",
   "author": "Amin Yahyaabadi",
   "main": "index.js",
   "react": "react.js",
