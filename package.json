@@ -23,8 +23,8 @@
   "scripts": {
     "format": "prettier --write .",
     "test.format": "prettier . --check",
-    "lint": "eslint . --fix",
-    "test.lint": "eslint .",
+    "lint": "eslint . --ignore-pattern spec/fixtures/** --fix",
+    "test.lint": "eslint . --ignore-pattern spec/fixtures/**",
     "test": "node ./spec/test.js",
     "clean": "shx rm -rf ./spec/fixtures/atom-community ./spec/fixtures/atom-minimap ./spec/fixtures/steelbrain ./strict.js ./strict-react.js",
     "bump": "ncu -u -x coffeescript"
