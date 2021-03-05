@@ -19,7 +19,10 @@ exports.pluginImportTypeScriptRulesExtra = {
   // Buggy on TypeScript:
   "import/no-unresolved": "off",
   "import/named": "off",
+  // doesn't understand type namespaces
   "import/namespace": "off",
+  // thinks types are mutable!
+  "import/export": "off"
 }
 
 exports.pluginImportSettings = {
