@@ -31,8 +31,8 @@
     "bump": "ncu -u -x coffeescript"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "^4.15.2",
-    "@typescript-eslint/parser": "^4.15.2",
+    "@typescript-eslint/eslint-plugin": "^4.17.0",
+    "@typescript-eslint/parser": "^4.17.0",
     "babel-eslint": "^10.1.0",
     "eslint-plugin-coffee": "^0.1.14",
     "eslint-plugin-import": "^2.22.1",
@@ -42,10 +42,10 @@
     "eslint-plugin-optimize-regex": "^1.2.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-react": "^7.22.0",
-    "eslint-plugin-yaml": "^0.3.0",
+    "eslint-plugin-yaml": "^0.4.1",
     "prettier": "^2",
     "typescript": "^4",
-    "coffeescript": "^1",
+    "coffeescript": "^2",
     "@babel/core": "^7"
   },
   "peerDependencies": {
