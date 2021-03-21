@@ -22,6 +22,7 @@ importers:
       execa: 5.0.0
       gitly: 2.0.2
       npm-check-updates: 11.3.0
+      prettier-config-atomic: 1.0.1
       shelljs: 0.8.4
     specifiers:
       '@babel/core': ^7
@@ -43,6 +44,7 @@ importers:
       gitly: ^2.0.2
       npm-check-updates: 11.3.0
       prettier: ^2
+      prettier-config-atomic: ^1.0.1
       shelljs: ^0.8.4
       typescript: ^4
   spec/fixtures/atom-community/atom-ide-datatip:
@@ -10901,6 +10903,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-6SQ0v6XqjBn0HN/UAddBo8gZ2Jc=
+  /prettier-config-atomic/1.0.1:
+    dependencies:
+      prettier: 2.2.1
+    dev: true
+    resolution:
+      integrity: sha512-bNW8oMkuuVZI0OXEwwfbGGpdh1Jv4QfOzSMnmueBkSCYcCAnA9iHy+wRVsAeVRZPfB1hjqB9UtxGTnrflITtyg==
   /prettier/2.2.1:
     engines:
       node: '>=10.13.0'
