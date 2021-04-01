@@ -82,7 +82,7 @@ exports.eslintRulesExtra = {
   // yoda: "error", // require or disallow "Yoda" conditions
 
   // https://eslint.org/docs/rules/#strict-mode
-  strict: "error", // require or disallow strict mode directives
+  strict: "off", // require or disallow strict mode directives
 
   // Source: https://eslint.org/docs/rules/#variables
   // "init-declarations": "error", //require or disallow initialization in variable declarations
