@@ -39,7 +39,7 @@ async function testLint(packedPkg, testRepo, isWorkspace = false, isSilent = fal
       shell: true,
     })
   } catch (e) {
-    console.log("\nPlease rerun pnpm test. This error happens because pnpm cannot delete locked files \n")
+    console.error("\nPlease rerun pnpm test. This error happens because pnpm cannot delete locked files \n")
     throw e
   }
 
@@ -56,12 +56,28 @@ async function testLint(packedPkg, testRepo, isWorkspace = false, isSilent = fal
   rm("-rf", packedPkg)
   await execa.command("pnpm pack", { cwd: root })
 
+  const errs = []
   for (const testRepo of testRepos) {
-    // We want to observe the output in order, so we await inside loop
-    await testLint(packedPkg, testRepo, false) // eslint-disable-line no-await-in-loop
+    try {
+      // We want to observe the output in order, so we await inside loop
+      await testLint(packedPkg, testRepo, false) // eslint-disable-line no-await-in-loop
+    } catch (err) {
+      console.error(err)
+      errs.push(err)
+    }
   }
+
   for (const testWorkspace of testWorkspaces) {
-    await testLint(packedPkg, testWorkspace, true, true) // eslint-disable-line no-await-in-loop
+    try {
+      await testLint(packedPkg, testWorkspace, true, true) // eslint-disable-line no-await-in-loop
+    } catch (err) {
+      console.error(err)
+      errs.push(err)
+    }
+  }
+  if (errs.length !== 0) {
+    rm("-rf", packedPkg)
+    throw new Error(`${errs.length} packages failed the tests. See the above.`)
   }
 
   rm("-rf", packedPkg)
