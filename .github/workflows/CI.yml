@@ -6,7 +6,6 @@ on:
 jobs:
   Test:
     if: "!contains(github.event.head_commit.message, '[skip ci]')"
-    name: ${{ matrix.os }} - Atom ${{ matrix.atom_channel }}
     runs-on: ${{ matrix.os }}
     strategy:
       fail-fast: false
@@ -18,19 +17,17 @@ jobs:
         atom_channel: [stable, beta]
     steps:
       - uses: actions/checkout@v2
-      - uses: UziTech/action-setup-atom@v1
-        with:
-          channel: ${{ matrix.atom_channel }}
-      - name: Versions
-        run: apm -v
-      - name: Install APM dependencies
-        run: |
-          apm install
 
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
       - name: Setup PNPM
-        uses: pnpm/action-setup@v1.2.1
+        uses: pnpm/action-setup@master
         with:
           version: latest
+
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Tests
         run: |
@@ -48,9 +45,11 @@ jobs:
       - name: Commit lint ✨
         uses: wagoid/commitlint-github-action@v2
 
-      - uses: UziTech/action-setup-atom@v1
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "14"
       - name: Setup PNPM
-        uses: pnpm/action-setup@v1.2.1
+        uses: pnpm/action-setup@master
         with:
           version: latest
 

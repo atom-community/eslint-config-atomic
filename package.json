@@ -39,6 +39,7 @@
     "coffeescript": "^1",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-coffee": "^0.1.14",
+    "eslint-plugin-html": "^6.1.2",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-json": "^2.1.2",
     "eslint-plugin-node": "^11.1.0",
