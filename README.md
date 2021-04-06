@@ -10,11 +10,24 @@ This includes the Eslint configuration used in atom-ide-community.
 npm install --save-dev eslint-config-atomic
 ```
 
-You should also install the peer dependencies:
+<details>
+<summary> You should have the peer dependencies. </summary>
+
+If using `npm`, the bundled Eslint, TypeScript, Babel, etc is hoisted automatically.
+
+If using `pnpm`, either add the following to your `.npmrc` to hoist the prettier bundled with the config
 
 ```
-npm install -save-dev "eslint"
+public-hoist-pattern[]=*
 ```
+
+Or install these yourself in your `devDependencies`.
+
+```
+pnpm install -save-dev eslint typescript @babel/core
+```
+
+</details>
 
 ## Usage
 
