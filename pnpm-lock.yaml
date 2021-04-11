@@ -8,7 +8,7 @@ importers:
       '@typescript-eslint/eslint-plugin': ^4.21.0
       '@typescript-eslint/parser': ^4.21.0
       babel-eslint: ^10.1.0
-      coffeescript: ^1
+      coffeescript: ^2
       eslint: ^7
       eslint-config-prettier: ^8.1.0
       eslint-plugin-coffee: ^0.1.14
@@ -18,7 +18,7 @@ importers:
       eslint-plugin-node: ^11.1.0
       eslint-plugin-only-warn: ^1.0.2
       eslint-plugin-optimize-regex: ^1.2.0
-      eslint-plugin-react: ^7.23.1
+      eslint-plugin-react: ^7.23.2
       eslint-plugin-yaml: ^0.4.1
       execa: ^5.0.0
       gitly: ^2.0.3
@@ -32,7 +32,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 4.21.0_67df5db230f20202ba0f3b3c474a3c04
       '@typescript-eslint/parser': 4.21.0_eslint@7.22.0+typescript@4.1.3
       babel-eslint: 10.1.0_eslint@7.22.0
-      coffeescript: 1.12.7
+      coffeescript: 2.5.1
       eslint: 7.22.0
       eslint-config-prettier: 8.1.0_eslint@7.22.0
       eslint-plugin-coffee: 0.1.14_eslint@7.22.0
@@ -42,7 +42,7 @@ importers:
       eslint-plugin-node: 11.1.0_eslint@7.22.0
       eslint-plugin-only-warn: 1.0.2
       eslint-plugin-optimize-regex: 1.2.0
-      eslint-plugin-react: 7.23.1_eslint@7.22.0
+      eslint-plugin-react: 7.23.2_eslint@7.22.0
       eslint-plugin-yaml: 0.4.1
       prettier: 2.2.1
       typescript: 4.1.3
@@ -5228,6 +5228,7 @@ packages:
     resolution: {integrity: sha512-pLXHFxQMPklVoEekowk8b3erNynC+DVJzChxS/LCBBgR6/8AJkHivkm//zbowcfc7BTCAjryuhx6gPqPRfsFoA==}
     engines: {node: '>=0.8.0'}
     hasBin: true
+    dev: true
 
   /coffeescript/2.5.1:
     resolution: {integrity: sha512-J2jRPX0eeFh5VKyVnoLrfVFgLZtnnmp96WQSLAS8OrLm2wtQLcnikYKe1gViJKDH7vucjuhHvBKKBP3rKcD1tQ==}
@@ -6671,8 +6672,8 @@ packages:
       string.prototype.matchall: 4.0.2
     dev: false
 
-  /eslint-plugin-react/7.23.1_eslint@7.22.0:
-    resolution: {integrity: sha512-MvFGhZjI8Z4HusajmSw0ougGrq3Gs4vT/0WgwksZgf5RrLrRa2oYAw56okU4tZJl8+j7IYNuTM+2RnFEuTSdRQ==}
+  /eslint-plugin-react/7.23.2_eslint@7.22.0:
+    resolution: {integrity: sha512-AfjgFQB+nYszudkxRkTFu0UR1zEQig0ArVMPloKhxwlwkzaw/fBiH0QWcBBhZONlXqQC51+nfqFrkn4EzHcGBw==}
     engines: {node: '>=4'}
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7
