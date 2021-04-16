@@ -21,7 +21,7 @@ const testRepos = [
 
 const testWorkspaces = ["atom-community/atom-ide-base"]
 
-/** a function that tests linting of a package */
+/** A function that tests linting of a package */
 async function testLint(packedPkg, testRepo, isWorkspace = false, isSilent = false) {
   console.log(`Testing ${testRepo}`)
 
@@ -49,7 +49,7 @@ async function testLint(packedPkg, testRepo, isWorkspace = false, isSilent = fal
   }
 }
 
-/** main entry */
+/** Main entry */
 ;(async function main() {
   const root = resolve(dirname(__dirname))
   const packedPkg = join(root, `${pkg.name}-${pkg.version}.tgz`)
