@@ -89,7 +89,6 @@ The list of used plugins and dependencies:
 ```
   "@typescript-eslint/eslint-plugin": "^4.14.2",
   "@typescript-eslint/parser": "^4.14.2",
-  "babel-eslint": "^10.1.0",
   "eslint-plugin-coffee": "^0.1.13",
   "eslint-plugin-import": "^2.22.1",
   "eslint-plugin-json": "^2.1.2",
@@ -102,5 +101,6 @@ The list of used plugins and dependencies:
   "prettier": "^2",
   "typescript": "^4",
   "coffeescript": "^1",
-  "@babel/core": "^7"
+  "@babel/core": "^7",
+  "@babel/eslint-parser": "^7.13.14",
 ```
