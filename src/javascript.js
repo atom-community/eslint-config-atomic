@@ -3,8 +3,9 @@ const { pluginNodeRules } = require("./plugin-node-rules")
 const { pluginImportRulesExtra } = require("./plugin-import-rules")
 
 exports.jsConfig = {
-  parser: "babel-eslint",
+  parser: "@babel/eslint-parser",
   parserOptions: {
+    requireConfigFile: false,
     ecmaFeatures: {
       jsx: true,
     },
