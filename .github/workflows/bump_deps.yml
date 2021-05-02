@@ -21,7 +21,7 @@ jobs:
         run: pnpm install -g npm-check-updates
 
       - run: |
-          ncu -u --dep prod
+          ncu -u --dep prod -x coffeescript
           pnpm install
 
       - uses: tibdex/github-app-token@v1
@@ -53,7 +53,7 @@ jobs:
         run: pnpm install -g npm-check-updates
 
       - run: |
-          ncu -u --dep dev
+          ncu -u --dep dev -x coffeescript
           pnpm install
 
       - uses: tibdex/github-app-token@v1

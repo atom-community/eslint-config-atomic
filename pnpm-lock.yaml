@@ -10,7 +10,7 @@ importers:
       '@typescript-eslint/parser': ^4.22.0
       coffeescript: ^1
       eslint: ^7
-      eslint-config-prettier: ^8.2.0
+      eslint-config-prettier: ^8.3.0
       eslint-plugin-coffee: ^0.1.14
       eslint-plugin-html: ^6.1.2
       eslint-plugin-import: ^2.22.1
@@ -22,9 +22,9 @@ importers:
       eslint-plugin-yaml: ^0.4.2
       execa: ^5.0.0
       gitly: ^2.0.3
-      npm-check-updates: 11.4.1
+      npm-check-updates: 11.5.9
       prettier: ^2
-      prettier-config-atomic: ^2.0.2
+      prettier-config-atomic: ^2.0.3
       shelljs: ^0.8.4
       typescript: ^4
     dependencies:
@@ -34,7 +34,7 @@ importers:
       '@typescript-eslint/parser': 4.22.0_eslint@7.22.0+typescript@4.1.3
       coffeescript: 1.12.7
       eslint: 7.22.0
-      eslint-config-prettier: 8.2.0_eslint@7.22.0
+      eslint-config-prettier: 8.3.0_eslint@7.22.0
       eslint-plugin-coffee: 0.1.14_eslint@7.22.0
       eslint-plugin-html: 6.1.2
       eslint-plugin-import: 2.22.1_eslint@7.22.0
@@ -49,8 +49,8 @@ importers:
     devDependencies:
       execa: 5.0.0
       gitly: 2.0.3
-      npm-check-updates: 11.4.1
-      prettier-config-atomic: 2.0.2
+      npm-check-updates: 11.5.9
+      prettier-config-atomic: 2.0.3
       shelljs: 0.8.4
 
   spec/fixtures/atom-community/atom-ide-datatip:
@@ -4777,7 +4777,7 @@ packages:
     dependencies:
       ansi-align: 3.0.0
       camelcase: 6.2.0
-      chalk: 4.1.0
+      chalk: 4.1.1
       cli-boxes: 2.2.1
       string-width: 4.2.0
       type-fest: 0.20.2
@@ -5068,6 +5068,14 @@ packages:
     dependencies:
       ansi-styles: 4.3.0
       supports-color: 7.2.0
+
+  /chalk/4.1.1:
+    resolution: {integrity: sha512-diHzdDKxcU+bAsUboHLPEDQiw0qEe0qd7SYUn3HgcFlWgbDcfLGswOHYeGrHKzG9z6UYf01d9VFMfZxPM1xZSg==}
+    engines: {node: '>=10'}
+    dependencies:
+      ansi-styles: 4.3.0
+      supports-color: 7.2.0
+    dev: true
 
   /chance/1.1.7:
     resolution: {integrity: sha512-bua/2cZEfzS6qPm0vi3JEvGNbriDLcMj9lKxCQOjUcCJRcyjA7umP0zZm6bKWWlBN04vA0L99QGH/CZQawr0eg==}
@@ -6430,8 +6438,8 @@ packages:
       eslint: 7.19.0
     dev: true
 
-  /eslint-config-prettier/8.2.0_eslint@7.22.0:
-    resolution: {integrity: sha512-dWV9EVeSo2qodOPi1iBYU/x6F6diHv8uujxbxr77xExs3zTAlNXvVZKiyLsQGNz7yPV2K49JY5WjPzNIuDc2Bw==}
+  /eslint-config-prettier/8.3.0_eslint@7.22.0:
+    resolution: {integrity: sha512-BgZuLUSeKzvlL/VUjx/Yb787VQ26RU3gGjA3iiFvdsp/2bMfVIWUVP7tjxtjS0e+HP409cPlPvNkQloz8C91ew==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
@@ -9030,8 +9038,8 @@ packages:
       mimic-fn: 3.1.0
     dev: true
 
-  /mem/8.1.0:
-    resolution: {integrity: sha512-FIkgXo0kTi3XpvaznV5Muk6Y6w8SkdmRXcY7ZLonQesuYezp59UooLxAVBcGuN6PH2tXN84mR3vyzSc6oSMUfA==}
+  /mem/8.1.1:
+    resolution: {integrity: sha512-qFCFUDs7U3b8mBDPyz5EToEKoAkgCzqquIgi9nkkR9bixxOVOre+09lbuH7+9Kn2NFpm56M3GUWVbU2hQgdACA==}
     engines: {node: '>=10'}
     dependencies:
       map-age-cleaner: 0.1.3
@@ -9401,12 +9409,12 @@ packages:
       update-notifier: 5.1.0
     dev: true
 
-  /npm-check-updates/11.4.1:
-    resolution: {integrity: sha512-bWElM5CeJ9gA/wvtqB4ljcKzAZ3BlPM2g/7mVi8mPdCR2N6dhgS4q5GCzQn4ZvpeKSFll3bUGkiR/lgSQOlN8Q==}
+  /npm-check-updates/11.5.9:
+    resolution: {integrity: sha512-D+FgrBNtBJHl+D1n364CsQy/o6JIrh+7v+SXngNzAeyOVvc8w/1yr5pvqguVQWIvduC3HcRI87amkDp7ipzH7A==}
     engines: {node: '>=10.17'}
     hasBin: true
     dependencies:
-      chalk: 4.1.0
+      chalk: 4.1.1
       cint: 8.2.1
       cli-table: 0.3.6
       commander: 6.2.1
@@ -9419,10 +9427,10 @@ packages:
       jsonlines: 0.1.1
       libnpmconfig: 1.2.1
       lodash: 4.17.21
-      mem: 8.1.0
+      mem: 8.1.1
       minimatch: 3.0.4
       p-map: 4.0.0
-      pacote: 11.3.1
+      pacote: 11.3.3
       parse-github-url: 1.0.2
       progress: 2.0.3
       prompts: 2.4.1
@@ -9474,6 +9482,21 @@ packages:
       npm-install-checks: 4.0.0
       npm-package-arg: 8.1.0
       semver: 7.3.5
+    dev: true
+
+  /npm-registry-fetch/10.1.1:
+    resolution: {integrity: sha512-F6a3l+ffCQ7hvvN16YG5bpm1rPZntCg66PLHDQ1apWJPOCUVHoKnL2w5fqEaTVhp42dmossTyXeR7hTGirfXrg==}
+    engines: {node: '>=10'}
+    dependencies:
+      lru-cache: 6.0.0
+      make-fetch-happen: 8.0.13
+      minipass: 3.1.3
+      minipass-fetch: 1.3.3
+      minipass-json-stream: 1.0.1
+      minizlib: 2.1.2
+      npm-package-arg: 8.1.0
+    transitivePeerDependencies:
+      - supports-color
     dev: true
 
   /npm-registry-fetch/9.0.0:
@@ -9845,8 +9868,8 @@ packages:
       tar: 6.1.0
     dev: true
 
-  /pacote/11.3.1:
-    resolution: {integrity: sha512-TymtwoAG12cczsJIrwI/euOQKtjrQHlD0k0oyt9QSmZGpqa+KdlxKdWR/YUjYizkixaVyztxt/Wsfo8bL3A6Fg==}
+  /pacote/11.3.3:
+    resolution: {integrity: sha512-GQxBX+UcVZrrJRYMK2HoG+gPeSUX/rQhnbPkkGrCYa4n2F/bgClFPaMm0nsdnYrxnmUy85uMHoFXZ0jTD0drew==}
     engines: {node: '>=10'}
     hasBin: true
     dependencies:
@@ -9863,7 +9886,7 @@ packages:
       npm-package-arg: 8.1.0
       npm-packlist: 2.1.4
       npm-pick-manifest: 6.1.0
-      npm-registry-fetch: 9.0.0
+      npm-registry-fetch: 10.1.1
       promise-retry: 2.0.1
       read-package-json-fast: 2.0.2
       rimraf: 3.0.2
@@ -10485,17 +10508,17 @@ packages:
     engines: {node: '>=4'}
     dev: true
 
-  /prettier-config-atomic/2.0.2:
-    resolution: {integrity: sha512-wnDfuHUKZrtsR4iOnDax2Ty6VgKueqIs9Xbl0s8ci1Aap0RI/UH/2hNWnUjn2EVeMsufpAO9ezq8LdZtgAnmEQ==}
+  /prettier-config-atomic/2.0.3:
+    resolution: {integrity: sha512-t4ILoW9A6JrzPA64XtXcLxZ1DrsEh/7RuKblGrqy7aEBXbHOjBLfaIeOcQa1dRgZc9gphwB65FZxhcN9HfXBRw==}
     dependencies:
       prettier: 2.2.1
-      prettier-plugin-jsdoc: 0.3.19_prettier@2.2.1
+      prettier-plugin-jsdoc: 0.3.22_prettier@2.2.1
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /prettier-plugin-jsdoc/0.3.19_prettier@2.2.1:
-    resolution: {integrity: sha512-pkzQSmQX9tXGScRGjXC1eV9YZ+Ze0nsZwRaFQ6T0pLzeopOJ+fkEapNiA5PK+3DLezZMzwPMAb2dB5fCqHItbQ==}
+  /prettier-plugin-jsdoc/0.3.22_prettier@2.2.1:
+    resolution: {integrity: sha512-8CuzIovyy0FQmt2QgrueYlnqOiYfC68TZsMQ5NRJJEb+JkWJekpO/3KWRJIkBQE/9dIT4Y0CVDqng6TqnoKJvA==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
       prettier: '>=2.1.2'
@@ -12381,7 +12404,7 @@ packages:
     engines: {node: '>=10'}
     dependencies:
       boxen: 5.0.0
-      chalk: 4.1.0
+      chalk: 4.1.1
       configstore: 5.0.1
       has-yarn: 2.1.0
       import-lazy: 2.1.0

@@ -38,7 +38,7 @@
     "@typescript-eslint/eslint-plugin": "^4.22.0",
     "@typescript-eslint/parser": "^4.22.0",
     "coffeescript": "^1",
-    "eslint-config-prettier": "^8.2.0",
+    "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-coffee": "^0.1.14",
     "eslint-plugin-html": "^6.1.2",
     "eslint-plugin-import": "^2.22.1",
@@ -58,8 +58,8 @@
     "eslint": "^7.22.0",
     "execa": "^5.0.0",
     "gitly": "^2.0.3",
-    "npm-check-updates": "11.4.1",
-    "prettier-config-atomic": "^2.0.2",
+    "npm-check-updates": "11.5.9",
+    "prettier-config-atomic": "^2.0.3",
     "shelljs": "^0.8.4"
   }
 }
