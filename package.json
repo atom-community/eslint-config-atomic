@@ -55,11 +55,11 @@
     "eslint": ">=7"
   },
   "devDependencies": {
-    "eslint": "^7.22.0",
+    "eslint": "^7.26.0",
     "execa": "^5.0.0",
-    "gitly": "^2.0.3",
-    "npm-check-updates": "11.5.9",
-    "prettier-config-atomic": "^2.0.3",
+    "gitly": "^2.1.0",
+    "npm-check-updates": "11.5.10",
+    "prettier-config-atomic": "^2.0.4",
     "shelljs": "^0.8.4"
   }
 }
