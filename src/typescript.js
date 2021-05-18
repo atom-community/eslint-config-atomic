@@ -38,6 +38,9 @@ exports.tsConfig = {
   // TypeScript files
   files: ["**/*.ts", "**/*.tsx"],
   parser: "@typescript-eslint/parser",
+  parserOptions: {
+    project: ["./**/tsconfig.json", "!./**/node_modules/**/tsconfig.json"],
+  },
   plugins: ["@typescript-eslint", "node", "import", "only-warn"],
   extends: [
     "eslint:recommended",
