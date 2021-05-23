@@ -13,10 +13,10 @@ importers:
       eslint-config-prettier: ^8.3.0
       eslint-plugin-coffee: ^0.1.14
       eslint-plugin-html: ^6.1.2
-      eslint-plugin-import: ^2.23.2
+      eslint-plugin-import: ^2.23.3
       eslint-plugin-json: ^3.0.0
       eslint-plugin-node: ^11.1.0
-      eslint-plugin-only-warn: npm:@aminya/eslint-plugin-only-warn@^1.2.1
+      eslint-plugin-only-warn: npm:@aminya/eslint-plugin-only-warn@^1.2.2
       eslint-plugin-optimize-regex: ^1.2.0
       eslint-plugin-react: ^7.23.2
       eslint-plugin-yaml: ^0.4.2
@@ -37,10 +37,10 @@ importers:
       eslint-config-prettier: 8.3.0_eslint@7.22.0
       eslint-plugin-coffee: 0.1.14_eslint@7.22.0
       eslint-plugin-html: 6.1.2
-      eslint-plugin-import: 2.23.2_eslint@7.22.0
+      eslint-plugin-import: 2.23.3_eslint@7.22.0
       eslint-plugin-json: 3.0.0
       eslint-plugin-node: 11.1.0_eslint@7.22.0
-      eslint-plugin-only-warn: /@aminya/eslint-plugin-only-warn/1.2.1
+      eslint-plugin-only-warn: /@aminya/eslint-plugin-only-warn/1.2.2
       eslint-plugin-optimize-regex: 1.2.0
       eslint-plugin-react: 7.23.2_eslint@7.22.0
       eslint-plugin-yaml: 0.4.2
@@ -326,8 +326,8 @@ importers:
 
 packages:
 
-  /@aminya/eslint-plugin-only-warn/1.2.1:
-    resolution: {integrity: sha512-sa4fZqT0nNWZ4zL1f/aYFrO6pbY+RRpwkFNpFnIJr2PPovZdmZXlAUq6WZNR+WWvqUfL21K9cYvFHV/b3uKuNg==}
+  /@aminya/eslint-plugin-only-warn/1.2.2:
+    resolution: {integrity: sha512-0VdfoicL+dorb0WrbbhsFsH8xH+8X2Y6CrO/3br68kimkMNOJB/5DFGRraVDYHfCIQgMnlv5Q9GX1yI7V4GcgQ==}
     engines: {node: '>=6'}
     dev: false
 
@@ -5443,14 +5443,6 @@ packages:
     resolution: {integrity: sha1-/ozxhP9mcLa67wGp1IYaXL7EEgo=}
     engines: {node: '>=0.10.0'}
 
-  /contains-path/1.0.0:
-    resolution: {integrity: sha1-NFizMhhWA+ju0Y9RjUoQiIo6vJE=}
-    engines: {node: '>=0.10.0'}
-    dependencies:
-      normalize-path: 2.1.1
-      path-starts-with: 1.0.0
-    dev: false
-
   /content-disposition/0.5.2:
     resolution: {integrity: sha1-DPaLud318r55YcOoUXjLhdunjLQ=}
     engines: {node: '>= 0.6'}
@@ -6598,15 +6590,14 @@ packages:
       tsconfig-paths: 3.9.0
     dev: false
 
-  /eslint-plugin-import/2.23.2_eslint@7.22.0:
-    resolution: {integrity: sha512-LmNoRptHBxOP+nb0PIKz1y6OSzCJlB+0g0IGS3XV4KaKk2q4szqQ6s6F1utVf5ZRkxk/QOTjdxe7v4VjS99Bsg==}
+  /eslint-plugin-import/2.23.3_eslint@7.22.0:
+    resolution: {integrity: sha512-wDxdYbSB55F7T5CC7ucDjY641VvKmlRwT0Vxh7PkY1mI4rclVRFWYfsrjDgZvwYYDZ5ee0ZtfFKXowWjqvEoRQ==}
     engines: {node: '>=4'}
     peerDependencies:
       eslint: ^2 || ^3 || ^4 || ^5 || ^6 || ^7.2.0
     dependencies:
       array-includes: 3.1.3
       array.prototype.flat: 1.2.4
-      contains-path: 1.0.0
       debug: 2.6.9
       doctrine: 2.1.0
       eslint: 7.22.0
@@ -9418,7 +9409,7 @@ packages:
     resolution: {integrity: sha512-/5CMN3T0R4XTj4DcGaexo+roZSdSFW/0AOOTROrjxzCG1wrWXEsGbRKevjlIL+ZDE4sZlJr5ED4YW0yqmkK+eA==}
     dependencies:
       hosted-git-info: 2.8.8
-      resolve: 1.19.0
+      resolve: 1.20.0
       semver: 5.7.1
       validate-npm-package-license: 3.0.4
 
@@ -9427,6 +9418,8 @@ packages:
     engines: {node: '>=0.10.0'}
     dependencies:
       remove-trailing-separator: 1.1.0
+    dev: true
+    optional: true
 
   /normalize-path/3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
@@ -10110,13 +10103,6 @@ packages:
 
   /path-parse/1.0.6:
     resolution: {integrity: sha512-GSmOT2EbHrINBf9SR7CDELwlJ8AENk3Qn7OikK4nFYAu3Ote2+JYNVvkpAEQm3/TLNEJFD/xZJjzyxg3KBWOzw==}
-
-  /path-starts-with/1.0.0:
-    resolution: {integrity: sha1-soJDAV6LE43lcmgqxS2kLmRq2E4=}
-    engines: {node: '>=4'}
-    dependencies:
-      normalize-path: 2.1.1
-    dev: false
 
   /path-to-regexp/2.2.1:
     resolution: {integrity: sha512-gu9bD6Ta5bwGrrU8muHzVOBFFREpp2iRkVfhBJahwJ6p6Xw20SjT0MxLnwkjOibQmGSYhiUnf2FLe7k+jcFmGQ==}
@@ -11055,6 +11041,8 @@ packages:
 
   /remove-trailing-separator/1.1.0:
     resolution: {integrity: sha1-wkvOKig62tW8P1jg1IJJuSN52O8=}
+    dev: true
+    optional: true
 
   /repeat-element/1.1.3:
     resolution: {integrity: sha512-ahGq0ZnV5m5XtZLMb+vP76kcAM5nkLqk0lpqAuojSKGgQtn4eRi4ZZGm2olo2zKFH+sMsWaqOCW1dqAnOru72g==}
