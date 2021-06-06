@@ -20,9 +20,9 @@ importers:
       eslint-plugin-optimize-regex: ^1.2.0
       eslint-plugin-react: ^7.23.2
       eslint-plugin-yaml: ^0.4.2
-      execa: ^5.0.0
-      gitly: ^2.1.0
-      npm-check-updates: 11.5.13
+      execa: ^5.1.1
+      gitly: ^2.1.1
+      npm-check-updates: 11.6.0
       prettier: ^2
       prettier-config-atomic: ^2.0.5
       shelljs: ^0.8.4
@@ -47,9 +47,9 @@ importers:
       prettier: 2.2.1
       typescript: 4.1.3
     devDependencies:
-      execa: 5.0.0
-      gitly: 2.1.0
-      npm-check-updates: 11.5.13
+      execa: 5.1.1
+      gitly: 2.1.1
+      npm-check-updates: 11.6.0
       prettier-config-atomic: 2.0.5
       shelljs: 0.8.4
 
@@ -7064,8 +7064,8 @@ packages:
       strip-final-newline: 2.0.0
     dev: true
 
-  /execa/5.0.0:
-    resolution: {integrity: sha512-ov6w/2LCiuyO4RLYGdpFGjkcs0wMTgGE8PrkTHikeUy5iJekXyPIKUjifk5CsE0pt7sMCrMZ3YNqoCj6idQOnQ==}
+  /execa/5.1.1:
+    resolution: {integrity: sha512-8uSpZZocAZRBAPIEINJj3Lo9HyGitllczc27Eh5YYojjMFMn8yHMDMaUHE2Jqfq05D/wucwI4JGURyXt1vchyg==}
     engines: {node: '>=10'}
     dependencies:
       cross-spawn: 7.0.3
@@ -7487,8 +7487,8 @@ packages:
       assert-plus: 1.0.0
     dev: true
 
-  /gitly/2.1.0:
-    resolution: {integrity: sha512-0TL0ZGT9bdmfa+dylBpwp1ip3FQ+CQsINM4Ih+2Z+XKkDasOWSk7MborpRPsdYnKO/1LuC5HoGQg/JAVIwb0qg==}
+  /gitly/2.1.1:
+    resolution: {integrity: sha512-xaaWlW388dI3fBf/5rrnensZVZ99tbTSt7XEfs1KGSrurjfGGvVxcVR/xkl7b4cTsUVcGr0uW3N3+rOE8mJeWw==}
     dependencies:
       axios: 0.21.1
       tar: 6.1.0
@@ -9475,8 +9475,8 @@ packages:
       update-notifier: 5.1.0
     dev: true
 
-  /npm-check-updates/11.5.13:
-    resolution: {integrity: sha512-4R9MOr101RdTWYKZSbIbCFIXYegxt0Z7CYMNSYUzkLuusMcueMoH3E/dgfL3h4S9W/z4XboDNbP6jV9FJP/73A==}
+  /npm-check-updates/11.6.0:
+    resolution: {integrity: sha512-/l4S7Gh+8+Rg5itWsqFya5RRSHtPzw5neyAlbWNJfBfEeRX6lYVxKgs85QFBOKrZj3eL5MGBaUW8228TmjMhrw==}
     engines: {node: '>=10.17'}
     hasBin: true
     dependencies:
@@ -12574,6 +12574,7 @@ packages:
 
   /uuid/3.4.0:
     resolution: {integrity: sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==}
+    deprecated: Please upgrade  to version 7 or higher.  Older versions may use Math.random() in certain circumstances, which is known to be problematic.  See https://v8.dev/blog/math-random for details.
     hasBin: true
     dev: true
 
