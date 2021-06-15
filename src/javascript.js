@@ -9,6 +9,13 @@ exports.jsConfig = {
     ecmaFeatures: {
       jsx: true,
     },
+    babelOptions: {
+      plugins: [
+        // enable jsx and flow syntax
+        "@babel/plugin-syntax-flow",
+        "@babel/plugin-syntax-jsx",
+      ],
+    },
     ecmaVersion: 2021,
     sourceType: "module",
   },
