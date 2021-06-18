@@ -40,6 +40,7 @@ exports.tsConfig = {
   parser: "@typescript-eslint/parser",
   parserOptions: {
     project: ["./**/tsconfig.json", "!./**/node_modules/**/tsconfig.json"],
+    createDefaultProgram: true, // otherwise Eslint will error if a ts file is not covered by one of the tsconfig.json files
   },
   plugins: ["@typescript-eslint", "node", "import", "only-warn"],
   extends: [
