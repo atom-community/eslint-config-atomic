@@ -57,7 +57,7 @@
     "eslint": ">=7"
   },
   "devDependencies": {
-    "eslint": "^7.22.0",
+    "eslint": "^7.31.0",
     "execa": "^5.1.1",
     "gitly": "^2.1.2",
     "npm-check-updates": "11.8.3",
