@@ -7,6 +7,20 @@ const { yamlConfig } = require("./yaml")
 const { htmlConfig } = require("./html")
 const { pluginImportSettings } = require("./plugin-import-rules")
 
+const overrides = [tsConfig, jsonConfig, yamlConfig, htmlConfig]
+
+// add coffee if installed
+if (coffeeConfig !== {}) {
+  try {
+    const found = require.resolve("eslint-plugin-coffee")
+    if (found) {
+      overrides.push(coffeeConfig, csonConfig)
+    }
+  } catch (_err) {
+    // optional plugin
+  }
+}
+
 module.exports = {
   root: true,
   env: {
@@ -21,7 +35,7 @@ module.exports = {
     measure: "readonly",
   },
   ...jsConfig,
-  overrides: [tsConfig, coffeeConfig, jsonConfig, csonConfig, yamlConfig, htmlConfig],
+  overrides,
   settings: {
     ...pluginImportSettings,
   },
