@@ -22,11 +22,11 @@
   "prettier": "prettier-config-atomic",
   "dependencies": {
     "@babel/core": "^7",
-    "@babel/eslint-parser": "^7.16.5",
+    "@babel/eslint-parser": "^7.17.0",
     "@babel/plugin-syntax-flow": "^7.16.7",
     "@babel/plugin-syntax-jsx": "^7.16.7",
-    "@typescript-eslint/eslint-plugin": "^5.10.1",
-    "@typescript-eslint/parser": "^5.10.1",
+    "@typescript-eslint/eslint-plugin": "^5.12.0",
+    "@typescript-eslint/parser": "^5.12.0",
     "eslint": "^7",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-html": "^6.2.0",
@@ -45,8 +45,8 @@
     "eslint": "^7",
     "execa": "^5.1.1",
     "gitly": "^2.1.5",
-    "npm-check-updates": "12.2.1",
-    "prettier-config-atomic": "^3.0.1",
+    "npm-check-updates": "12.3.0",
+    "prettier-config-atomic": "^3.0.3",
     "shelljs": "^0.8.5"
   },
   "peerDependencies": {
