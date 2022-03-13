@@ -6,6 +6,7 @@ const { download, extract } = require("gitly")
 const { existsSync } = require("fs")
 
 const testRepos = [
+  "atom-community/atom-ide-hyperclick",
   "atom-minimap/minimap",
   "aminya/solid-simple-table",
   "steelbrain/linter",
@@ -15,7 +16,6 @@ const testRepos = [
 const testWorkspaces = [
   "atom-community/atom-ide-base",
   "atom-community/terminal",
-  "atom-community/atom-ide-hyperclick",
   "atom-community/atom-languageclient",
   "atom-community/atom-ide-outline",
   "atom-community/atom-ide-datatip",
