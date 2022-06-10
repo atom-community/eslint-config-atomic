@@ -6,15 +6,21 @@ const { csonConfig } = require("./cson")
 const { yamlConfig } = require("./yaml")
 const { htmlConfig } = require("./html")
 const { pluginImportSettings } = require("./plugin-import-rules")
+const semverLt = require("semver/functions/lt")
+const { getEslintVersion } = require("./eslint-version")
 
 const overrides = [tsConfig, jsonConfig, yamlConfig, htmlConfig]
 
 // add coffee if installed
 if (coffeeConfig !== {}) {
   try {
-    const found = require.resolve("eslint-plugin-coffee")
-    if (found) {
-      overrides.push(coffeeConfig, csonConfig)
+    // check if the eslint version is >= 8
+    if (semverLt(getEslintVersion(), "8.0.0")) {
+      // if so try adding the coffee plugin
+      const found = require.resolve("eslint-plugin-coffee")
+      if (found) {
+        overrides.push(coffeeConfig, csonConfig)
+      }
     }
   } catch (_err) {
     // optional plugin
