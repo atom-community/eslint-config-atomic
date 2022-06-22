@@ -111,4 +111,5 @@ exports.eslintRulesExtra = {
   "prefer-spread": "error", // require spread operators instead of `.apply()`
   "prefer-template": "error", // require template literals instead of string concatenation
   "symbol-description": "error", // require symbol descriptions
+  "one-var": "error", // enforces variables to be declared either separately
 }
