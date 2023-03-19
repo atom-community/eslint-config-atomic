@@ -56,7 +56,7 @@
     "eslint": "^8 || ^7 || ^6"
   },
   "optionalDependencies": {
-    "coffeescript": "^1.12.7",
+    "coffeescript": "^2.0.0",
     "eslint-plugin-coffee": "^0.1.15",
     "eslint-plugin-react-hooks": "^4.6.0"
   },

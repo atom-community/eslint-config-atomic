@@ -9,7 +9,7 @@ specifiers:
   '@types/semver': ^7.3.13
   '@typescript-eslint/eslint-plugin': ^5.55.0
   '@typescript-eslint/parser': ^5.55.0
-  coffeescript: ^1.12.7
+  coffeescript: ^2.0.0
   eslint: ^8.17.0
   eslint-config-prettier: ^8.7.0
   eslint-plugin-coffee: ^0.1.15
@@ -55,7 +55,7 @@ dependencies:
   typescript: 5.0.2
 
 optionalDependencies:
-  coffeescript: 1.12.7
+  coffeescript: 2.7.0
   eslint-plugin-coffee: 0.1.15_wcefzqusrfkvygn5bkjuuqvm5a
   eslint-plugin-react-hooks: 4.6.0_eslint@8.17.0
 
@@ -1271,14 +1271,6 @@ packages:
       exit: 0.1.2
       glob: 7.2.3
     dev: false
-
-  /coffeescript/1.12.7:
-    resolution: {integrity: sha512-pLXHFxQMPklVoEekowk8b3erNynC+DVJzChxS/LCBBgR6/8AJkHivkm//zbowcfc7BTCAjryuhx6gPqPRfsFoA==}
-    engines: {node: '>=0.8.0'}
-    hasBin: true
-    requiresBuild: true
-    dev: false
-    optional: true
 
   /coffeescript/2.7.0:
     resolution: {integrity: sha512-hzWp6TUE2d/jCcN67LrW1eh5b/rSDKQK6oD6VMLlggYVUUFexgTH9z3dNYihzX4RMhze5FTUsUmOXViJKFQR/A==}
