@@ -34,7 +34,6 @@ const pluginTypeScriptRulesExtra = {
   "@typescript-eslint/no-shadow": "error",
   "@typescript-eslint/no-dynamic-delete": "error",
   "@typescript-eslint/no-extraneous-class": "error",
-  "@typescript-eslint/no-parameter-properties": "error",
   // "@typescript-eslint/no-unnecessary-type-arguments": "error",
   "@typescript-eslint/no-unnecessary-type-constraint": "error",
   // "@typescript-eslint/prefer-function-type": "error",
