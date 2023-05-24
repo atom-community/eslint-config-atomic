@@ -3,6 +3,15 @@ const { pluginImportRulesExtra, pluginImportTypeScriptRulesExtra } = require("./
 const { pluginNodeRules } = require("./plugin-node-rules")
 
 const pluginTypeScriptRulesExtra = {
+  "@typescript-eslint/no-unused-vars": [
+    "error",
+    {
+      argsIgnorePattern: "^_",
+      varsIgnorePattern: "^_",
+      caughtErrorsIgnorePattern: "^_",
+      destructuredArrayIgnorePattern: "^_",
+    },
+  ],
   "@typescript-eslint/explicit-function-return-type": "off",
   "@typescript-eslint/explicit-module-boundary-types": "off",
   "@typescript-eslint/camelcase": "off",

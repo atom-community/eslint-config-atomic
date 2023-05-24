@@ -3,6 +3,15 @@
  * not among these. The rules that might be useful in future are commented.
  */
 exports.eslintRulesExtra = {
+  "no-unused-vars": [
+    "error",
+    {
+      argsIgnorePattern: "^_",
+      varsIgnorePattern: "^_",
+      caughtErrorsIgnorePattern: "^_",
+      destructuredArrayIgnorePattern: "^_",
+    },
+  ],
   // Source https://eslint.org/docs/rules/#possible-errors
   "no-await-in-loop": "error", // disallow `await` inside of loops
   // "no-console": ["error", { allow: ["warn", "error"] }], // disallow the use of `console`  // console.log is useful in CLI tools
