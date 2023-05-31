@@ -1,36 +1,32 @@
 const { eslintRulesExtra } = require("./official-eslint-rules")
 const { pluginImportRulesExtra, pluginImportTypeScriptRulesExtra } = require("./plugin-import-rules")
 const { pluginNodeRules } = require("./plugin-node-rules")
-const fs = require("fs")
-const path = require("path")
+const { globifyGitIgnoreFile } = require("globify-gitignore")
+const makeSynchronous = require("make-synchronous")
+const { findOneFile } = require("./utils")
 
 const tsFiles = ["**/*.tsx", "**/*.ts"]
 const project = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
 
-function findOneFile(cwd, fileEnding, ignoredFolders) {
-  // recursively search the current folder for a file with the given fileEnding, ignoring the given folders, and return true as soon as one is found
-  const files = fs.readdirSync(cwd, { withFileTypes: true, recursive: false })
-  for (const file of files) {
-    if (file.isDirectory()) {
-      if (!ignoredFolders.includes(file.name)) {
-        // if the folder is not ignored, search it recursively
-        const found = findOneFile(path.join(cwd, file.name), fileEnding, ignoredFolders)
-        if (found) {
-          return true
-        }
-      }
-    } else if (file.name.endsWith(fileEnding)) {
-      // if the file ends with the given fileEnding, return true
-      return true
-    }
-  }
-  return false
-}
-
 /** Check if there are any tsconfig.json files */
-function disableProjectBasedRules() {
-  const hasTsFile = findOneFile(process.cwd(), ".ts", ["node_modules", ".git"])
-  const hasTsConfig = findOneFile(process.cwd(), "tsconfig.json", ["node_modules", ".git"])
+async function disableProjectBasedRules() {
+  // get all the files that are ignored by git
+  const ignore = (await globifyGitIgnoreFile(".", true)).map((entry) => {
+    if (entry.included) {
+      return `!${entry.glob}`
+    }
+    return entry.glob
+  })
+  ignore.push("./**/.git/**")
+
+  // check if there are any ts files
+  const hasTsFile = findOneFile(process.cwd(), tsFiles, ignore)
+  if (!hasTsFile) {
+    return true
+  }
+
+  // check if there is a tsconfig.json file
+  const hasTsConfig = findOneFile(process.cwd(), project, ignore)
 
   // if there is no tsconfig.json file, but there are ts files, disable the project-based rules
   const disable = !hasTsConfig && hasTsFile
@@ -82,7 +78,7 @@ const pluginTypeScriptRulesExtra = {
   // "@typescript-eslint/prefer-string-starts-ends-with": "error",
 }
 
-const pluginTypeScriptProjectRules = disableProjectBasedRules()
+const pluginTypeScriptProjectRules = makeSynchronous(disableProjectBasedRules())
   ? {}
   : {
       "@typescript-eslint/no-floating-promises": "error",
