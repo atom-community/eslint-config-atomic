@@ -17,7 +17,7 @@ async function disableProjectBasedRules() {
     }
     return entry.glob
   })
-  ignore.push("./**/.git/**")
+  ignore.push("./**/.git/**", "./**/node_modules/**")
 
   // check if there are any ts files
   const hasTsFile = findOneFile(process.cwd(), tsFiles, ignore)
