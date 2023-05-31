@@ -21,7 +21,7 @@
   },
   "prettier": "prettier-config-atomic",
   "dependencies": {
-    "@babel/core": "^7.21.8",
+    "@babel/core": "^7.22.1",
     "@babel/eslint-parser": "^7.21.8",
     "@babel/plugin-syntax-flow": "^7.21.4",
     "@babel/plugin-syntax-jsx": "^7.21.4",
@@ -44,7 +44,7 @@
     "typescript": "^5.0.4"
   },
   "devDependencies": {
-    "@types/node": "^20.2.3",
+    "@types/node": "^20.2.5",
     "@types/semver": "^7.5.0",
     "execa": "^5.1.1",
     "gitly": "^2.4.2",

@@ -13,6 +13,10 @@ if (!projectedBasedRules) {
   )
 }
 
+// turn-off no-unused-vars for typescript files
+const typeScriptEslintExtra = { ...eslintRulesExtra }
+typeScriptEslintExtra["no-unused-vars"] = "off"
+
 const pluginTypeScriptRulesExtra = {
   "@typescript-eslint/no-unused-vars": [
     "error",
@@ -76,7 +80,7 @@ exports.tsConfig = {
     "prettier",
   ],
   rules: {
-    ...eslintRulesExtra,
+    ...typeScriptEslintExtra,
     ...pluginTypeScriptRulesExtra,
     ...pluginTypeScriptProjectRules,
     ...pluginNodeRules,
