@@ -3,6 +3,7 @@ import { pluginImportRulesExtra, pluginImportTypeScriptRulesExtra } from "./plug
 import { pluginNodeRules } from "./plugin-node-rules"
 import makeSynchronous from "make-synchronous"
 import { findOneFile } from "./utils"
+import type { GlobifiedEntry } from "globify-gitignore"
 
 const tsFiles = ["**/*.tsx", "**/*.ts"]
 const project = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
@@ -12,7 +13,10 @@ function globifyGitIgnoreFileWithDeps(cwd: string, include: boolean) {
   const { globifyGitIgnoreFile } = require("globify-gitignore") as typeof import("globify-gitignore") // prettier-ignore
   return globifyGitIgnoreFile(cwd, include)
 }
-const globifyGitIgnoreFileSync = makeSynchronous(globifyGitIgnoreFileWithDeps)
+const globifyGitIgnoreFileSync = makeSynchronous(globifyGitIgnoreFileWithDeps) as (
+  cwd: string,
+  include: boolean,
+) => GlobifiedEntry[]
 
 /** Check if there are any tsconfig.json files */
 function disableProjectBasedRules() {
