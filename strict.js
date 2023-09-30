@@ -1,1 +1,1 @@
-module.exports = require("./dist/index-strict.js")
+module.exports = require("./dist/index-strict.js").default

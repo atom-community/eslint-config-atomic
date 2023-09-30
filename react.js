@@ -1,1 +1,1 @@
-module.exports = require("./dist/index-react.js")
+module.exports = require("./dist/index-react.js").default

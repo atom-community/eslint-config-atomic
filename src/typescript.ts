@@ -7,8 +7,9 @@ import { findOneFile } from "./utils"
 const tsFiles = ["**/*.tsx", "**/*.ts"]
 const project = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
 
-async function globifyGitIgnoreFileWithDeps(cwd: string, include: boolean) {
-  const { globifyGitIgnoreFile } = require("globify-gitignore") as typeof import("globify-gitignore")
+function globifyGitIgnoreFileWithDeps(cwd: string, include: boolean) {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const { globifyGitIgnoreFile } = require("globify-gitignore") as typeof import("globify-gitignore") // prettier-ignore
   return globifyGitIgnoreFile(cwd, include)
 }
 const globifyGitIgnoreFileSync = makeSynchronous(globifyGitIgnoreFileWithDeps)

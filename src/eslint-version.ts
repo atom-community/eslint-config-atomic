@@ -1,4 +1,5 @@
 import child_process from "child_process"
+import eslintPackageJson from "eslint/package.json"
 
 export function getEslintVersion() {
   if (process.argv[1].includes("eslint.js")) {
@@ -8,6 +9,6 @@ export function getEslintVersion() {
     })
     return eslintVersion
   } else {
-    return require("eslint/package.json").version
+    return eslintPackageJson.version
   }
 }

@@ -17,7 +17,7 @@ const nonStrictConfig = {
     ...base.overrides.slice(1),
   ],
   settings: {
-    ...(base.settings || {}),
+    ...base.settings,
     react: {
       version: "detect",
     },
