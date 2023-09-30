@@ -34,7 +34,7 @@ async function disableProjectBasedRules() {
   if (disable) {
     console.warn(
       "\x1b[33m%s\x1b[0m",
-      "No tsconfig.json found, disabling the project-based rules. To enable them, include all the **/*.ts(x)? files in the includes of the tsconfig.json files and run eslint again."
+      "No tsconfig.json found, disabling the project-based rules. To enable them, include all the **/*.ts(x)? files in the includes of the tsconfig.json files and run eslint again.",
     )
   }
 
