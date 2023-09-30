@@ -1,17 +1,22 @@
 import { eslintRulesExtra } from "./official-eslint-rules"
 import { pluginImportRulesExtra, pluginImportTypeScriptRulesExtra } from "./plugin-import-rules"
 import { pluginNodeRules } from "./plugin-node-rules"
-import { globifyGitIgnoreFile } from "globify-gitignore"
 import makeSynchronous from "make-synchronous"
 import { findOneFile } from "./utils"
 
 const tsFiles = ["**/*.tsx", "**/*.ts"]
 const project = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
 
+async function globifyGitIgnoreFileWithDeps(cwd: string, include: boolean) {
+  const { globifyGitIgnoreFile } = require("globify-gitignore") as typeof import("globify-gitignore")
+  return globifyGitIgnoreFile(cwd, include)
+}
+const globifyGitIgnoreFileSync = makeSynchronous(globifyGitIgnoreFileWithDeps)
+
 /** Check if there are any tsconfig.json files */
-async function disableProjectBasedRules() {
+function disableProjectBasedRules() {
   // get all the files that are ignored by git
-  const ignore = (await globifyGitIgnoreFile(".", true)).map((entry) => {
+  const ignore = globifyGitIgnoreFileSync(".", true).map((entry) => {
     if (entry.included) {
       return `!${entry.glob}`
     }
@@ -75,7 +80,7 @@ const pluginTypeScriptRulesExtra = {
   // "@typescript-eslint/prefer-string-starts-ends-with": "error",
 }
 
-const pluginTypeScriptProjectRules = makeSynchronous(disableProjectBasedRules)()
+const pluginTypeScriptProjectRules = disableProjectBasedRules()
   ? {}
   : {
       "@typescript-eslint/no-floating-promises": "error",
