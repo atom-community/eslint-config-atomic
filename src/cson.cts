@@ -1,4 +1,4 @@
-import { coffeeConfig } from "./coffeescript.js"
+import { coffeeConfig } from "./coffeescript.cjs"
 
 export const csonConfig = {
   ...coffeeConfig,

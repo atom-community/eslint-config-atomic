@@ -1,5 +1,5 @@
-import base from "./index.js"
-import { tsConfig } from "./typescript"
+import base from "./index.cjs"
+import { tsConfig } from "./typescript.cjs"
 
 const nonStrictConfig = {
   ...base,

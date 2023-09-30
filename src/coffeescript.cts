@@ -1,5 +1,5 @@
-import { pluginNodeRules } from "./plugin-node-rules.js"
-import { pluginImportRulesExtra } from "./plugin-import-rules.js"
+import { pluginNodeRules } from "./plugin-node-rules.cjs"
+import { pluginImportRulesExtra } from "./plugin-import-rules.cjs"
 
 export const coffeeConfig = {
   // CoffeeScript files

@@ -5,20 +5,22 @@
   "repository": "https://github.com/atom-ide-community/eslint-config-atomic",
   "license": "MIT",
   "author": "Amin Yahyaabadi",
-  "main": "index.js",
+  "type": "commonjs",
+  "main": "index.cjs",
   "files": [
     "src",
     "dist",
-    "*.js"
+    "*.cjs"
   ],
   "scripts": {
     "build": "tsc",
     "bump": "ncu -u -x coffeescript,execa,read-pkg-up",
-    "clean": "shx rm -rf ./spec/fixtures/atom-community ./spec/fixtures/atom-minimap ./spec/fixtures/steelbrain ./strict.js ./strict-react.js",
+    "clean": "shx rm -rf ./spec/fixtures/ ./dist",
     "format": "prettier --write .",
     "lint": "eslint . --ignore-pattern ./spec/fixtures/ --fix",
-    "prepare": "npm run build",
-    "test": "node ./spec/test.js",
+    "prepare": "pnpm run build",
+    "prepublishOnly": "pnpm run clean && pnpm run build",
+    "test": "node ./spec/test.cjs",
     "test.format": "prettier . --check",
     "test.lint": "eslint . --ignore-pattern spec/fixtures/**"
   },
@@ -58,11 +60,13 @@
     "@types/read-pkg-up": "^6.0.0",
     "@types/semver": "^7.5.3",
     "@types/shelljs": "^0.8.13",
+    "eslint-config-atomic": "link:",
     "execa": "^5.1.1",
     "gitly": "^2.4.5",
     "npm-check-updates": "16.14.4",
     "prettier-config-atomic": "^3.1.0",
-    "shelljs": "^0.8.5"
+    "shelljs": "^0.8.5",
+    "shx": "^0.3.4"
   },
   "peerDependencies": {
     "eslint": "^8 || ^7 || ^6"
@@ -80,7 +84,7 @@
     "lint",
     "prettier"
   ],
-  "react": "react.js",
-  "strict": "strict.js",
-  "strict-react": "strict-react.js"
+  "react": "react.cjs",
+  "strict": "strict.cjs",
+  "strict-react": "strict-react.cjs"
 }

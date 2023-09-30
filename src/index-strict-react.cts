@@ -1,4 +1,4 @@
-import nonStrictConfig from "./index-react.js"
+import nonStrictConfig from "./index-react.cjs"
 
 // remove only-warn from javascript
 if (nonStrictConfig.plugins[nonStrictConfig.plugins.length - 1] === "only-warn") {

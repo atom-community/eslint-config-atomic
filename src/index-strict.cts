@@ -1,4 +1,4 @@
-import nonStrictConfig from "./index"
+import nonStrictConfig from "./index.cjs"
 
 // remove only-warn from javascript
 if (nonStrictConfig.plugins[nonStrictConfig.plugins.length - 1] === "only-warn") {

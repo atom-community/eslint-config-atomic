@@ -114,6 +114,9 @@ devDependencies:
   '@types/shelljs':
     specifier: ^0.8.13
     version: 0.8.13
+  eslint-config-atomic:
+    specifier: 'link:'
+    version: 'link:'
   execa:
     specifier: ^5.1.1
     version: 5.1.1
@@ -129,6 +132,9 @@ devDependencies:
   shelljs:
     specifier: ^0.8.5
     version: 0.8.5
+  shx:
+    specifier: ^0.3.4
+    version: 0.3.4
 
 packages:
 
@@ -5012,6 +5018,15 @@ packages:
       glob: 7.2.3
       interpret: 1.4.0
       rechoir: 0.6.2
+    dev: true
+
+  /shx@0.3.4:
+    resolution: {integrity: sha512-N6A9MLVqjxZYcVn8hLmtneQWIJtp8IKzMP4eMnx+nqkvXoqinUPCbUFLp2UcWTEIUONhlk0ewxr/jaVGlc+J+g==}
+    engines: {node: '>=6'}
+    hasBin: true
+    dependencies:
+      minimist: 1.2.8
+      shelljs: 0.8.5
     dev: true
 
   /side-channel@1.0.4:
