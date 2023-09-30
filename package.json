@@ -14,7 +14,7 @@
     "bump": "ncu -u -x coffeescript,execa,read-pkg-up",
     "clean": "shx rm -rf ./spec/fixtures/atom-community ./spec/fixtures/atom-minimap ./spec/fixtures/steelbrain ./strict.js ./strict-react.js",
     "format": "prettier --write .",
-    "lint": "eslint . --ignore-pattern spec/fixtures/** --fix",
+    "lint": "eslint . --ignore-pattern ./spec/fixtures/ --fix",
     "test": "node ./spec/test.js",
     "test.format": "prettier . --check",
     "test.lint": "eslint . --ignore-pattern spec/fixtures/**"
