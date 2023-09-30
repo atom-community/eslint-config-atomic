@@ -1,13 +1,8 @@
-const { readdirSync } = require("fs")
-const { join } = require("path")
-const { default: anymatch } = require("anymatch")
+import { readdirSync } from "fs"
+import { join } from "path"
+import { default as anymatch } from "anymatch"
 
-/**
- * @param {string} cwd
- * @param {string} search
- * @param {string[]} ignored
- */
-function findOneFile(cwd, search, ignored) {
+export function findOneFile(cwd: string, search: string[], ignored: string[]) {
   // recursively search the current folder for a file with the given fileEnding, ignoring the given folders, and return true as soon as one is found
   const files = readdirSync(cwd, { withFileTypes: true, recursive: false })
   for (const file of files) {
@@ -27,4 +22,3 @@ function findOneFile(cwd, search, ignored) {
   }
   return false
 }
-exports.findOneFile = findOneFile

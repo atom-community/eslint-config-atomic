@@ -1,17 +1,27 @@
-const { eslintRulesExtra } = require("./official-eslint-rules")
-const { pluginImportRulesExtra, pluginImportTypeScriptRulesExtra } = require("./plugin-import-rules")
-const { pluginNodeRules } = require("./plugin-node-rules")
-const { globifyGitIgnoreFile } = require("globify-gitignore")
-const makeSynchronous = require("make-synchronous")
-const { findOneFile } = require("./utils")
+import { eslintRulesExtra } from "./official-eslint-rules"
+import { pluginImportRulesExtra, pluginImportTypeScriptRulesExtra } from "./plugin-import-rules"
+import { pluginNodeRules } from "./plugin-node-rules"
+import makeSynchronous from "make-synchronous"
+import { findOneFile } from "./utils"
+import type { GlobifiedEntry } from "globify-gitignore"
 
 const tsFiles = ["**/*.tsx", "**/*.ts"]
 const project = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
 
+function globifyGitIgnoreFileWithDeps(cwd: string, include: boolean) {
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const { globifyGitIgnoreFile } = require("globify-gitignore") as typeof import("globify-gitignore") // prettier-ignore
+  return globifyGitIgnoreFile(cwd, include)
+}
+const globifyGitIgnoreFileSync = makeSynchronous(globifyGitIgnoreFileWithDeps) as (
+  cwd: string,
+  include: boolean,
+) => GlobifiedEntry[]
+
 /** Check if there are any tsconfig.json files */
-async function disableProjectBasedRules() {
+function disableProjectBasedRules() {
   // get all the files that are ignored by git
-  const ignore = (await globifyGitIgnoreFile(".", true)).map((entry) => {
+  const ignore = globifyGitIgnoreFileSync(".", true).map((entry) => {
     if (entry.included) {
       return `!${entry.glob}`
     }
@@ -34,7 +44,7 @@ async function disableProjectBasedRules() {
   if (disable) {
     console.warn(
       "\x1b[33m%s\x1b[0m",
-      "No tsconfig.json found, disabling the project-based rules. To enable them, include all the **/*.ts(x)? files in the includes of the tsconfig.json files and run eslint again."
+      "No tsconfig.json found, disabling the project-based rules. To enable them, include all the **/*.ts(x)? files in the includes of the tsconfig.json files and run eslint again.",
     )
   }
 
@@ -43,10 +53,7 @@ async function disableProjectBasedRules() {
 
 function javaScriptRules() {
   // turn-off no-unused-vars for typescript files
-  const typeScriptEslintExtra = { ...eslintRulesExtra }
-  typeScriptEslintExtra["no-unused-vars"] = "off"
-
-  return typeScriptEslintExtra
+  return { ...eslintRulesExtra, "no-unused-vars": "off" }
 }
 
 const pluginTypeScriptRulesExtra = {
@@ -78,7 +85,7 @@ const pluginTypeScriptRulesExtra = {
   // "@typescript-eslint/prefer-string-starts-ends-with": "error",
 }
 
-const pluginTypeScriptProjectRules = makeSynchronous(disableProjectBasedRules())
+const pluginTypeScriptProjectRules = disableProjectBasedRules()
   ? {}
   : {
       "@typescript-eslint/no-floating-promises": "error",
@@ -94,7 +101,7 @@ const pluginTypeScriptProjectRules = makeSynchronous(disableProjectBasedRules())
       "@typescript-eslint/switch-exhaustiveness-check": "warn",
     }
 
-exports.tsConfig = {
+export const tsConfig = {
   // TypeScript files
   files: tsFiles,
   parser: "@typescript-eslint/parser",

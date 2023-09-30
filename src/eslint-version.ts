@@ -1,6 +1,7 @@
-const child_process = require("child_process")
+import child_process from "child_process"
+import eslintPackageJson from "eslint/package.json"
 
-function getEslintVersion() {
+export function getEslintVersion() {
   if (process.argv[1].includes("eslint.js")) {
     const eslintVersion = child_process.execFileSync(process.argv[0], [process.argv[1], "--version"], {
       encoding: "utf8",
@@ -8,8 +9,6 @@ function getEslintVersion() {
     })
     return eslintVersion
   } else {
-    return require("eslint/package.json").version
+    return eslintPackageJson.version
   }
 }
-
-exports.getEslintVersion = getEslintVersion

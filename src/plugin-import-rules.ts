@@ -1,4 +1,4 @@
-exports.pluginImportRulesExtra = {
+export const pluginImportRulesExtra = {
   "import/no-absolute-path": "error",
   "import/no-useless-path-segments": "error",
   "import/no-deprecated": "error",
@@ -15,14 +15,14 @@ exports.pluginImportRulesExtra = {
   // "import/no-unused-modules": ["warn", {"missingExports": true}],
 }
 
-exports.pluginImportTypeScriptRulesExtra = {
+export const pluginImportTypeScriptRulesExtra = {
   // Buggy on TypeScript:
   "import/no-unresolved": "off",
   "import/named": "off",
   "import/namespace": "off",
 }
 
-exports.pluginImportSettings = {
+export const pluginImportSettings = {
   "import/core-modules": ["atom", "electron"],
   // support TypeScript and Coffee importing
   "import/extensions": [".ts", ".tsx", ".d.ts", ".js", ".jsx", ".coffee"],

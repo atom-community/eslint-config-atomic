@@ -1,7 +1,7 @@
-const { pluginNodeRules } = require("./plugin-node-rules")
-const { pluginImportRulesExtra } = require("./plugin-import-rules")
+import { pluginNodeRules } from "./plugin-node-rules.js"
+import { pluginImportRulesExtra } from "./plugin-import-rules.js"
 
-exports.coffeeConfig = {
+export const coffeeConfig = {
   // CoffeeScript files
   files: ["**/*.coffee"],
   parser: "eslint-plugin-coffee",

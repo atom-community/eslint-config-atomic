@@ -1,4 +1,4 @@
-exports.pluginNodeRules = {
+export const pluginNodeRules = {
   "node/no-exports-assign": "error",
   "node/process-exit-as-throw": "error",
   "node/shebang": "error",

@@ -1,7 +1,7 @@
-const base = require("./index.js")
-const { tsConfig } = require("./typescript")
+import base from "./index.js"
+import { tsConfig } from "./typescript"
 
-module.exports = {
+const nonStrictConfig = {
   ...base,
   plugins: ["react", ...base.plugins],
   extends: ["plugin:react/recommended", ...base.extends],
@@ -17,9 +17,11 @@ module.exports = {
     ...base.overrides.slice(1),
   ],
   settings: {
-    ...(base.settings || {}),
+    ...base.settings,
     react: {
       version: "detect",
     },
   },
 }
+
+export default nonStrictConfig
