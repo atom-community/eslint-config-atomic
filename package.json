@@ -16,7 +16,7 @@
     "clean": "shx rm -rf ./spec/fixtures/atom-community ./spec/fixtures/atom-minimap ./spec/fixtures/steelbrain ./strict.js ./strict-react.js",
     "format": "prettier --write .",
     "lint": "eslint . --ignore-pattern ./spec/fixtures/ --fix",
-    "prepublishOnly": "npm run build",
+    "prepare": "npm run build",
     "test": "node ./spec/test.js",
     "test.format": "prettier . --check",
     "test.lint": "eslint . --ignore-pattern spec/fixtures/**"
