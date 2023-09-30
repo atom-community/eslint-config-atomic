@@ -6,23 +6,22 @@ import { csonConfig } from "./cson.cjs"
 import { yamlConfig } from "./yaml.cjs"
 import { htmlConfig } from "./html.cjs"
 import { pluginImportSettings } from "./plugin-import-rules.cjs"
-import semverLt from "semver/functions/lt"
+import semverMajor from "semver/functions/major"
 import { getEslintVersion } from "./eslint-version.cjs"
 
-const overrides = [tsConfig, jsonConfig, yamlConfig, htmlConfig]
-
-// add coffee if installed
-try {
-  // check if the eslint version is >= 8
-  if (semverLt(getEslintVersion(), "8.0.0")) {
-    // if so try adding the coffee plugin
-    const found = require.resolve("eslint-plugin-coffee")
-    if (found) {
-      overrides.push(coffeeConfig, csonConfig)
+function maybeAddCoffeeScript() {
+  try {
+    const eslintVersion = semverMajor(getEslintVersion())
+    // check if the eslint version is < 8
+    // and if coffee installed
+    if (eslintVersion < 8 && require.resolve("eslint-plugin-coffee")) {
+      // if so try adding the coffee plugin
+      return [coffeeConfig, csonConfig]
     }
+  } catch (_err) {
+    // optional plugin
   }
-} catch (_err) {
-  // optional plugin
+  return []
 }
 
 const config = {
@@ -39,7 +38,7 @@ const config = {
     measure: "readonly",
   },
   ...jsConfig,
-  overrides,
+  overrides: [tsConfig, jsonConfig, yamlConfig, htmlConfig, ...maybeAddCoffeeScript()],
   settings: {
     ...pluginImportSettings,
   },
