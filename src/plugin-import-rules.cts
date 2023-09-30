@@ -25,14 +25,14 @@ export const pluginImportTypeScriptRulesExtra = {
 export const pluginImportSettings = {
   "import/core-modules": ["atom", "electron"],
   // support TypeScript and Coffee importing
-  "import/extensions": [".ts", ".tsx", ".d.ts", ".js", ".jsx", ".coffee"],
+  "import/extensions": [".ts", ".tsx", ".cts", ".mts", ".d.ts", ".js", ".cjs", ".mjs", ".jsx", ".coffee"],
   "import/external-module-folders": ["node_modules", "node_modules/@types"],
   "import/parsers": {
     "@typescript-eslint/parser": [".ts", ".tsx", ".d.ts"],
   },
   "import/resolver": {
     node: {
-      extensions: [".ts", ".tsx", ".d.ts", ".js", ".jsx", ".coffee"],
+      extensions: [".ts", ".tsx", ".cts", ".mts", ".d.ts", ".js", ".cjs", ".mjs", ".jsx", ".coffee"],
     },
   },
 }

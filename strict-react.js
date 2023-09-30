@@ -1,1 +1,1 @@
-module.exports = require("./dist/index-strict-react.js").default
+module.exports = require("./dist/index-strict-react.cjs").default

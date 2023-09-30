@@ -1,8 +1,8 @@
-import { eslintRulesExtra } from "./official-eslint-rules"
-import { pluginImportRulesExtra, pluginImportTypeScriptRulesExtra } from "./plugin-import-rules"
-import { pluginNodeRules } from "./plugin-node-rules"
+import { eslintRulesExtra } from "./official-eslint-rules.cjs"
+import { pluginImportRulesExtra, pluginImportTypeScriptRulesExtra } from "./plugin-import-rules.cjs"
+import { pluginNodeRules } from "./plugin-node-rules.cjs"
 import makeSynchronous from "make-synchronous"
-import { findOneFile } from "./utils"
+import { findOneFile } from "./utils.cjs"
 import type { GlobifiedEntry } from "globify-gitignore"
 
 const tsFiles = ["**/*.tsx", "**/*.ts"]

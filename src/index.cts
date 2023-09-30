@@ -1,13 +1,13 @@
-import { jsConfig } from "./javascript"
-import { tsConfig } from "./typescript"
-import { coffeeConfig } from "./coffeescript"
-import { jsonConfig } from "./json"
-import { csonConfig } from "./cson"
-import { yamlConfig } from "./yaml"
-import { htmlConfig } from "./html"
-import { pluginImportSettings } from "./plugin-import-rules"
+import { jsConfig } from "./javascript.cjs"
+import { tsConfig } from "./typescript.cjs"
+import { coffeeConfig } from "./coffeescript.cjs"
+import { jsonConfig } from "./json.cjs"
+import { csonConfig } from "./cson.cjs"
+import { yamlConfig } from "./yaml.cjs"
+import { htmlConfig } from "./html.cjs"
+import { pluginImportSettings } from "./plugin-import-rules.cjs"
 import semverLt from "semver/functions/lt"
-import { getEslintVersion } from "./eslint-version"
+import { getEslintVersion } from "./eslint-version.cjs"
 
 const overrides = [tsConfig, jsonConfig, yamlConfig, htmlConfig]
 

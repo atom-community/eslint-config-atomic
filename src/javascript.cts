@@ -1,6 +1,6 @@
-import { eslintRulesExtra } from "./official-eslint-rules"
-import { pluginNodeRules } from "./plugin-node-rules"
-import { pluginImportRulesExtra } from "./plugin-import-rules"
+import { eslintRulesExtra } from "./official-eslint-rules.cjs"
+import { pluginNodeRules } from "./plugin-node-rules.cjs"
+import { pluginImportRulesExtra } from "./plugin-import-rules.cjs"
 
 export const jsConfig = {
   parser: "@babel/eslint-parser",
