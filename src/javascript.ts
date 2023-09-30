@@ -1,8 +1,8 @@
-const { eslintRulesExtra } = require("./official-eslint-rules")
-const { pluginNodeRules } = require("./plugin-node-rules")
-const { pluginImportRulesExtra } = require("./plugin-import-rules")
+import { eslintRulesExtra } from "./official-eslint-rules"
+import { pluginNodeRules } from "./plugin-node-rules"
+import { pluginImportRulesExtra } from "./plugin-import-rules"
 
-exports.jsConfig = {
+export const jsConfig = {
   parser: "@babel/eslint-parser",
   parserOptions: {
     requireConfigFile: false,

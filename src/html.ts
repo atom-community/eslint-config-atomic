@@ -1,4 +1,4 @@
-exports.htmlConfig = {
+export const htmlConfig = {
   files: [
     "**/*.erb",
     "**/*.handlebars",

@@ -1,1 +1,1 @@
-module.exports = require("./src/index-strict.js")
+module.exports = require("./dist/index-strict.js")

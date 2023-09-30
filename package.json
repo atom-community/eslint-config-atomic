@@ -11,10 +11,12 @@
     "*.js"
   ],
   "scripts": {
+    "build": "tsc",
     "bump": "ncu -u -x coffeescript,execa,read-pkg-up",
     "clean": "shx rm -rf ./spec/fixtures/atom-community ./spec/fixtures/atom-minimap ./spec/fixtures/steelbrain ./strict.js ./strict-react.js",
     "format": "prettier --write .",
     "lint": "eslint . --ignore-pattern ./spec/fixtures/ --fix",
+    "prepublishOnly": "npm run build",
     "test": "node ./spec/test.js",
     "test.format": "prettier . --check",
     "test.lint": "eslint . --ignore-pattern spec/fixtures/**"
@@ -46,8 +48,15 @@
     "typescript": "^5.2.2"
   },
   "devDependencies": {
+    "@types/babel__core": "^7.20.2",
+    "@types/coffeescript": "^2.5.4",
+    "@types/eslint": "^8.44.3",
+    "@types/eslint-config-prettier": "^6.11.1",
+    "@types/execa": "^2.0.0",
     "@types/node": "^20.7.2",
+    "@types/read-pkg-up": "^6.0.0",
     "@types/semver": "^7.5.3",
+    "@types/shelljs": "^0.8.13",
     "execa": "^5.1.1",
     "gitly": "^2.4.5",
     "npm-check-updates": "16.14.4",

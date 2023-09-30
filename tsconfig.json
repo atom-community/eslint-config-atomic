@@ -1,0 +1,45 @@
+{
+  "compilerOptions": {
+    // target
+    "target": "EsNext",
+    "lib": [
+      "es2021",
+      "EsNext",
+      "DOM",
+      "DOM.Iterable",
+      "WebWorker",
+      "WebWorker.ImportScripts",
+      "Webworker.Iterable",
+      "ScriptHost"
+    ],
+    "importHelpers": false,
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    // check
+    "strict": true,
+    "strictNullChecks": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noFallthroughCasesInSwitch": true,
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    // build
+    "incremental": true,
+    "inlineSourceMap": false,
+    "inlineSources": false,
+    "preserveSymlinks": true,
+    "outDir": "./dist",
+    "skipLibCheck": true
+  },
+  "include": ["src"]
+}

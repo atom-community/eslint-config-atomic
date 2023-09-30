@@ -1,6 +1,6 @@
-const { coffeeConfig } = require("./coffeescript")
+import { coffeeConfig } from "./coffeescript.js"
 
-exports.csonConfig = {
+export const csonConfig = {
   ...coffeeConfig,
   files: ["**/*.cson"],
   rules: {

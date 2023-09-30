@@ -1,4 +1,4 @@
-const nonStrictConfig = require("./index-react")
+import nonStrictConfig from "./index"
 
 // remove only-warn from javascript
 if (nonStrictConfig.plugins[nonStrictConfig.plugins.length - 1] === "only-warn") {
@@ -12,4 +12,4 @@ nonStrictConfig.overrides.forEach((overrides) => {
   }
 })
 
-module.exports = nonStrictConfig
+export default nonStrictConfig

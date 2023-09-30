@@ -1,9 +1,9 @@
-const { eslintRulesExtra } = require("./official-eslint-rules")
-const { pluginImportRulesExtra, pluginImportTypeScriptRulesExtra } = require("./plugin-import-rules")
-const { pluginNodeRules } = require("./plugin-node-rules")
-const { globifyGitIgnoreFile } = require("globify-gitignore")
-const makeSynchronous = require("make-synchronous")
-const { findOneFile } = require("./utils")
+import { eslintRulesExtra } from "./official-eslint-rules"
+import { pluginImportRulesExtra, pluginImportTypeScriptRulesExtra } from "./plugin-import-rules"
+import { pluginNodeRules } from "./plugin-node-rules"
+import { globifyGitIgnoreFile } from "globify-gitignore"
+import makeSynchronous from "make-synchronous"
+import { findOneFile } from "./utils"
 
 const tsFiles = ["**/*.tsx", "**/*.ts"]
 const project = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
@@ -43,10 +43,7 @@ async function disableProjectBasedRules() {
 
 function javaScriptRules() {
   // turn-off no-unused-vars for typescript files
-  const typeScriptEslintExtra = { ...eslintRulesExtra }
-  typeScriptEslintExtra["no-unused-vars"] = "off"
-
-  return typeScriptEslintExtra
+  return { ...eslintRulesExtra, "no-unused-vars": "off" }
 }
 
 const pluginTypeScriptRulesExtra = {
@@ -78,7 +75,7 @@ const pluginTypeScriptRulesExtra = {
   // "@typescript-eslint/prefer-string-starts-ends-with": "error",
 }
 
-const pluginTypeScriptProjectRules = makeSynchronous(disableProjectBasedRules())
+const pluginTypeScriptProjectRules = makeSynchronous(disableProjectBasedRules)()
   ? {}
   : {
       "@typescript-eslint/no-floating-promises": "error",
@@ -94,7 +91,7 @@ const pluginTypeScriptProjectRules = makeSynchronous(disableProjectBasedRules())
       "@typescript-eslint/switch-exhaustiveness-check": "warn",
     }
 
-exports.tsConfig = {
+export const tsConfig = {
   // TypeScript files
   files: tsFiles,
   parser: "@typescript-eslint/parser",

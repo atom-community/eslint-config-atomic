@@ -1,4 +1,4 @@
-exports.jsonConfig = {
+export const jsonConfig = {
   // JSON files
   files: ["*.json"],
   plugins: ["json"],
