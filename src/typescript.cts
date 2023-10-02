@@ -16,17 +16,17 @@ function globifyGitIgnoreFileWithDeps(cwd: string, include: boolean) {
 const globifyGitIgnoreFileSync = makeSynchronous(globifyGitIgnoreFileWithDeps) as (
   cwd: string,
   include: boolean,
-) => GlobifiedEntry[]
+) => GlobifiedEntry[] | undefined
 
 /** Check if there are any tsconfig.json files */
 function disableProjectBasedRules() {
   // get all the files that are ignored by git
-  const ignore = globifyGitIgnoreFileSync(".", true).map((entry) => {
+  const ignore = globifyGitIgnoreFileSync(".", true)?.map((entry) => {
     if (entry.included) {
       return `!${entry.glob}`
     }
     return entry.glob
-  })
+  }) ?? []
   ignore.push("./**/.git/**", "./**/node_modules/**")
 
   // check if there are any ts files
