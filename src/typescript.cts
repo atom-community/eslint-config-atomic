@@ -28,7 +28,14 @@ function disableProjectBasedRules() {
       }
       return entry.glob
     }) ?? []
-  ignore.push("./**/.git/**", "./**/node_modules/**")
+  ignore.push(
+    "./**/.git/**",
+    "./**/node_modules/**",
+    "./**/dist/**",
+    "./**/build/**",
+    "./**/coverage/**",
+    "./**/target/**",
+  )
 
   // check if there are any ts files
   const hasTsFile = findOneFile(process.cwd(), tsFiles, ignore)
