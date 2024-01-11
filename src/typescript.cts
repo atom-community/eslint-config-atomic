@@ -5,7 +5,7 @@ import makeSynchronous from "make-synchronous"
 import { findOneFile } from "./utils.cjs"
 import type { GlobifiedEntry } from "globify-gitignore"
 
-const tsFiles = ["**/*.tsx", "**/*.ts"]
+const tsFiles = ["**/*.tsx", "**/*.ts", "**/*.mts", "**/*.cts"]
 const project = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
 
 function globifyGitIgnoreFileWithDeps(cwd: string, include: boolean) {
@@ -20,9 +20,11 @@ const globifyGitIgnoreFileSync = makeSynchronous(globifyGitIgnoreFileWithDeps) a
 
 /** Check if there are any tsconfig.json files */
 function disableProjectBasedRules() {
+  const cwd = process.cwd()
+
   // get all the files that are ignored by git
   const ignore =
-    globifyGitIgnoreFileSync(".", true)?.map((entry) => {
+    globifyGitIgnoreFileSync(cwd, true)?.map((entry) => {
       if (entry.included) {
         return `!${entry.glob}`
       }
@@ -38,13 +40,15 @@ function disableProjectBasedRules() {
   )
 
   // check if there are any ts files
-  const hasTsFile = findOneFile(process.cwd(), tsFiles, ignore)
+  const hasTsFile = findOneFile(cwd, tsFiles, ignore)
+
+  // return if there are no ts files
   if (!hasTsFile) {
     return true
   }
 
   // check if there is a tsconfig.json file
-  const hasTsConfig = findOneFile(process.cwd(), project, ignore)
+  const hasTsConfig = findOneFile(cwd, project, ignore)
 
   // if there is no tsconfig.json file, but there are ts files, disable the project-based rules
   const disable = !hasTsConfig && hasTsFile
