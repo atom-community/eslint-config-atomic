@@ -21,12 +21,13 @@ const globifyGitIgnoreFileSync = makeSynchronous(globifyGitIgnoreFileWithDeps) a
 /** Check if there are any tsconfig.json files */
 function disableProjectBasedRules() {
   // get all the files that are ignored by git
-  const ignore = globifyGitIgnoreFileSync(".", true)?.map((entry) => {
-    if (entry.included) {
-      return `!${entry.glob}`
-    }
-    return entry.glob
-  }) ?? []
+  const ignore =
+    globifyGitIgnoreFileSync(".", true)?.map((entry) => {
+      if (entry.included) {
+        return `!${entry.glob}`
+      }
+      return entry.glob
+    }) ?? []
   ignore.push("./**/.git/**", "./**/node_modules/**")
 
   // check if there are any ts files
