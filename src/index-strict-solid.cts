@@ -1,4 +1,4 @@
-import nonStrictConfig from "./index-react.cjs"
+import nonStrictConfig from "./index-solid.cjs"
 
 // remove only-warn from javascript
 if (

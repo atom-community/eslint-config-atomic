@@ -4,6 +4,7 @@ import { pluginNodeRules } from "./plugin-node-rules.cjs"
 import makeSynchronous from "make-synchronous"
 import { findOneFile } from "./utils.cjs"
 import type { GlobifiedEntry } from "globify-gitignore"
+import { Linter } from "eslint"
 
 const tsFiles = ["**/*.tsx", "**/*.ts", "**/*.mts", "**/*.cts"]
 const project = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
@@ -63,12 +64,12 @@ function disableProjectBasedRules() {
   return disable
 }
 
-function javaScriptRules() {
+function javaScriptRules(): Linter.RulesRecord {
   // turn-off no-unused-vars for typescript files
   return { ...eslintRulesExtra, "no-unused-vars": "off" }
 }
 
-const pluginTypeScriptRulesExtra = {
+const pluginTypeScriptRulesExtra: Linter.RulesRecord = {
   "@typescript-eslint/no-unused-vars": [
     "error",
     {
@@ -97,7 +98,7 @@ const pluginTypeScriptRulesExtra = {
   // "@typescript-eslint/prefer-string-starts-ends-with": "error",
 }
 
-const pluginTypeScriptProjectRules = disableProjectBasedRules()
+const pluginTypeScriptProjectRules: Linter.RulesRecord = disableProjectBasedRules()
   ? {}
   : {
       "@typescript-eslint/no-floating-promises": "error",
@@ -113,7 +114,7 @@ const pluginTypeScriptProjectRules = disableProjectBasedRules()
       "@typescript-eslint/switch-exhaustiveness-check": "warn",
     }
 
-export const tsConfig = {
+export const tsConfig: Linter.ConfigOverride<Linter.RulesRecord> = {
   // TypeScript files
   files: tsFiles,
   parser: "@typescript-eslint/parser",

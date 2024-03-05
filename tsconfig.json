@@ -1,17 +1,8 @@
 {
   "compilerOptions": {
     // target
-    "target": "EsNext",
-    "lib": [
-      "es2021",
-      "EsNext",
-      "DOM",
-      "DOM.Iterable",
-      "WebWorker",
-      "WebWorker.ImportScripts",
-      "Webworker.Iterable",
-      "ScriptHost"
-    ],
+    "target": "ES2022",
+    "lib": ["ES2022"],
     "importHelpers": false,
     "module": "CommonJS",
     "moduleResolution": "node",

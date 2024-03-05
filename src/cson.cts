@@ -1,6 +1,7 @@
+import { Linter } from "eslint"
 import { coffeeConfig } from "./coffeescript.cjs"
 
-export const csonConfig = {
+export const csonConfig: Linter.ConfigOverride<Linter.RulesRecord> = {
   ...coffeeConfig,
   files: ["**/*.cson"],
   rules: {
