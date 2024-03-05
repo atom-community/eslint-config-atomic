@@ -43,6 +43,7 @@
     "eslint-plugin-only-warn": "npm:@aminya/eslint-plugin-only-warn@^1.2.2",
     "eslint-plugin-optimize-regex": "^1.2.1",
     "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-solid": "^0.13.1",
     "eslint-plugin-yaml": "^0.5.0",
     "globify-gitignore": "^1.0.3",
     "make-synchronous": "^0.1.1",

@@ -60,6 +60,26 @@ Add a lint script to your `package.json`:
 }
 ```
 
+- **solid**:
+  You can instead use the `solid` version which throws errors instead of warning:
+
+```json
+{
+  "extends": "eslint-config-atomic/solid",
+  "ignorePatterns": ["dist/", "node_modules/"]
+}
+```
+
+- **strict-solid**:
+  Same as the solid version but it is strict:
+
+```json
+{
+  "extends": "eslint-config-atomic/strict-solid",
+  "ignorePatterns": ["dist/", "node_modules/"]
+}
+```
+
 - **react**:
   It supports react using `eslint-plugin-react`.
 
