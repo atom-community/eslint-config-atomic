@@ -32,11 +32,12 @@ const config: Linter.Config = {
     atomtest: true,
     es6: true,
     node: true,
-    browser: true
+    browser: true,
   },
   globals: {
-    atom: "readonly"
+    atom: "readonly",
   },
+  ignorePatterns: ["node_modules/"],
   ...jsConfig,
   overrides: [tsConfig, jsonConfig, yamlConfig, htmlConfig, astroConfig, ...maybeAddCoffeeScript()],
   settings: {

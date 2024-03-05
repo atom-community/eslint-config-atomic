@@ -1,4 +1,6 @@
-export const pluginImportRulesExtra = {
+import { Linter } from "eslint"
+
+export const pluginImportRulesExtra: Linter.RulesRecord = {
   "import/no-absolute-path": "error",
   "import/no-useless-path-segments": "error",
   "import/no-deprecated": "error",
@@ -15,7 +17,7 @@ export const pluginImportRulesExtra = {
   // "import/no-unused-modules": ["warn", {"missingExports": true}],
 }
 
-export const pluginImportTypeScriptRulesExtra = {
+export const pluginImportTypeScriptRulesExtra: Linter.RulesRecord = {
   // Buggy on TypeScript:
   "import/no-unresolved": "off",
   "import/named": "off",

@@ -1,4 +1,6 @@
-export const astroConfig = {
+import { Linter } from "eslint"
+
+export const astroConfig: Linter.ConfigOverride<Linter.RulesRecord> = {
   // astro files
   files: ["*.astro"],
   parser: "astro-eslint-parser",

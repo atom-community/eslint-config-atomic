@@ -1,7 +1,8 @@
 import { pluginNodeRules } from "./plugin-node-rules.cjs"
 import { pluginImportRulesExtra } from "./plugin-import-rules.cjs"
+import { Linter } from "eslint"
 
-export const coffeeConfig = {
+export const coffeeConfig: Linter.ConfigOverride<Linter.RulesRecord> = {
   // CoffeeScript files
   files: ["**/*.coffee"],
   parser: "eslint-plugin-coffee",

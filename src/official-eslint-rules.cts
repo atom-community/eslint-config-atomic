@@ -1,8 +1,10 @@
+import { Linter } from "eslint"
+
 /**
  * The official Eslint rules that are constructive and not included in recommended. The formatting/stylistic rules are
  * not among these. The rules that might be useful in future are commented.
  */
-export const eslintRulesExtra = {
+export const eslintRulesExtra: Linter.RulesRecord = {
   "no-unused-vars": [
     "error",
     {

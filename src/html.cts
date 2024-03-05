@@ -1,4 +1,6 @@
-export const htmlConfig = {
+import { Linter } from "eslint"
+
+export const htmlConfig: Linter.ConfigOverride<Linter.RulesRecord> = {
   files: [
     "**/*.erb",
     "**/*.handlebars",
