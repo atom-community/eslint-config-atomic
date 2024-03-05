@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-atomic",
-  "version": "1.20.6",
+  "version": "1.21.0",
   "description": "Eslint config used in atom-ide-community",
   "repository": "https://github.com/atom-ide-community/eslint-config-atomic",
   "license": "MIT",
