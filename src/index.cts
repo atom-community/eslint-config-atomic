@@ -8,6 +8,7 @@ import { htmlConfig } from "./html.cjs"
 import { pluginImportSettings } from "./plugin-import-rules.cjs"
 import semverMajor from "semver/functions/major"
 import { getEslintVersion } from "./eslint-version.cjs"
+import { astroConfig } from "./astro.cjs"
 
 function maybeAddCoffeeScript() {
   try {
@@ -38,7 +39,7 @@ const config = {
     measure: "readonly",
   },
   ...jsConfig,
-  overrides: [tsConfig, jsonConfig, yamlConfig, htmlConfig, ...maybeAddCoffeeScript()],
+  overrides: [tsConfig, jsonConfig, yamlConfig, htmlConfig, astroConfig, ...maybeAddCoffeeScript()],
   settings: {
     ...pluginImportSettings,
   },
