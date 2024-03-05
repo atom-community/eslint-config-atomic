@@ -9,6 +9,7 @@ import { pluginImportSettings } from "./plugin-import-rules.cjs"
 import semverMajor from "semver/functions/major"
 import { getEslintVersion } from "./eslint-version.cjs"
 import { astroConfig } from "./astro.cjs"
+import type { Linter } from "eslint"
 
 function maybeAddCoffeeScript() {
   try {
@@ -25,18 +26,16 @@ function maybeAddCoffeeScript() {
   return []
 }
 
-const config = {
+const config: Linter.Config = {
   root: true,
   env: {
     atomtest: true,
     es6: true,
     node: true,
-    browser: true,
-    jasmine: true,
+    browser: true
   },
   globals: {
-    atom: "readonly",
-    measure: "readonly",
+    atom: "readonly"
   },
   ...jsConfig,
   overrides: [tsConfig, jsonConfig, yamlConfig, htmlConfig, astroConfig, ...maybeAddCoffeeScript()],
