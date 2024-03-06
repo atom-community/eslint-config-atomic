@@ -1,4 +1,5 @@
 import { Linter } from "eslint"
+import { pluginImportAstroRulesExtra } from "./plugin-import-rules.cjs"
 
 export const astroConfig: Linter.ConfigOverride<Linter.RulesRecord> = {
   // astro files
@@ -10,4 +11,10 @@ export const astroConfig: Linter.ConfigOverride<Linter.RulesRecord> = {
   },
   plugins: ["astro", "only-warn"],
   extends: ["plugin:astro/recommended"],
+  rules: {
+    ...pluginImportAstroRulesExtra
+  },
+  globals: {
+    astroHTML: "readonly",
+  },
 }

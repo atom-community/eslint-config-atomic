@@ -1,5 +1,9 @@
 {
-  "cSpell.words": ["Globified", "globify"],
+  "cSpell.words": [
+    "astrojs",
+    "Globified",
+    "globify"
+  ],
   "explorer.fileNesting.patterns": {
     "index.js": "*.js"
   }

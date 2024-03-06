@@ -24,17 +24,26 @@ export const pluginImportTypeScriptRulesExtra: Linter.RulesRecord = {
   "import/namespace": "off",
 }
 
+export const pluginImportAstroRulesExtra: Linter.RulesRecord = {
+  // Buggy on Astro:
+  "import/default": "off",
+  "import/no-absolute-path": "off",
+  "import/no-unresolved": "off",
+  "import/no-extraneous-dependencies": "off",
+}
+
 export const pluginImportSettings = {
   "import/core-modules": ["atom", "electron"],
   // support TypeScript and Coffee importing
-  "import/extensions": [".ts", ".tsx", ".cts", ".mts", ".d.ts", ".js", ".cjs", ".mjs", ".jsx", ".coffee"],
+  "import/extensions": [".ts", ".tsx", ".cts", ".mts", ".d.ts", ".js", ".cjs", ".mjs", ".jsx", ".coffee", ".astro"],
   "import/external-module-folders": ["node_modules", "node_modules/@types"],
   "import/parsers": {
     "@typescript-eslint/parser": [".ts", ".tsx", ".d.ts"],
+    "astro-eslint-parser": [".astro"],
   },
   "import/resolver": {
     node: {
-      extensions: [".ts", ".tsx", ".cts", ".mts", ".d.ts", ".js", ".cjs", ".mjs", ".jsx", ".coffee"],
+      extensions: [".ts", ".tsx", ".cts", ".mts", ".d.ts", ".js", ".cjs", ".mjs", ".jsx", ".coffee", ".astro"],
     },
   },
 }

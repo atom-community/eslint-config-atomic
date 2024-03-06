@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-atomic",
-  "version": "1.21.1",
+  "version": "1.21.2",
   "description": "Eslint config used in atom-ide-community",
   "repository": "https://github.com/atom-ide-community/eslint-config-atomic",
   "license": "MIT",
@@ -36,6 +36,7 @@
     "anymatch": "^3.1.3",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-astro": "^0.31.4",
     "eslint-plugin-html": "^8.0.0",
     "eslint-plugin-import": "^2.29.1",
     "eslint-plugin-json": "^3.1.0",
@@ -44,7 +45,6 @@
     "eslint-plugin-optimize-regex": "^1.2.1",
     "eslint-plugin-react": "^7.34.0",
     "eslint-plugin-solid": "^0.13.1",
-    "eslint-plugin-astro": "^0.31.4",
     "eslint-plugin-yaml": "^0.5.0",
     "globify-gitignore": "^1.0.3",
     "make-synchronous": "^0.1.1",

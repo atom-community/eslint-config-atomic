@@ -4,9 +4,13 @@ import { tsConfig } from "./typescript.cjs"
 
 const nonStrictConfig: Linter.Config = {
   ...base,
-  plugins: ["solid", ...(base.plugins ?? [])],
-  extends: ["plugin:solid/recommended", ...(base.extends ?? [])],
   overrides: [
+    // JavaScript:
+    {
+      files: ["*.js", "*.jsx", "*.mjs", "*.cjs"],
+      plugins: ["solid", ...(base.plugins ?? [])],
+      extends: ["plugin:solid/recommended", ...(base.extends ?? [])],
+    },
     // TypeScript:
     {
       ...tsConfig,
