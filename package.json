@@ -64,9 +64,9 @@
     "@types/semver": "^7.5.8",
     "@types/shelljs": "^0.8.15",
     "eslint-config-atomic": "link:",
-    "execa": "^5.1.1",
+    "execa": "^8.0.0",
     "gitly": "^2.5.2",
-    "npm-check-updates": "16.14.15",
+    "npm-check-updates": "16.14.18",
     "prettier-config-atomic": "^4.0.0",
     "shelljs": "^0.8.5",
     "shx": "^0.3.4"
