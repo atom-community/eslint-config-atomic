@@ -1,30 +1,47 @@
 import { eslintRulesExtra } from "./official-eslint-rules.cjs"
 import { pluginNodeRules } from "./plugin-node-rules.cjs"
 import { pluginImportRulesExtra } from "./plugin-import-rules.cjs"
-import { Linter } from "eslint"
+import type { Linter } from "eslint"
+import * as eslintBabelParser from "@babel/eslint-parser"
+import * as nodePlugin from "eslint-plugin-node"
+import * as importPlugin from "eslint-plugin-import"
+import * as onlyWarnPlugin from "eslint-plugin-only-warn"
+import * as optimizeRegexPlugin from "eslint-plugin-optimize-regex"
+// import * as prettierPlugin from "eslint-plugin-prettier"
 
-export const jsConfig: Linter.Config = {
-  parser: "@babel/eslint-parser",
-  parserOptions: {
-    requireConfigFile: false,
-    ecmaFeatures: {
-      jsx: true,
+import js from "@eslint/js"
+
+export const jsConfig: Linter.FlatConfig = {
+  ...js.configs.recommended,
+  ...optimizeRegexPlugin.configs!.all,
+  // ...prettierPlugin.configs!.all,
+  files: ["*.js", "*.mjs", "*.cjs", "*.jsx", "*.flow"],
+  languageOptions: {
+    parser: eslintBabelParser,
+    parserOptions: {
+      requireConfigFile: false,
+      ecmaFeatures: {
+        jsx: true,
+      },
+      babelOptions: {
+        plugins: ["@babel/plugin-syntax-flow", "@babel/plugin-syntax-jsx"],
+      },
+      ecmaVersion: "latest" as const,
+      sourceType: "module" as const,
     },
-    babelOptions: {
-      plugins: [
-        // enable jsx and flow syntax
-        "@babel/plugin-syntax-flow",
-        "@babel/plugin-syntax-jsx",
-      ],
+    globals: {
+      atom: "readonly",
     },
-    ecmaVersion: 2021 as const,
-    sourceType: "module" as const,
   },
-  plugins: ["node", "import", "only-warn"],
-  extends: ["eslint:recommended", "plugin:optimize-regex/all", "plugin:import/recommended", "prettier"],
+  plugins: {
+    node: nodePlugin,
+    import: importPlugin,
+    "only-warn": onlyWarnPlugin,
+  },
   rules: {
     ...eslintRulesExtra,
     ...pluginNodeRules,
     ...pluginImportRulesExtra,
+    ...importPlugin.configs.recommended.rules,
   },
 }

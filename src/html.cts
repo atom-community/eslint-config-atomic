@@ -1,6 +1,7 @@
-import { Linter } from "eslint"
+import type { Linter } from "eslint"
+import * as htmlPlugin from "eslint-plugin-html"
 
-export const htmlConfig: Linter.ConfigOverride<Linter.RulesRecord> = {
+export const htmlConfig: Linter.FlatConfig<Linter.RulesRecord> = {
   files: [
     "**/*.erb",
     "**/*.handlebars",
@@ -16,5 +17,7 @@ export const htmlConfig: Linter.ConfigOverride<Linter.RulesRecord> = {
     "**/*.xhtml",
     "**/*.xml",
   ],
-  plugins: ["html"],
+  plugins: {
+    html: htmlPlugin,
+  },
 }
