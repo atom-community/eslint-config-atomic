@@ -1,10 +1,15 @@
-import { Linter } from "eslint"
+import type { Linter } from "eslint"
+import * as jsonPlugin from "eslint-plugin-json"
+// import * as prettierPlugin from "eslint-plugin-prettier"
 
-export const jsonConfig: Linter.ConfigOverride<Linter.RulesRecord> = {
+export const jsonConfig: Linter.FlatConfig<Linter.RulesRecord> = {
   // JSON files
+  ...jsonPlugin.configs!.recommended,
+  // ...prettierPlugin.configs!.all,
   files: ["*.json"],
-  plugins: ["json"],
-  extends: ["plugin:json/recommended", "prettier"],
+  plugins: {
+    json: jsonPlugin,
+  },
   rules: {
     "json/*": [
       "error",

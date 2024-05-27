@@ -1,4 +1,4 @@
-import { Linter } from "eslint"
+import type { Linter } from "eslint"
 
 export const pluginImportRulesExtra: Linter.RulesRecord = {
   "import/no-absolute-path": "error",

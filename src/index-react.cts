@@ -1,8 +1,8 @@
-import { Linter } from "eslint"
+import type { Linter } from "eslint"
 import base from "./index.cjs"
 import { tsConfig } from "./typescript.cjs"
 
-const nonStrictConfig: Linter.Config = {
+const nonStrictConfig: Linter.FlatConfig = {
   ...base,
   plugins: ["react", ...(base.plugins ?? [])],
   extends: ["plugin:react/recommended", ...(base.extends ?? [])],
