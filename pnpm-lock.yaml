@@ -85,8 +85,8 @@ importers:
         version: 5.4.5
     optionalDependencies:
       coffeescript:
-        specifier: ^1.12.7
-        version: 1.12.7
+        specifier: ^2.0.0
+        version: 2.7.0
       eslint-plugin-coffee:
         specifier: ^0.1.15
         version: 0.1.15(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-react-hooks@4.6.2(eslint@8.57.0))(eslint@8.57.0)
@@ -878,11 +878,6 @@ packages:
   cli@1.0.1:
     resolution: {integrity: sha512-41U72MB56TfUMGndAKK8vJ78eooOD4Z5NOL4xEfjc0c23s+6EYKXlXsmACBVclLP1yOfWCgEganVzddVrSNoTg==}
     engines: {node: '>=0.2.5'}
-
-  coffeescript@1.12.7:
-    resolution: {integrity: sha512-pLXHFxQMPklVoEekowk8b3erNynC+DVJzChxS/LCBBgR6/8AJkHivkm//zbowcfc7BTCAjryuhx6gPqPRfsFoA==}
-    engines: {node: '>=0.8.0'}
-    hasBin: true
 
   coffeescript@2.7.0:
     resolution: {integrity: sha512-hzWp6TUE2d/jCcN67LrW1eh5b/rSDKQK6oD6VMLlggYVUUFexgTH9z3dNYihzX4RMhze5FTUsUmOXViJKFQR/A==}
@@ -4135,9 +4130,6 @@ snapshots:
     dependencies:
       exit: 0.1.2
       glob: 7.2.3
-
-  coffeescript@1.12.7:
-    optional: true
 
   coffeescript@2.7.0:
     optional: true
