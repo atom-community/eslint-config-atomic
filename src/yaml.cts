@@ -1,8 +1,4 @@
-import { Linter } from "eslint"
+import type { Linter } from "eslint"
+import yamlPlugin from "eslint-plugin-yaml"
 
-export const yamlConfig: Linter.ConfigOverride<Linter.RulesRecord> = {
-  // YAML files
-  files: ["*.yaml", "*.yml"],
-  plugins: ["yaml", "only-warn"],
-  extends: ["plugin:yaml/recommended"],
-}
+export const yamlConfig: Linter.FlatConfig<Linter.RulesRecord> = yamlPlugin.configs.recommended

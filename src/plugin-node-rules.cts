@@ -1,4 +1,4 @@
-import { Linter } from "eslint"
+import type { Linter } from "eslint"
 
 export const pluginNodeRules: Linter.RulesRecord = {
   "node/no-exports-assign": "error",

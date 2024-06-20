@@ -1,10 +1,16 @@
+import js from "@eslint/js"
+import * as typeScriptPlugin from "typescript-eslint"
+import type { Linter } from "eslint"
+import * as importPlugin from "eslint-plugin-import"
+import * as nodePlugin from "eslint-plugin-node"
+import * as onlyWarnPlugin from "eslint-plugin-only-warn"
+import type { GlobifiedEntry } from "globify-gitignore"
+import makeSynchronous from "make-synchronous"
 import { eslintRulesExtra } from "./official-eslint-rules.cjs"
 import { pluginImportRulesExtra, pluginImportTypeScriptRulesExtra } from "./plugin-import-rules.cjs"
 import { pluginNodeRules } from "./plugin-node-rules.cjs"
-import makeSynchronous from "make-synchronous"
 import { findOneFile } from "./utils.cjs"
-import type { GlobifiedEntry } from "globify-gitignore"
-import { Linter } from "eslint"
+import * as eslintTypeScriptParser from "@typescript-eslint/parser"
 
 const tsFiles = ["**/*.tsx", "**/*.ts", "**/*.mts", "**/*.cts"]
 const project = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
@@ -114,29 +120,32 @@ const pluginTypeScriptProjectRules: Linter.RulesRecord = disableProjectBasedRule
       "@typescript-eslint/switch-exhaustiveness-check": "warn",
     }
 
-export const tsConfig: Linter.ConfigOverride<Linter.RulesRecord> = {
+export const tsConfig: Linter.FlatConfig<Linter.RulesRecord>[] = [
   // TypeScript files
-  files: tsFiles,
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    project,
-    createDefaultProgram: true, // otherwise Eslint will error if a ts file is not covered by one of the tsconfig.json files
+  js.configs.recommended,
+  ...typeScriptPlugin.configs.recommended as Linter.FlatConfig[],
+  {
+    files: tsFiles,
+    languageOptions: {
+      parser: eslintTypeScriptParser,
+      parserOptions: {
+        project,
+        createDefaultProgram: true, // otherwise Eslint will error if a ts file is not covered by one of the tsconfig.json files
+      },
+    },
+    plugins: {
+      node: nodePlugin,
+      import: importPlugin,
+      "only-warn": onlyWarnPlugin,
+    },
+    rules: {
+      ...javaScriptRules(),
+      ...pluginTypeScriptRulesExtra,
+      ...pluginTypeScriptProjectRules,
+      ...pluginNodeRules,
+      ...pluginImportRulesExtra,
+      ...pluginImportTypeScriptRulesExtra,
+      ...importPlugin.configs.recommended.rules,
+    },
   },
-  plugins: ["@typescript-eslint", "node", "import", "only-warn"],
-  extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:optimize-regex/all",
-    "plugin:import/recommended",
-    "prettier",
-  ],
-  rules: {
-    ...javaScriptRules(),
-    ...pluginTypeScriptRulesExtra,
-    ...pluginTypeScriptProjectRules,
-    ...pluginNodeRules,
-    ...pluginImportRulesExtra,
-    ...pluginImportTypeScriptRulesExtra,
-  },
-}
+]
