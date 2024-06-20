@@ -51,8 +51,8 @@ importers:
         specifier: npm:@aminya/eslint-plugin-only-warn@^1.2.2
         version: '@aminya/eslint-plugin-only-warn@1.2.2'
       eslint-plugin-optimize-regex:
-        specifier: ^1.2.1
-        version: 1.2.1
+        specifier: github:aminya/eslint-plugin-optimize-regex#16f9506ed2
+        version: https://codeload.github.com/aminya/eslint-plugin-optimize-regex/tar.gz/16f9506ed2
       eslint-plugin-react:
         specifier: ^7.34.3
         version: 7.34.3(eslint@9.5.0)
@@ -106,6 +106,9 @@ importers:
       '@types/eslint-config-prettier':
         specifier: ^6.11.3
         version: 6.11.3
+      '@types/eslint__js':
+        specifier: ^8.42.3
+        version: 8.42.3
       '@types/execa':
         specifier: ^2.0.0
         version: 2.0.0
@@ -465,6 +468,9 @@ packages:
 
   '@types/eslint@8.56.10':
     resolution: {integrity: sha512-Shavhk87gCtY2fhXDctcfS3e6FdxWkCx1iUZ9eEUbh7rTqlZT0/IzOkCOVt0fCjcFuZ9FPYfuezTBImfHCDBGQ==}
+
+  '@types/eslint__js@8.42.3':
+    resolution: {integrity: sha512-alfG737uhmPdnvkrLdZLcEKJ/B8s9Y4hrZ+YAdzUeoArBlSUERA2E87ROfOaS4jd/C45fzOoZzidLc1IPwLqOw==}
 
   '@types/estree@1.0.5':
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
@@ -1297,8 +1303,9 @@ packages:
     peerDependencies:
       eslint: '>=5.16.0'
 
-  eslint-plugin-optimize-regex@1.2.1:
-    resolution: {integrity: sha512-fUaU7Tj1G/KSTDTABJw4Wp427Rl7RPl9ViYTu1Jrv36fJw4DFhd4elPdXiuYtdPsNsvzn9GcVlKEssGIVjw0UQ==}
+  eslint-plugin-optimize-regex@https://codeload.github.com/aminya/eslint-plugin-optimize-regex/tar.gz/16f9506ed2:
+    resolution: {tarball: https://codeload.github.com/aminya/eslint-plugin-optimize-regex/tar.gz/16f9506ed2}
+    version: 1.2.1
     engines: {node: '>=10'}
 
   eslint-plugin-react-hooks@4.6.2:
@@ -3608,6 +3615,10 @@ snapshots:
       '@types/estree': 1.0.5
       '@types/json-schema': 7.0.15
 
+  '@types/eslint__js@8.42.3':
+    dependencies:
+      '@types/eslint': 8.56.10
+
   '@types/estree@1.0.5': {}
 
   '@types/execa@2.0.0':
@@ -4664,7 +4675,7 @@ snapshots:
       resolve: 1.22.8
       semver: 6.3.1
 
-  eslint-plugin-optimize-regex@1.2.1:
+  eslint-plugin-optimize-regex@https://codeload.github.com/aminya/eslint-plugin-optimize-regex/tar.gz/16f9506ed2:
     dependencies:
       regexp-tree: 0.1.27
 

@@ -4,8 +4,6 @@ import type { Linter } from "eslint"
 import * as importPlugin from "eslint-plugin-import"
 import * as nodePlugin from "eslint-plugin-node"
 import * as onlyWarnPlugin from "eslint-plugin-only-warn"
-import * as optimizeRegexPlugin from "eslint-plugin-optimize-regex"
-// import * as prettierPlugin from "eslint-plugin-prettier"
 import type { GlobifiedEntry } from "globify-gitignore"
 import makeSynchronous from "make-synchronous"
 import { eslintRulesExtra } from "./official-eslint-rules.cjs"
@@ -130,9 +128,7 @@ const pluginTypeScriptProjectRules: Linter.RulesRecord = disableProjectBasedRule
 export const tsConfig: Linter.FlatConfig<Linter.RulesRecord>[] = [
   // TypeScript files
   js.configs.recommended,
-  ...typeScriptPlugin.configs.recommended,
-  // optimizeRegexPlugin.configs!.all,
-
+  ...typeScriptPlugin.configs.recommended as Linter.FlatConfig[],
   {
     files: tsFiles,
     languageOptions: {
