@@ -33,12 +33,6 @@ declare module "eslint-plugin-coffee" {
   export = plugin
 }
 
-declare module "eslint-plugin-optimize-regex" {
-  import type { ESLint } from "eslint"
-  const plugin: ESLint.Plugin
-  export = plugin
-}
-
 declare module "eslint-plugin-html" {
   import type { ESLint } from "eslint"
   const plugin: ESLint.Plugin
