@@ -1,2 +1,2 @@
 const config = require("./index.js")
-module.exports = config
+module.exports = [...config]

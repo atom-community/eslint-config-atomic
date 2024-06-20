@@ -13,7 +13,7 @@ import js from "@eslint/js"
 
 export const jsConfig: Linter.FlatConfig = {
   ...js.configs.recommended,
-  ...optimizeRegexPlugin.configs!.all,
+  // ...optimizeRegexPlugin.configs!.all,
   // ...prettierPlugin.configs!.all,
   files: ["*.js", "*.mjs", "*.cjs", "*.jsx", "*.flow"],
   languageOptions: {

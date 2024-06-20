@@ -4,25 +4,27 @@ import astroPlugin from "eslint-plugin-astro"
 import * as onlyWarnPlugin from "eslint-plugin-only-warn"
 import astroParser from "astro-eslint-parser"
 
-export const astroConfig: Linter.FlatConfig<Linter.RulesRecord> = {
+export const astroConfig: Linter.FlatConfig<Linter.RulesRecord>[] = [
   // astro files
-  ...astroPlugin.configs.recommended,
-  files: ["*.astro"],
-  languageOptions: {
-    parser: astroParser,
-    parserOptions: {
-      parser: "@typescript-eslint/parser",
-      extraFileExtensions: [".astro"],
+  ...astroPlugin.configs["flat/all"],
+  {
+    files: ["*.astro"],
+    languageOptions: {
+      parser: astroParser,
+      parserOptions: {
+        parser: "@typescript-eslint/parser",
+        extraFileExtensions: [".astro"],
+      },
+      globals: {
+        astroHTML: "readonly",
+      },
     },
-    globals: {
-      astroHTML: "readonly",
+    plugins: {
+      astro: astroPlugin,
+      "only-warn": onlyWarnPlugin,
+    },
+    rules: {
+      ...pluginImportAstroRulesExtra,
     },
   },
-  plugins: {
-    astro: astroPlugin,
-    "only-warn": onlyWarnPlugin,
-  },
-  rules: {
-    ...pluginImportAstroRulesExtra,
-  },
-}
+]

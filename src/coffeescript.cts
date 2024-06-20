@@ -10,7 +10,7 @@ import * as optimizeRegexPlugin from "eslint-plugin-optimize-regex"
 export const coffeeConfig: Linter.FlatConfig<Linter.RulesRecord> = {
   // CoffeeScript files
   ...eslintPluginCoffee.configs!.recommended,
-  ...optimizeRegexPlugin.configs!.all,
+  // ...optimizeRegexPlugin.configs!.all,
   ...eslintPluginCoffee.configs!.prettier,
   files: ["**/*.coffee"],
   languageOptions: {

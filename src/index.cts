@@ -28,22 +28,13 @@ function maybeAddCoffeeScript() {
 }
 
 const config: Linter.FlatConfig[] = [
-  // {
-  //   ignores: ["node_modules/"],
-  //   ...jsConfig,
-  //   settings: {
-  //     ...pluginImportSettings,
-  //   },
-  // },
   jsConfig,
-  tsConfig,
+  ...tsConfig,
   jsonConfig,
   yamlConfig,
   htmlConfig,
-  astroConfig,
+  ...astroConfig,
   ...maybeAddCoffeeScript(),
 ]
-
-// console.log(config)
 
 export default config
