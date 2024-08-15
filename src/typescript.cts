@@ -54,12 +54,7 @@ function disableProjectBasedRules() {
   )
 
   // check if there are any ts files
-  const [hasTscConfig, hasTsFile] = findFilesForGroups(cwd, [tscConfigFiles, tsFiles], ignore)
-
-  // return if there are no ts files
-  if (!hasTsFile) {
-    return true
-  }
+  const [hasTscConfig, hasTsFile] = findFilesForGroups(cwd, tscConfigFiles, tsFiles, ignore)
 
   // if there is no tsconfig.json file, but there are ts files, disable the project-based rules
   const disable = !hasTscConfig && hasTsFile
