@@ -9,10 +9,23 @@ import { Linter } from "eslint"
 const tsFiles = ["**/*.tsx", "**/*.ts", "**/*.mts", "**/*.cts"]
 const project = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
 
-function globifyGitIgnoreFileWithDeps(cwd: string, include: boolean) {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const { globifyGitIgnoreFile } = require("globify-gitignore") as typeof import("globify-gitignore") // prettier-ignore
-  return globifyGitIgnoreFile(cwd, include)
+async function globifyGitIgnoreFileWithDeps(cwd: string, include: boolean) {
+  try {
+    // import in the function to allow makeSynchronous to work
+    /* eslint-disable @typescript-eslint/no-var-requires */
+    const { globifyGitIgnoreFile } = require("globify-gitignore") as typeof import("globify-gitignore") // prettier-ignore
+    const { existsSync } = require("fs") as typeof import("fs")
+    const { join } = require("path") as typeof import("path")
+    /* eslint-enable @typescript-eslint/no-var-requires */
+
+    if (!existsSync(join(cwd, ".gitignore"))) {
+      return []
+    }
+    return await globifyGitIgnoreFile(cwd, include)
+  } catch (error) {
+    console.error(error)
+    return []
+  }
 }
 const globifyGitIgnoreFileSync = makeSynchronous(globifyGitIgnoreFileWithDeps) as (
   cwd: string,
