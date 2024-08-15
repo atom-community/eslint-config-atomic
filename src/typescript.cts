@@ -2,12 +2,12 @@ import { eslintRulesExtra } from "./official-eslint-rules.cjs"
 import { pluginImportRulesExtra, pluginImportTypeScriptRulesExtra } from "./plugin-import-rules.cjs"
 import { pluginNodeRules } from "./plugin-node-rules.cjs"
 import makeSynchronous from "make-synchronous"
-import { findOneFile } from "./utils.cjs"
+import { findFilesForGroups } from "./utils.cjs"
 import type { GlobifiedEntry } from "globify-gitignore"
 import { Linter } from "eslint"
 
 const tsFiles = ["**/*.tsx", "**/*.ts", "**/*.mts", "**/*.cts"]
-const project = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
+const tscConfigFiles = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
 
 async function globifyGitIgnoreFileWithDeps(cwd: string, include: boolean) {
   try {
@@ -54,18 +54,15 @@ function disableProjectBasedRules() {
   )
 
   // check if there are any ts files
-  const hasTsFile = findOneFile(cwd, tsFiles, ignore)
+  const [hasTscConfig, hasTsFile] = findFilesForGroups(cwd, [tscConfigFiles, tsFiles], ignore)
 
   // return if there are no ts files
   if (!hasTsFile) {
     return true
   }
 
-  // check if there is a tsconfig.json file
-  const hasTsConfig = findOneFile(cwd, project, ignore)
-
   // if there is no tsconfig.json file, but there are ts files, disable the project-based rules
-  const disable = !hasTsConfig && hasTsFile
+  const disable = !hasTscConfig && hasTsFile
 
   if (disable) {
     console.warn(
@@ -132,7 +129,7 @@ export const tsConfig: Linter.ConfigOverride<Linter.RulesRecord> = {
   files: tsFiles,
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    project,
+    project: tscConfigFiles,
     createDefaultProgram: true, // otherwise Eslint will error if a ts file is not covered by one of the tsconfig.json files
   },
   plugins: ["@typescript-eslint", "node", "import", "only-warn"],
