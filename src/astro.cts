@@ -12,7 +12,7 @@ export const astroConfig: Linter.ConfigOverride<Linter.RulesRecord> = {
   plugins: ["astro", "only-warn"],
   extends: ["plugin:astro/recommended"],
   rules: {
-    ...pluginImportAstroRulesExtra
+    ...pluginImportAstroRulesExtra,
   },
   globals: {
     astroHTML: "readonly",
