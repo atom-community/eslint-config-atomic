@@ -1,5 +1,5 @@
 import { jsConfig } from "./javascript.cjs"
-import { tsConfig } from "./typescript.cjs"
+import { tsConfigs } from "./typescript.cjs"
 import { jsonConfig } from "./json.cjs"
 import { yamlConfig } from "./yaml.cjs"
 import { htmlConfig } from "./html.cjs"
@@ -31,7 +31,7 @@ function maybeAddCoffeeScript() {
 const config: Linter.Config[] = [
   ...jsConfig,
   pluginOptmizeRegex.configs.all,
-  ...tsConfig,
+  ...tsConfigs,
   jsonConfig,
   yamlConfig,
   htmlConfig,

@@ -1,28 +1,32 @@
 import type { Linter } from "eslint"
 import base from "./index.cjs"
-import { tsConfig } from "./typescript.cjs"
+import { tsConfigs } from "./typescript.cjs"
+import reactPlugin from "eslint-plugin-react"
+import globals from "globals";
 
-const nonStrictConfig: Linter.Config = {
+const reactTypeScript: Linter.Config = {
+  ...tsConfigs,
+  ...reactPlugin.configs.flat.recommended
+};
+
+const nonStrictConfig: Linter.Config[] = [
   ...base,
-  plugins: ["react", ...(base.plugins ?? [])],
-  extends: ["plugin:react/recommended", ...(base.extends ?? [])],
-  overrides: [
-    // TypeScript:
-    {
-      ...tsConfig,
-      plugins: ["react", ...(tsConfig.plugins ?? [])],
-      extends: ["plugin:react/recommended", ...(tsConfig.extends ?? [])],
-      rules: tsConfig.rules,
-    },
-    // The rest is the same
-    ...(base.overrides?.slice(1) ?? []),
-  ],
-  settings: {
-    ...base.settings,
-    react: {
-      version: "detect",
+  // JavaScript:
+  {
+    files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
+    ...reactPlugin.configs.flat.recommended,
+  },
+  {
+    files: ['**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}'],
+    languageOptions: {
+      globals: {
+        ...globals.serviceworker,
+        ...globals.browser,
+      },
     },
   },
-}
+  // TypeScript:
+  reactTypeScript,
+]
 
 export default nonStrictConfig

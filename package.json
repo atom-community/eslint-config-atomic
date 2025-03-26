@@ -46,6 +46,7 @@
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-solid": "^0.14.5",
     "eslint-plugin-yaml": "^1.0.3",
+    "globals": "^16.0.0",
     "globify-gitignore": "^1.0.3",
     "make-synchronous": "^0.1.1",
     "prettier": "3.5.3",

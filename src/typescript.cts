@@ -9,7 +9,7 @@ import makeSynchronous from "make-synchronous"
 import { eslintRulesExtra } from "./official-eslint-rules.cjs"
 import { pluginImportRulesExtra, pluginImportTypeScriptRulesExtra } from "./plugin-import-rules.cjs"
 import { pluginNodeRules } from "./plugin-node-rules.cjs"
-import { findFilesForGroups } from "./utils.cjs"
+import { findFilesForGroups } from "./searchFs.cjs"
 import * as eslintTypeScriptParser from "@typescript-eslint/parser"
 
 const tsFiles = ["**/*.tsx", "**/*.ts", "**/*.mts", "**/*.cts"]
@@ -125,32 +125,34 @@ const pluginTypeScriptProjectRules: Linter.RulesRecord = disableProjectBasedRule
       "@typescript-eslint/switch-exhaustiveness-check": "warn",
     }
 
-export const tsConfig: Linter.Config[] = [
+export const tsConfig: Linter.Config = {
+  files: tsFiles,
+  languageOptions: {
+    parser: eslintTypeScriptParser,
+    parserOptions: {
+      project: tsConfigFiles,
+      createDefaultProgram: true, // otherwise Eslint will error if a ts file is not covered by one of the tsconfig.json files
+    },
+  },
+  plugins: {
+    node: nodePlugin,
+    import: importPlugin,
+    "only-warn": onlyWarnPlugin,
+  },
+  rules: {
+    ...javaScriptRules(),
+    ...pluginTypeScriptRulesExtra,
+    ...pluginTypeScriptProjectRules,
+    ...pluginNodeRules,
+    ...pluginImportRulesExtra,
+    ...pluginImportTypeScriptRulesExtra,
+    ...importPlugin.configs.recommended.rules,
+  },
+};
+
+export const tsConfigs: Linter.Config[] = [
   // TypeScript files
   js.configs.recommended,
   ...typeScriptPlugin.configs.recommended,
-  {
-    files: tsFiles,
-    languageOptions: {
-      parser: eslintTypeScriptParser,
-      parserOptions: {
-        project: tsConfigFiles,
-        createDefaultProgram: true, // otherwise Eslint will error if a ts file is not covered by one of the tsconfig.json files
-      },
-    },
-    plugins: {
-      node: nodePlugin,
-      import: importPlugin,
-      "only-warn": onlyWarnPlugin,
-    },
-    rules: {
-      ...javaScriptRules(),
-      ...pluginTypeScriptRulesExtra,
-      ...pluginTypeScriptProjectRules,
-      ...pluginNodeRules,
-      ...pluginImportRulesExtra,
-      ...pluginImportTypeScriptRulesExtra,
-      ...importPlugin.configs.recommended.rules,
-    },
-  },
+  tsConfig,
 ]
