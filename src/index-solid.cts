@@ -2,7 +2,7 @@ import type { Linter } from "eslint"
 import base from "./index.cjs"
 import { tsConfig } from "./typescript.cjs"
 
-const nonStrictConfig: Linter.FlatConfig[] = [
+const nonStrictConfig: Linter.Config[] = [
   ...base,
   // JavaScript:
   {

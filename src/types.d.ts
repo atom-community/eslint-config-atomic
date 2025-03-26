@@ -55,13 +55,13 @@ declare module "eslint-plugin-json" {
 
 declare module "@babel/eslint-parser" {
   import type { Linter } from "eslint"
-  const parser: Linter.FlatConfigParserModule
+  const parser: Linter.Parser
   export = parser
 }
 
 declare module "eslint-plugin-coffee/parser" {
   import type { Linter } from "eslint"
-  const parser: Linter.FlatConfigParserModule
+  const parser: Linter.Parser
   export = parser
 }
 
@@ -82,6 +82,12 @@ declare module "@babel/plugin-syntax-jsx" {
 declare module "typescript-eslint" {
   import type { Linter } from "eslint"
   export const configs: {
-    recommended: Linter.FlatConfig[]
+    recommended: Linter.Config[]
   }
+}
+
+declare module "astro-eslint-parser" {
+  import type { Linter } from "eslint"
+  const parser: Linter.Parser
+  export = parser
 }

@@ -28,7 +28,7 @@ function maybeAddCoffeeScript() {
   return []
 }
 
-const config: Linter.FlatConfig[] = [
+const config: Linter.Config[] = [
   ...jsConfig,
   pluginOptmizeRegex.configs.all,
   ...tsConfig,

@@ -9,7 +9,7 @@ import * as onlyWarnPlugin from "eslint-plugin-only-warn"
 
 import js from "@eslint/js"
 
-export const jsConfig: Linter.FlatConfig[] = [
+export const jsConfig: Linter.Config[] = [
   {
     ...js.configs.recommended,
     files: ["*.js", "*.mjs", "*.cjs", "*.jsx", "*.flow"],
