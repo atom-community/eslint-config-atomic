@@ -18,3 +18,4 @@ spec/fixtures/aminya
 spec/fixtures/steelbrain
 
 *.tar.gz
+*.tgz
