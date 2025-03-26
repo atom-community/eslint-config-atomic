@@ -6,7 +6,7 @@ import * as onlyWarnPlugin from "eslint-plugin-only-warn"
 import * as nodePlugin from "eslint-plugin-node"
 import * as coffeeParser from "eslint-plugin-coffee/parser"
 
-export const coffeeConfig: Linter.FlatConfig<Linter.RulesRecord> = {
+export const coffeeConfig: Linter.Config = {
   // CoffeeScript files
   ...eslintPluginCoffee.configs!.recommended,
   ...eslintPluginCoffee.configs!.prettier,

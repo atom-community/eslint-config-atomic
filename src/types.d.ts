@@ -78,3 +78,10 @@ declare module "@babel/plugin-syntax-jsx" {
   const plugin: PluginObj
   export = plugin
 }
+
+declare module "typescript-eslint" {
+  import type { Linter } from "eslint"
+  export const configs: {
+    recommended: Linter.FlatConfig[]
+  }
+}

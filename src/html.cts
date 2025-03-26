@@ -1,7 +1,7 @@
 import type { Linter } from "eslint"
 import * as htmlPlugin from "eslint-plugin-html"
 
-export const htmlConfig: Linter.FlatConfig<Linter.RulesRecord> = {
+export const htmlConfig: Linter.Config = {
   files: [
     "**/*.erb",
     "**/*.handlebars",

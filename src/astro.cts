@@ -4,7 +4,7 @@ import astroPlugin from "eslint-plugin-astro"
 import * as onlyWarnPlugin from "eslint-plugin-only-warn"
 import astroParser from "astro-eslint-parser"
 
-export const astroConfig: Linter.FlatConfig<Linter.RulesRecord>[] = [
+export const astroConfig: Linter.Config[] = [
   // astro files
   ...astroPlugin.configs["flat/all"],
   {

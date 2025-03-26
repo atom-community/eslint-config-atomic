@@ -125,10 +125,10 @@ const pluginTypeScriptProjectRules: Linter.RulesRecord = disableProjectBasedRule
       "@typescript-eslint/switch-exhaustiveness-check": "warn",
     }
 
-export const tsConfig: Linter.FlatConfig<Linter.RulesRecord>[] = [
+export const tsConfig: Linter.Config[] = [
   // TypeScript files
   js.configs.recommended,
-  ...typeScriptPlugin.configs.recommended as Linter.FlatConfig[],
+  ...typeScriptPlugin.configs.recommended,
   {
     files: tsFiles,
     languageOptions: {
