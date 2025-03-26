@@ -3,7 +3,7 @@
     // target
     "target": "ES2022",
     "lib": ["ES2022"],
-    "importHelpers": false,
+    "importHelpers": true,
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "allowJs": true,
