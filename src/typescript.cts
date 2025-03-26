@@ -148,7 +148,7 @@ export const tsConfig: Linter.Config = {
     ...pluginImportTypeScriptRulesExtra,
     ...importPlugin.configs.recommended.rules,
   },
-};
+}
 
 export const tsConfigs: Linter.Config[] = [
   // TypeScript files

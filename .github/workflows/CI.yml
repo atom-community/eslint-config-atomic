@@ -35,15 +35,15 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      # - name: Format ✨
-      #   run: pnpm run test.format
+      - name: Format ✨
+        run: pnpm run test.format
 
       - name: Lint ✨
         run: pnpm run test.lint
 
-      # - name: Tests
-      #   run: |
-      #     pnpm test
+      - name: Tests
+        run: |
+          pnpm test
 
   # Release:
   #   needs: [Test]

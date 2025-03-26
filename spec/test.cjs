@@ -45,42 +45,48 @@ async function testLint(packedPkg, testRepo, isWorkspace = false, isSilent = fal
     throw e
   }
 
-  const result = await execa.command("eslint .", { cwd: distFolder, stdout: !isSilent ? "inherit" : "pipe" })
+  const result = await execa.command("eslint . --cache", { cwd: distFolder, stdout: !isSilent ? "inherit" : "pipe" })
   if (result.failed) {
     throw new Error("An error happened")
   }
 }
 
 /** Main entry */
-;(async function main() {
+async function main() {
   const root = resolve(dirname(__dirname))
   const packedPkg = join(root, `${pkg.name}-${pkg.version}.tgz`)
   rm("-rf", packedPkg)
   await execa.command("pnpm pack", { cwd: root })
 
   const errs = []
-  for (const testRepo of testRepos) {
-    try {
-      // We want to observe the output in order, so we await inside loop
-      await testLint(packedPkg, testRepo, false) // eslint-disable-line no-await-in-loop
-    } catch (err) {
-      console.error(err)
-      errs.push(err)
-    }
-  }
+  await Promise.all([
+    ...testRepos.map(async (testRepo) => {
+      try {
+        await testLint(packedPkg, testRepo, false)
+      } catch (err) {
+        console.error(err)
+        errs.push(err)
+      }
+    }),
+    ...testWorkspaces.map(async (testWorkspace) => {
+      try {
+        await testLint(packedPkg, testWorkspace, true, true)
+      } catch (err) {
+        console.error(err)
+        errs.push(err)
+      }
+    }),
+  ])
 
-  for (const testWorkspace of testWorkspaces) {
-    try {
-      await testLint(packedPkg, testWorkspace, true, true) // eslint-disable-line no-await-in-loop
-    } catch (err) {
-      console.error(err)
-      errs.push(err)
-    }
-  }
   if (errs.length !== 0) {
     rm("-rf", packedPkg)
     throw new Error(`${errs.length} packages failed the tests. See the above.`)
   }
 
   rm("-rf", packedPkg)
-})()
+}
+
+main().catch((err) => {
+  console.error(err)
+  process.exit(1)
+})

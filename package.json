@@ -14,10 +14,10 @@
     "*.js"
   ],
   "scripts": {
-    "dev": "tsc --pretty --watch",
     "build": "tsc --pretty",
     "bump": "ncu -u -x coffeescript,execa,read-pkg-up,make-synchronous && pnpm update && pnpm dedupe",
     "clean": "shx rm -rf ./spec/fixtures/ ./dist",
+    "dev": "tsc --pretty --watch",
     "format": "prettier --write .",
     "lint": "eslint ./ --ignore dist --fix",
     "prepare": "pnpm run build",

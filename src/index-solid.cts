@@ -5,8 +5,8 @@ import solid from "eslint-plugin-solid"
 
 const solidTypeScript: Linter.Config = {
   ...tsConfig,
-  ...solid.configs["flat/typescript"]
-};
+  ...solid.configs["flat/typescript"],
+}
 
 const nonStrictConfig: Linter.Config[] = [
   ...base,
