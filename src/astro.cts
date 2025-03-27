@@ -1,7 +1,6 @@
 import type { Linter } from "eslint"
 import { pluginImportAstroRulesExtra } from "./plugin-import-rules.cjs"
 import astroPlugin from "eslint-plugin-astro"
-import * as onlyWarnPlugin from "eslint-plugin-only-warn"
 import astroParser from "astro-eslint-parser"
 
 export const astroConfig: Linter.Config[] = [
@@ -21,7 +20,6 @@ export const astroConfig: Linter.Config[] = [
     },
     plugins: {
       astro: astroPlugin,
-      "only-warn": onlyWarnPlugin,
     },
     rules: {
       ...pluginImportAstroRulesExtra,

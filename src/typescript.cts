@@ -3,7 +3,6 @@ import * as typeScriptPlugin from "typescript-eslint"
 import type { Linter } from "eslint"
 import * as importPlugin from "eslint-plugin-import"
 import * as nodePlugin from "eslint-plugin-node"
-import * as onlyWarnPlugin from "eslint-plugin-only-warn"
 import type { GlobifiedEntry } from "globify-gitignore"
 import makeSynchronous from "make-synchronous"
 import { eslintRulesExtra } from "./official-eslint-rules.cjs"
@@ -137,7 +136,6 @@ export const tsConfig: Linter.Config = {
   plugins: {
     node: nodePlugin,
     import: importPlugin,
-    "only-warn": onlyWarnPlugin,
   },
   rules: {
     ...javaScriptRules(),

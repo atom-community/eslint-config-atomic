@@ -5,7 +5,6 @@ import type { Linter } from "eslint"
 import * as eslintBabelParser from "@babel/eslint-parser"
 import * as nodePlugin from "eslint-plugin-node"
 import * as importPlugin from "eslint-plugin-import"
-import * as onlyWarnPlugin from "eslint-plugin-only-warn"
 
 import js from "@eslint/js"
 
@@ -33,7 +32,7 @@ export const jsConfig: Linter.Config[] = [
     plugins: {
       node: nodePlugin,
       import: importPlugin,
-      "only-warn": onlyWarnPlugin,
+
     },
     rules: {
       ...eslintRulesExtra,

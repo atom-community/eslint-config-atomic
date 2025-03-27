@@ -1,8 +1,9 @@
 import { command } from "execa"
 import { resolve, dirname, join } from "path"
 import packageJson from "../package.json" with { type: "json" }
-import * as gitly from "./gitly.js"
-const { download, extract } = gitly
+// @ts-ignore
+import gitly from "./gitly.js"
+const { download, extract } = gitly as typeof import("./gitly.js")
 import fs from "fs-extra"
 const { pathExists, ensureDir, remove } = fs
 import { fileURLToPath } from "url"
