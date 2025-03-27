@@ -60,8 +60,8 @@ importers:
         specifier: ^0.14.5
         version: 0.14.5(eslint@9.23.0)(typescript@5.8.2)
       eslint-plugin-yaml:
-        specifier: ^1.0.3
-        version: 1.0.3
+        specifier: ^1.1.1
+        version: 1.1.1
       globals:
         specifier: ^16.0.0
         version: 16.0.0
@@ -1270,8 +1270,8 @@ packages:
       eslint: ^6.0.0 || ^7.0.0 || ^8.0.0 || ^9.0.0
       typescript: '>=4.8.4'
 
-  eslint-plugin-yaml@1.0.3:
-    resolution: {integrity: sha512-PNA2P38xFIrIdb82W0k66UPtpn0UHbPs8LxwtmZqG03PUzV1RE6OYFUi0pxL4LsFndHjgOyNlLqK2N5lGdX8ew==}
+  eslint-plugin-yaml@1.1.1:
+    resolution: {integrity: sha512-CjdDntFFk55Vm1dkfjbEmag8SJLzTUedQX2TpvJWps98c04kRzMmtvXu6myr8f6ATnafqP8Rq38YKrMT05Y+hw==}
     engines: {node: '>=12'}
 
   eslint-scope@3.7.3:
@@ -1339,6 +1339,9 @@ packages:
   estraverse@5.3.0:
     resolution: {integrity: sha512-MMdARuVEQziNTeJD8DgMqmhwR11BRQ/cBP+pLtYdSTnf3MIO8fFeiINEbX36ZdNlfU/7A9f3gUw49B3oQsvwBA==}
     engines: {node: '>=4.0'}
+
+  estree-util-value-to-estree@3.3.2:
+    resolution: {integrity: sha512-hYH1aSvQI63Cvq3T3loaem6LW4u72F187zW4FHpTrReJSm6W66vYTFNO1vH/chmcOulp1HlAj1pxn8Ag0oXI5Q==}
 
   esutils@2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
@@ -4047,8 +4050,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-yaml@1.0.3:
+  eslint-plugin-yaml@1.1.1:
     dependencies:
+      '@types/estree': 1.0.7
+      eslint-plugin-yaml: 'link:'
+      estree-util-value-to-estree: 3.3.2
       js-yaml: 4.1.0
       jshint: 2.13.6
 
@@ -4142,6 +4148,10 @@ snapshots:
   estraverse@4.3.0: {}
 
   estraverse@5.3.0: {}
+
+  estree-util-value-to-estree@3.3.2:
+    dependencies:
+      '@types/estree': 1.0.7
 
   esutils@2.0.3: {}
 

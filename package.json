@@ -22,7 +22,7 @@
     "lint": "eslint ./ --ignore dist --fix",
     "prepare": "pnpm run build",
     "prepublishOnly": "pnpm run clean && pnpm run build",
-    "test": "tsx ./spec/test.mts",
+    "test": "tsx --tsconfig ./spec/tsconfig.json ./spec/test.mts",
     "test.format": "prettier . --check",
     "test.lint": "eslint . --ignore-pattern spec/fixtures/**"
   },
@@ -45,7 +45,7 @@
     "eslint-plugin-optimize-regex": "github:aminya/eslint-plugin-optimize-regex#16f9506ed2",
     "eslint-plugin-react": "^7.37.4",
     "eslint-plugin-solid": "^0.14.5",
-    "eslint-plugin-yaml": "^1.0.3",
+    "eslint-plugin-yaml": "^1.1.1",
     "globals": "^16.0.0",
     "globify-gitignore": "^1.0.3",
     "make-synchronous": "^0.1.1",
