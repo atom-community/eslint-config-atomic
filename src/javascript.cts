@@ -32,7 +32,6 @@ export const jsConfig: Linter.Config[] = [
     plugins: {
       // node: nodePlugin,
       import: importPlugin,
-
     },
     rules: {
       ...eslintRulesExtra,

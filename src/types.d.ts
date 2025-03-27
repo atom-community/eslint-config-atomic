@@ -79,13 +79,6 @@ declare module "@babel/plugin-syntax-jsx" {
   export = plugin
 }
 
-declare module "typescript-eslint" {
-  import type { Linter } from "eslint"
-  export const configs: {
-    recommended: Linter.Config[]
-  }
-}
-
 declare module "astro-eslint-parser" {
   import type { Linter } from "eslint"
   const parser: Linter.Parser

@@ -1,13 +1,13 @@
 import js from "@eslint/js"
-import * as typeScriptPlugin from "typescript-eslint"
+import * as tsEslint from "typescript-eslint"
 import type { Linter } from "eslint"
 import * as importPlugin from "eslint-plugin-import"
-import * as nodePlugin from "eslint-plugin-node"
+// import * as nodePlugin from "eslint-plugin-node"
 import type { GlobifiedEntry } from "globify-gitignore"
 import makeSynchronous from "make-synchronous"
 import { eslintRulesExtra } from "./official-eslint-rules.cjs"
 import { pluginImportRulesExtra, pluginImportTypeScriptRulesExtra } from "./plugin-import-rules.cjs"
-import { pluginNodeRules } from "./plugin-node-rules.cjs"
+// import { pluginNodeRules } from "./plugin-node-rules.cjs"
 import { findFilesForGroups } from "./searchFs.cjs"
 import * as eslintTypeScriptParser from "@typescript-eslint/parser"
 
@@ -148,9 +148,10 @@ export const tsConfig: Linter.Config = {
   },
 }
 
-export const tsConfigs: Linter.Config[] = [
+export const tsConfigs = tsEslint.config([
   // TypeScript files
   js.configs.recommended,
-  ...typeScriptPlugin.configs.recommended,
+  tsEslint.configs.eslintRecommended,
+  ...tsEslint.configs.recommended,
   tsConfig,
-]
+])
