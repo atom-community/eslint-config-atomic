@@ -6,7 +6,7 @@ export const jsonConfig: Linter.Config = {
   // JSON files
   ...jsonPlugin.configs!.recommended,
   // ...prettierPlugin.configs!.all,
-  files: ["*.json"],
+  files: ["**/*.json"],
   plugins: {
     json: jsonPlugin,
   },

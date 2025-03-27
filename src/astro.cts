@@ -7,7 +7,7 @@ export const astroConfig: Linter.Config[] = [
   // astro files
   ...astroPlugin.configs["flat/all"],
   {
-    files: ["*.astro"],
+    files: ["**/*.astro"],
     languageOptions: {
       parser: astroParser,
       parserOptions: {

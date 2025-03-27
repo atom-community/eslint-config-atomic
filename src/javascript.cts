@@ -11,7 +11,7 @@ import js from "@eslint/js"
 export const jsConfig: Linter.Config[] = [
   {
     ...js.configs.recommended,
-    files: ["*.js", "*.mjs", "*.cjs", "*.jsx", "*.flow"],
+    files: ["**/*.js", "**/*.mjs", "**/*.cjs", "**/*.jsx", "**/*.flow"],
     languageOptions: {
       parser: eslintBabelParser,
       parserOptions: {
