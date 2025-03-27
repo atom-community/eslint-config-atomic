@@ -33,7 +33,7 @@ const config: Linter.Config[] = [
   pluginOptimizeRegex.configs.all,
   ...tsConfigs,
   jsonConfig,
-  yamlConfig,
+  // yamlConfig,
   htmlConfig,
   ...astroConfig,
   ...maybeAddCoffeeScript(),
