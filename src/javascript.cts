@@ -6,6 +6,7 @@ import * as eslintBabelParser from "@babel/eslint-parser"
 import * as nodePlugin from "eslint-plugin-node"
 import * as importPlugin from "eslint-plugin-import"
 import type { TransformOptions } from "@babel/core"
+import globals from "globals"
 
 import js from "@eslint/js"
 
@@ -29,7 +30,9 @@ export const jsConfig: Linter.Config[] = [
         sourceType: "module" as const,
       },
       globals: {
-        atom: "readonly",
+        ...globals.node,
+        ...globals.browser,
+        ...globals.atomtest,
       },
     },
     plugins: {
