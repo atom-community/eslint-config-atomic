@@ -8,9 +8,26 @@ declare module "eslint-plugin-node" {
 
 declare module "eslint-plugin-import" {
   import type { ESLint, Linter } from "eslint"
-  const plugin: ESLint.Plugin & {
+  const plugin: {
+    rules: Record<string, Linter.RuleEntry>,
     configs: {
-      recommended: Linter.Config
+      recommended: Linter.LegacyConfig,
+      errors: Linter.LegacyConfig,
+      warnings: Linter.LegacyConfig,
+      stage0: Linter.LegacyConfig,
+      react: Linter.LegacyConfig,
+      'react-native': Linter.LegacyConfig,
+      electron: Linter.LegacyConfig,
+      typescript: Linter.LegacyConfig,
+    },
+    flatConfigs: {
+      recommended: Linter.Config,
+      errors: Linter.Config,
+      warnings: Linter.Config,
+      react: Linter.Config,
+      'react-native': Linter.Config,
+      electron: Linter.Config,
+      typescript: Linter.Config,
     }
   }
   export = plugin

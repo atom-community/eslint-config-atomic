@@ -1,5 +1,5 @@
 import { pluginNodeRules } from "./plugin-node-rules.cjs"
-import { pluginImportRulesExtra } from "./plugin-import-rules.cjs"
+import { pluginImportRulesExtra, pluginImportSettings } from "./plugin-import-rules.cjs"
 import type { Linter } from "eslint"
 import * as eslintPluginCoffee from "eslint-plugin-coffee"
 import * as nodePlugin from "eslint-plugin-node"
@@ -20,5 +20,8 @@ export const coffeeConfig: Linter.Config = {
   rules: {
     ...pluginNodeRules,
     ...pluginImportRulesExtra,
+  },
+  settings: {
+    ...pluginImportSettings,
   },
 }

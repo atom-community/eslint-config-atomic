@@ -1,6 +1,6 @@
 import { eslintRulesExtra } from "./official-eslint-rules.cjs"
 import { pluginNodeRules } from "./plugin-node-rules.cjs"
-import { pluginImportRulesExtra } from "./plugin-import-rules.cjs"
+import { pluginImportRulesExtra, pluginImportSettings } from "./plugin-import-rules.cjs"
 import type { Linter } from "eslint"
 import * as eslintBabelParser from "@babel/eslint-parser"
 import * as nodePlugin from "eslint-plugin-node"
@@ -41,6 +41,9 @@ export const jsConfig: Linter.Config[] = [
       // ...pluginNodeRules,
       ...pluginImportRulesExtra,
       ...importPlugin.configs.recommended.rules,
+    },
+    settings: {
+      ...pluginImportSettings,
     },
   },
 ]

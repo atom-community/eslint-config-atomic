@@ -1,4 +1,5 @@
 import type { Linter } from "eslint"
+import * as importPlugin from 'eslint-plugin-import';
 
 export const pluginImportRulesExtra: Linter.RulesRecord = {
   "import/no-absolute-path": "error",

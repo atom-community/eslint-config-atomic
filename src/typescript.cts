@@ -6,7 +6,7 @@ import * as importPlugin from "eslint-plugin-import"
 import type { GlobifiedEntry } from "globify-gitignore"
 import makeSynchronous from "make-synchronous"
 import { eslintRulesExtra } from "./official-eslint-rules.cjs"
-import { pluginImportRulesExtra, pluginImportTypeScriptRulesExtra } from "./plugin-import-rules.cjs"
+import { pluginImportRulesExtra, pluginImportSettings, pluginImportTypeScriptRulesExtra } from "./plugin-import-rules.cjs"
 // import { pluginNodeRules } from "./plugin-node-rules.cjs"
 import { findFilesForGroups } from "./searchFs.cjs"
 import * as eslintTypeScriptParser from "@typescript-eslint/parser"
@@ -145,6 +145,9 @@ export const tsConfig: Linter.Config = {
     ...pluginImportRulesExtra,
     ...pluginImportTypeScriptRulesExtra,
     ...importPlugin.configs.recommended.rules,
+  },
+  settings: {
+    ...pluginImportSettings,
   },
 }
 
