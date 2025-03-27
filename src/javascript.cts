@@ -5,8 +5,13 @@ import type { Linter } from "eslint"
 import * as eslintBabelParser from "@babel/eslint-parser"
 import * as nodePlugin from "eslint-plugin-node"
 import * as importPlugin from "eslint-plugin-import"
+import type { TransformOptions } from "@babel/core"
 
 import js from "@eslint/js"
+
+const babelOptions: TransformOptions = {
+  plugins: ["@babel/plugin-syntax-flow", "@babel/plugin-syntax-jsx"],
+}
 
 export const jsConfig: Linter.Config[] = [
   {
@@ -19,9 +24,7 @@ export const jsConfig: Linter.Config[] = [
         ecmaFeatures: {
           jsx: true,
         },
-        babelOptions: {
-          plugins: ["@babel/plugin-syntax-flow", "@babel/plugin-syntax-jsx"],
-        },
+        babelOptions,
         ecmaVersion: "latest" as const,
         sourceType: "module" as const,
       },

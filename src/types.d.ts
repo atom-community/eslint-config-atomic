@@ -1,16 +1,5 @@
 // Eslint plugins
 
-declare module "@eslint/js" {
-  import * as all from "@types/eslint__js"
-  export = all
-}
-
-declare module "eslint-plugin-only-warn" {
-  import type { ESLint } from "eslint"
-  const plugin: ESLint.Plugin
-  export = plugin
-}
-
 declare module "eslint-plugin-node" {
   import type { ESLint } from "eslint"
   const plugin: ESLint.Plugin
@@ -52,12 +41,6 @@ declare module "eslint-plugin-json" {
 }
 
 // Eslint parsers
-
-declare module "@babel/eslint-parser" {
-  import type { Linter } from "eslint"
-  const parser: Linter.Parser
-  export = parser
-}
 
 declare module "eslint-plugin-coffee/parser" {
   import type { Linter } from "eslint"
