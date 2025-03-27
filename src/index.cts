@@ -4,7 +4,7 @@ import { jsonConfig } from "./json.cjs"
 import { yamlConfig } from "./yaml.cjs"
 import { htmlConfig } from "./html.cjs"
 // import { pluginImportSettings } from "./plugin-import-rules.cjs"
-import pluginOptimizeRegex from "eslint-plugin-optimize-regex"
+// import pluginOptimizeRegex from "eslint-plugin-optimize-regex"
 import semverMajor from "semver/functions/major"
 import { getEslintVersion } from "./eslint-version.cjs"
 import { astroConfig } from "./astro.cjs"
@@ -30,7 +30,7 @@ function maybeAddCoffeeScript() {
 
 const config: Linter.Config[] = [
   ...jsConfig,
-  pluginOptimizeRegex.configs.all,
+  // pluginOptimizeRegex.configs.all,
   ...tsConfigs,
   jsonConfig,
   // yamlConfig,
