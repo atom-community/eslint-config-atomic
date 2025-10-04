@@ -83,16 +83,6 @@ importers:
       typescript:
         specifier: ^5.4.5
         version: 5.4.5
-    optionalDependencies:
-      coffeescript:
-        specifier: ^1.12.7
-        version: 1.12.7
-      eslint-plugin-coffee:
-        specifier: ^0.1.15
-        version: 0.1.15(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-react-hooks@4.6.2(eslint@8.57.0))(eslint@8.57.0)
-      eslint-plugin-react-hooks:
-        specifier: ^4.6.2
-        version: 4.6.2(eslint@8.57.0)
     devDependencies:
       '@types/babel__core':
         specifier: ^7.20.5
@@ -142,6 +132,16 @@ importers:
       shx:
         specifier: ^0.3.4
         version: 0.3.4
+    optionalDependencies:
+      coffeescript:
+        specifier: ^1.12.7
+        version: 1.12.7
+      eslint-plugin-coffee:
+        specifier: ^0.1.15
+        version: 0.1.15(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-react-hooks@6.1.1(eslint@8.57.0))(eslint@8.57.0)
+      eslint-plugin-react-hooks:
+        specifier: ^6.0.0
+        version: 6.1.1(eslint@8.57.0)
 
 packages:
 
@@ -1297,11 +1297,11 @@ packages:
     resolution: {integrity: sha512-fUaU7Tj1G/KSTDTABJw4Wp427Rl7RPl9ViYTu1Jrv36fJw4DFhd4elPdXiuYtdPsNsvzn9GcVlKEssGIVjw0UQ==}
     engines: {node: '>=10'}
 
-  eslint-plugin-react-hooks@4.6.2:
-    resolution: {integrity: sha512-QzliNJq4GinDBcD8gPB5v0wh6g8q3SUi6EFF0x8N/BL9PoVs0atuGc47ozMRyOWAKdwaZ5OnbOEa3WR+dSGKuQ==}
-    engines: {node: '>=10'}
+  eslint-plugin-react-hooks@6.1.1:
+    resolution: {integrity: sha512-St9EKZzOAQF704nt2oJvAKZHjhrpg25ClQoaAlHmPZuajFldVLqRDW4VBNAS01NzeiQF0m0qhG1ZA807K6aVaQ==}
+    engines: {node: '>=18'}
     peerDependencies:
-      eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0
+      eslint: ^3.0.0 || ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0-0 || ^9.0.0
 
   eslint-plugin-react-native-globals@0.1.2:
     resolution: {integrity: sha512-9aEPf1JEpiTjcFAmmyw8eiIXmcNZOqaZyHO77wgm0/dWfT/oxC1SrIq8ET38pMxHYrcB6Uew+TzUVsBeczF88g==}
@@ -1367,6 +1367,7 @@ packages:
   eslint@8.57.0:
     resolution: {integrity: sha512-dZ6+mexnaTIbSBZWgou51U6OmzIhYM2VcNdtiTtI7qPNZm35Akpr0f6vtw3w1Kmn5PYo+tZVfh13WrhpS6oLqQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
+    deprecated: This version is no longer supported. Please see https://eslint.org/version-support for other options.
     hasBin: true
 
   espree@9.6.1:
@@ -3186,6 +3187,15 @@ packages:
     resolution: {integrity: sha512-rVksvsnNCdJ/ohGc6xgPwyN8eheCxsiLM8mxuE/t/mOVqJewPuO1miLpTHQiRgTKCLexL4MeAFVagts7HmNZ2Q==}
     engines: {node: '>=10'}
 
+  zod-validation-error@4.0.2:
+    resolution: {integrity: sha512-Q6/nZLe6jxuU80qb/4uJ4t5v2VEZ44lzQjPDhYJNztRQ4wyWc6VF3D3Kb/fAuPetZQnhS3hnajCf9CsWesghLQ==}
+    engines: {node: '>=18.0.0'}
+    peerDependencies:
+      zod: ^3.25.0 || ^4.0.0
+
+  zod@4.1.11:
+    resolution: {integrity: sha512-WPsqwxITS2tzx1bzhIKsEs19ABD5vmCVa4xBo2tq/SrV4RNZtfws1EnCWQXM6yh8bD08a1idvkB5MZSBiZsjwg==}
+
 snapshots:
 
   '@aminya/eslint-plugin-only-warn@1.2.2': {}
@@ -4484,14 +4494,14 @@ snapshots:
       object.entries: 1.1.8
     optional: true
 
-  eslint-config-airbnb@18.2.1(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint-plugin-jsx-a11y@6.8.0(eslint@8.57.0))(eslint-plugin-react-hooks@4.6.2(eslint@8.57.0))(eslint-plugin-react@7.23.2(eslint@8.57.0))(eslint@8.57.0):
+  eslint-config-airbnb@18.2.1(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint-plugin-jsx-a11y@6.8.0(eslint@8.57.0))(eslint-plugin-react-hooks@6.1.1(eslint@8.57.0))(eslint-plugin-react@7.23.2(eslint@8.57.0))(eslint@8.57.0):
     dependencies:
       eslint: 8.57.0
       eslint-config-airbnb-base: 14.2.1(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0)
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)
       eslint-plugin-jsx-a11y: 6.8.0(eslint@8.57.0)
       eslint-plugin-react: 7.23.2(eslint@8.57.0)
-      eslint-plugin-react-hooks: 4.6.2(eslint@8.57.0)
+      eslint-plugin-react-hooks: 6.1.1(eslint@8.57.0)
       object.assign: 4.1.5
       object.entries: 1.1.8
     optional: true
@@ -4533,7 +4543,7 @@ snapshots:
       - supports-color
       - typescript
 
-  eslint-plugin-coffee@0.1.15(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-react-hooks@4.6.2(eslint@8.57.0))(eslint@8.57.0):
+  eslint-plugin-coffee@0.1.15(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint-plugin-react-hooks@6.1.1(eslint@8.57.0))(eslint@8.57.0):
     dependencies:
       axe-core: 3.5.6
       babel-eslint: 7.2.3
@@ -4541,7 +4551,7 @@ snapshots:
       coffeescript: 2.7.0
       doctrine: 2.1.0
       eslint: 8.57.0
-      eslint-config-airbnb: 18.2.1(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint-plugin-jsx-a11y@6.8.0(eslint@8.57.0))(eslint-plugin-react-hooks@4.6.2(eslint@8.57.0))(eslint-plugin-react@7.23.2(eslint@8.57.0))(eslint@8.57.0)
+      eslint-config-airbnb: 18.2.1(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint-plugin-jsx-a11y@6.8.0(eslint@8.57.0))(eslint-plugin-react-hooks@6.1.1(eslint@8.57.0))(eslint-plugin-react@7.23.2(eslint@8.57.0))(eslint@8.57.0)
       eslint-config-airbnb-base: 14.2.1(eslint-plugin-import@2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0))(eslint@8.57.0)
       eslint-plugin-import: 2.29.1(@typescript-eslint/parser@7.13.0(eslint@8.57.0)(typescript@5.4.5))(eslint@8.57.0)
       eslint-plugin-jsx-a11y: 6.8.0(eslint@8.57.0)
@@ -4637,9 +4647,15 @@ snapshots:
     dependencies:
       regexp-tree: 0.1.27
 
-  eslint-plugin-react-hooks@4.6.2(eslint@8.57.0):
+  eslint-plugin-react-hooks@6.1.1(eslint@8.57.0):
     dependencies:
+      '@babel/core': 7.24.7
+      '@babel/parser': 7.24.7
       eslint: 8.57.0
+      zod: 4.1.11
+      zod-validation-error: 4.0.2(zod@4.1.11)
+    transitivePeerDependencies:
+      - supports-color
     optional: true
 
   eslint-plugin-react-native-globals@0.1.2:
@@ -6875,3 +6891,11 @@ snapshots:
   yallist@4.0.0: {}
 
   yocto-queue@0.1.0: {}
+
+  zod-validation-error@4.0.2(zod@4.1.11):
+    dependencies:
+      zod: 4.1.11
+    optional: true
+
+  zod@4.1.11:
+    optional: true
