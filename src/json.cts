@@ -4,5 +4,5 @@ import * as jsonPlugin from "eslint-plugin-json"
 
 export const jsonConfig: Linter.Config = {
   // JSON files
-  ...jsonPlugin.configs['recommended-with-comments'],
+  ...jsonPlugin.configs["recommended-with-comments"],
 }

@@ -57,9 +57,9 @@ declare module "eslint-plugin-json" {
     rules: Record<string, Linter.RuleEntry>
     configs: {
       recommended: Linter.Config
-      'recommended-with-comments': Linter.Config,
-      'recommended-legacy': Linter.LegacyConfig,
-      'recommended-with-comments-legacy': Linter.LegacyConfig,
+      "recommended-with-comments": Linter.Config
+      "recommended-legacy": Linter.LegacyConfig
+      "recommended-with-comments-legacy": Linter.LegacyConfig
     }
   }
   export = plugin
