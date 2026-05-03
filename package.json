@@ -58,6 +58,7 @@
     "typescript-eslint": "^8.59.1"
   },
   "devDependencies": {
+    "@eslint/core": "^1.2.1",
     "@types/babel__core": "^7.20.5",
     "@types/coffeescript": "^2.5.7",
     "@types/eslint": "^9.6.1",

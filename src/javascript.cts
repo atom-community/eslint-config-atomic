@@ -38,13 +38,13 @@ export const jsConfig: Linter.Config[] = [
     },
     plugins: {
       // node: nodePlugin,
-      import: importPlugin,
+      ...importPlugin.flatConfigs.recommended.plugins,
     },
     rules: {
       ...eslintRulesExtra,
       // ...pluginNodeRules,
+      ...importPlugin.flatConfigs.recommended.rules,
       ...pluginImportRulesExtra,
-      ...importPlugin.configs.recommended.rules,
     },
     settings: {
       ...pluginImportSettings,

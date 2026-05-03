@@ -139,14 +139,14 @@ export const tsConfig: Linter.Config = {
   },
   plugins: {
     // node: nodePlugin,
-    import: importPlugin,
+    ...importPlugin.flatConfigs.recommended.plugins,
   },
   rules: {
     ...javaScriptRules(),
     ...pluginTypeScriptRulesExtra,
     ...pluginTypeScriptProjectRules,
     // ...pluginNodeRules,
-    ...importPlugin.configs.recommended.rules,
+    ...importPlugin.flatConfigs.recommended.rules,
     ...pluginImportRulesExtra,
     ...pluginImportTypeScriptRulesExtra,
   },

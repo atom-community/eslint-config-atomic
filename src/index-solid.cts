@@ -5,13 +5,13 @@ import solid from "eslint-plugin-solid"
 
 const solidTypeScript: Linter.Config = {
   ...tsConfig,
-  ...solid.configs["flat/typescript"],
+  ...(solid.configs["flat/typescript"] as unknown as Linter.Config),
 }
 
 const nonStrictConfig: Linter.Config[] = [
   ...base,
   // JavaScript:
-  solid.configs["flat/recommended"],
+  solid.configs["flat/recommended"] as unknown as Linter.Config,
   // TypeScript:
   solidTypeScript,
 ]
