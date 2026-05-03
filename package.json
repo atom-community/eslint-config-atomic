@@ -28,6 +28,7 @@
   },
   "prettier": "prettier-config-atomic",
   "dependencies": {
+    "@eslint/js": "^9.0.0",
     "@babel/core": "^7.26.10",
     "@babel/eslint-parser": "^7.27.0",
     "@babel/plugin-syntax-flow": "^7.26.0",
@@ -37,10 +38,10 @@
     "eslint": "^9.23.0",
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-astro": "^1.3.1",
-    "eslint-plugin-html": "^8.1.2",
+    "eslint-plugin-html": "^8.1.4",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-json": "^4.0.1",
-    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-n": "^17.24.0",
     "eslint-plugin-only-warn": "npm:@aminya/eslint-plugin-only-warn@^1.2.2",
     "eslint-plugin-optimize-regex": "github:aminya/eslint-plugin-optimize-regex#16f9506ed2",
     "eslint-plugin-react": "^7.37.4",
@@ -79,7 +80,7 @@
     "tsx": "^4.19.3"
   },
   "peerDependencies": {
-    "eslint": "^8 || ^7 || ^6"
+    "eslint": "^9 || ^8 || ^7 || ^6"
   },
   "optionalDependencies": {
     "coffeescript": "^1.12.7",

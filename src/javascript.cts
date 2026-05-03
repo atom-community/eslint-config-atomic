@@ -1,9 +1,10 @@
 import { eslintRulesExtra } from "./official-eslint-rules.cjs"
-import { pluginNodeRules } from "./plugin-node-rules.cjs"
+// eslint-plugin-node replaced with eslint-plugin-n (ESLint 9 compatible fork).
+// Uncomment to enable node rules using eslint-plugin-n with n/ prefix.
+// import { pluginNodeRules } from "./plugin-node-rules.cjs"
 import { pluginImportRulesExtra, pluginImportSettings } from "./plugin-import-rules.cjs"
 import type { Linter } from "eslint"
 import * as eslintBabelParser from "@babel/eslint-parser"
-import * as nodePlugin from "eslint-plugin-node"
 import * as importPlugin from "eslint-plugin-import"
 import type { TransformOptions } from "@babel/core"
 import globals from "globals"

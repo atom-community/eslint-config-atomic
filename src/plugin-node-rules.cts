@@ -1,10 +1,10 @@
 import type { Linter } from "eslint"
 
 export const pluginNodeRules: Linter.RulesRecord = {
-  "node/no-exports-assign": "error",
-  "node/process-exit-as-throw": "error",
-  "node/shebang": "error",
-  "node/no-deprecated-api": "error",
-  "node/prefer-promises/dns": "error",
-  "node/prefer-promises/fs": "error",
+  "n/no-exports-assign": "error",
+  "n/process-exit-as-throw": "error",
+  "n/shebang": "error",
+  "n/no-deprecated-api": "error",
+  "n/prefer-promises/dns": "error",
+  "n/prefer-promises/fs": "error",
 }

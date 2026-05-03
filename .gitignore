@@ -19,3 +19,8 @@ spec/fixtures/steelbrain
 
 *.tar.gz
 *.tgz
+
+.claude/
+.code-review-graph/
+CLAUDE.md
+.mcp.json

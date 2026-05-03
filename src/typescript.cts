@@ -17,11 +17,11 @@ const tsConfigFiles = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
 async function globifyGitIgnoreFileWithDeps(cwd: string, include: boolean) {
   try {
     // import in the function to allow makeSynchronous to work
-    /* eslint-disable @typescript-eslint/no-var-requires */
+    /* eslint-disable @typescript-eslint/no-require-imports */
     const { globifyGitIgnoreFile } = require("globify-gitignore") as typeof import("globify-gitignore") // prettier-ignore
     const { existsSync } = require("fs") as typeof import("fs")
     const { join } = require("path") as typeof import("path")
-    /* eslint-enable @typescript-eslint/no-var-requires */
+    /* eslint-enable @typescript-eslint/no-require-imports */
 
     if (!existsSync(join(cwd, ".gitignore"))) {
       return []
@@ -91,7 +91,7 @@ const pluginTypeScriptRulesExtra: Linter.RulesRecord = {
   ],
   "@typescript-eslint/explicit-function-return-type": "off",
   "@typescript-eslint/explicit-module-boundary-types": "off",
-  "@typescript-eslint/camelcase": "off",
+  // "@typescript-eslint/camelcase" was removed in typescript-eslint v6; use naming-convention instead
   "@typescript-eslint/no-use-before-define": "off",
   "@typescript-eslint/member-delimiter-style": "off",
   "@typescript-eslint/no-inferrable-types": "off",
@@ -142,9 +142,9 @@ export const tsConfig: Linter.Config = {
     ...pluginTypeScriptRulesExtra,
     ...pluginTypeScriptProjectRules,
     // ...pluginNodeRules,
+    ...importPlugin.configs.recommended.rules,
     ...pluginImportRulesExtra,
     ...pluginImportTypeScriptRulesExtra,
-    ...importPlugin.configs.recommended.rules,
   },
   settings: {
     ...pluginImportSettings,
