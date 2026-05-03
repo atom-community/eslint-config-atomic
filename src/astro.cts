@@ -1,6 +1,6 @@
 import type { Linter } from "eslint"
 import { pluginImportAstroRulesExtra } from "./plugin-import-rules.cjs"
-import astroPlugin from "eslint-plugin-astro"
+import * as astroPlugin from "eslint-plugin-astro"
 import astroParser from "astro-eslint-parser"
 
 export const astroConfig: Linter.Config[] = [

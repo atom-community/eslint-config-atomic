@@ -1,7 +1,6 @@
 import { command } from "execa"
 import { resolve, dirname, join } from "path"
 import packageJson from "../package.json" with { type: "json" }
-// @ts-ignore
 import gitly from "./gitly.js"
 const { download, extract } = gitly as typeof import("./gitly.js")
 import fs from "fs-extra"
