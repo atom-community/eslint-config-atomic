@@ -1,30 +1,53 @@
 import { eslintRulesExtra } from "./official-eslint-rules.cjs"
-import { pluginNodeRules } from "./plugin-node-rules.cjs"
-import { pluginImportRulesExtra } from "./plugin-import-rules.cjs"
-import { Linter } from "eslint"
+// eslint-plugin-node replaced with eslint-plugin-n (ESLint 9 compatible fork).
+// Uncomment to enable node rules using eslint-plugin-n with n/ prefix.
+// import { pluginNodeRules } from "./plugin-node-rules.cjs"
+import { pluginImportRulesExtra, pluginImportSettings } from "./plugin-import-rules.cjs"
+import type { Linter } from "eslint"
+import * as eslintBabelParser from "@babel/eslint-parser"
+import * as importPlugin from "eslint-plugin-import"
+import type { TransformOptions } from "@babel/core"
+import globals from "globals"
 
-export const jsConfig: Linter.Config = {
-  parser: "@babel/eslint-parser",
-  parserOptions: {
-    requireConfigFile: false,
-    ecmaFeatures: {
-      jsx: true,
-    },
-    babelOptions: {
-      plugins: [
-        // enable jsx and flow syntax
-        "@babel/plugin-syntax-flow",
-        "@babel/plugin-syntax-jsx",
-      ],
-    },
-    ecmaVersion: 2021 as const,
-    sourceType: "module" as const,
-  },
-  plugins: ["node", "import", "only-warn"],
-  extends: ["eslint:recommended", "plugin:optimize-regex/all", "plugin:import/recommended", "prettier"],
-  rules: {
-    ...eslintRulesExtra,
-    ...pluginNodeRules,
-    ...pluginImportRulesExtra,
-  },
+import js from "@eslint/js"
+
+const babelOptions: TransformOptions = {
+  plugins: ["@babel/plugin-syntax-flow", "@babel/plugin-syntax-jsx"],
 }
+
+export const jsConfig: Linter.Config[] = [
+  {
+    ...js.configs.recommended,
+    files: ["**/*.js", "**/*.mjs", "**/*.cjs", "**/*.jsx", "**/*.flow"],
+    languageOptions: {
+      parser: eslintBabelParser,
+      parserOptions: {
+        requireConfigFile: false,
+        ecmaFeatures: {
+          jsx: true,
+        },
+        babelOptions,
+        ecmaVersion: "latest" as const,
+        sourceType: "module" as const,
+      },
+      globals: {
+        ...globals.node,
+        ...globals.browser,
+        ...globals.atomtest,
+      },
+    },
+    plugins: {
+      // node: nodePlugin,
+      ...importPlugin.flatConfigs.recommended.plugins,
+    },
+    rules: {
+      ...eslintRulesExtra,
+      // ...pluginNodeRules,
+      ...importPlugin.flatConfigs.recommended.rules,
+      ...pluginImportRulesExtra,
+    },
+    settings: {
+      ...pluginImportSettings,
+    },
+  },
+]

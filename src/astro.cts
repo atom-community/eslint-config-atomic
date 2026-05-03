@@ -1,20 +1,19 @@
-import { Linter } from "eslint"
+import type { Linter } from "eslint"
 import { pluginImportAstroRulesExtra } from "./plugin-import-rules.cjs"
+import * as astroPlugin from "eslint-plugin-astro"
 
-export const astroConfig: Linter.ConfigOverride<Linter.RulesRecord> = {
-  // astro files
-  files: ["*.astro"],
-  parser: "astro-eslint-parser",
-  parserOptions: {
-    parser: "@typescript-eslint/parser",
-    extraFileExtensions: [".astro"],
+export const astroConfig: Linter.Config[] = [
+  // astro files — flat/all already registers the plugin, parser, parserOptions, and globals
+  ...astroPlugin.configs["flat/all"],
+  {
+    files: ["**/*.astro"],
+    languageOptions: {
+      globals: {
+        astroHTML: "readonly",
+      },
+    },
+    rules: {
+      ...pluginImportAstroRulesExtra,
+    },
   },
-  plugins: ["astro", "only-warn"],
-  extends: ["plugin:astro/recommended"],
-  rules: {
-    ...pluginImportAstroRulesExtra,
-  },
-  globals: {
-    astroHTML: "readonly",
-  },
-}
+]

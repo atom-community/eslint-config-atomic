@@ -1,22 +1,31 @@
-import { eslintRulesExtra } from "./official-eslint-rules.cjs"
-import { pluginImportRulesExtra, pluginImportTypeScriptRulesExtra } from "./plugin-import-rules.cjs"
-import { pluginNodeRules } from "./plugin-node-rules.cjs"
-import makeSynchronous from "make-synchronous"
-import { findFilesForGroups } from "./utils.cjs"
+import js from "@eslint/js"
+import * as tsEslint from "typescript-eslint"
+import type { Linter } from "eslint"
+import * as importPlugin from "eslint-plugin-import"
+// import * as nodePlugin from "eslint-plugin-node"
 import type { GlobifiedEntry } from "globify-gitignore"
-import { Linter } from "eslint"
+import makeSynchronous from "make-synchronous"
+import { eslintRulesExtra } from "./official-eslint-rules.cjs"
+import {
+  pluginImportRulesExtra,
+  pluginImportSettings,
+  pluginImportTypeScriptRulesExtra,
+} from "./plugin-import-rules.cjs"
+// import { pluginNodeRules } from "./plugin-node-rules.cjs"
+import { findFilesForGroups } from "./searchFs.cjs"
+import * as eslintTypeScriptParser from "@typescript-eslint/parser"
 
 const tsFiles = ["**/*.tsx", "**/*.ts", "**/*.mts", "**/*.cts"]
-const tscConfigFiles = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
+const tsConfigFiles = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
 
 async function globifyGitIgnoreFileWithDeps(cwd: string, include: boolean) {
   try {
     // import in the function to allow makeSynchronous to work
-    /* eslint-disable @typescript-eslint/no-var-requires */
+    /* eslint-disable @typescript-eslint/no-require-imports */
     const { globifyGitIgnoreFile } = require("globify-gitignore") as typeof import("globify-gitignore") // prettier-ignore
     const { existsSync } = require("fs") as typeof import("fs")
     const { join } = require("path") as typeof import("path")
-    /* eslint-enable @typescript-eslint/no-var-requires */
+    /* eslint-enable @typescript-eslint/no-require-imports */
 
     if (!existsSync(join(cwd, ".gitignore"))) {
       return []
@@ -54,7 +63,7 @@ function disableProjectBasedRules() {
   )
 
   // check if there are any ts files
-  const [hasTscConfig, hasTsFile] = findFilesForGroups(cwd, tscConfigFiles, tsFiles, ignore)
+  const [hasTscConfig, hasTsFile] = findFilesForGroups(cwd, tsConfigFiles, tsFiles, ignore)
 
   // if there is no tsconfig.json file, but there are ts files, disable the project-based rules
   const disable = !hasTscConfig && hasTsFile
@@ -86,7 +95,7 @@ const pluginTypeScriptRulesExtra: Linter.RulesRecord = {
   ],
   "@typescript-eslint/explicit-function-return-type": "off",
   "@typescript-eslint/explicit-module-boundary-types": "off",
-  "@typescript-eslint/camelcase": "off",
+  // "@typescript-eslint/camelcase" was removed in typescript-eslint v6; use naming-convention instead
   "@typescript-eslint/no-use-before-define": "off",
   "@typescript-eslint/member-delimiter-style": "off",
   "@typescript-eslint/no-inferrable-types": "off",
@@ -119,29 +128,37 @@ const pluginTypeScriptProjectRules: Linter.RulesRecord = disableProjectBasedRule
       "@typescript-eslint/switch-exhaustiveness-check": "warn",
     }
 
-export const tsConfig: Linter.ConfigOverride<Linter.RulesRecord> = {
-  // TypeScript files
+export const tsConfig: Linter.Config = {
   files: tsFiles,
-  parser: "@typescript-eslint/parser",
-  parserOptions: {
-    project: tscConfigFiles,
-    createDefaultProgram: true, // otherwise Eslint will error if a ts file is not covered by one of the tsconfig.json files
+  languageOptions: {
+    parser: eslintTypeScriptParser,
+    parserOptions: {
+      project: tsConfigFiles,
+      createDefaultProgram: true, // otherwise Eslint will error if a ts file is not covered by one of the tsconfig.json files
+    },
   },
-  plugins: ["@typescript-eslint", "node", "import", "only-warn"],
-  extends: [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:optimize-regex/all",
-    "plugin:import/recommended",
-    "prettier",
-  ],
+  plugins: {
+    // node: nodePlugin,
+    ...importPlugin.flatConfigs.recommended.plugins,
+  },
   rules: {
     ...javaScriptRules(),
     ...pluginTypeScriptRulesExtra,
     ...pluginTypeScriptProjectRules,
-    ...pluginNodeRules,
+    // ...pluginNodeRules,
+    ...importPlugin.flatConfigs.recommended.rules,
     ...pluginImportRulesExtra,
     ...pluginImportTypeScriptRulesExtra,
   },
+  settings: {
+    ...pluginImportSettings,
+  },
 }
+
+export const tsConfigs = tsEslint.config([
+  // TypeScript files
+  js.configs.recommended,
+  tsEslint.configs.eslintRecommended,
+  ...tsEslint.configs.recommended,
+  tsConfig,
+])

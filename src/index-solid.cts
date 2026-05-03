@@ -1,26 +1,19 @@
-import { Linter } from "eslint"
+import type { Linter } from "eslint"
 import base from "./index.cjs"
 import { tsConfig } from "./typescript.cjs"
+import solid from "eslint-plugin-solid"
 
-const nonStrictConfig: Linter.Config = {
-  ...base,
-  overrides: [
-    // JavaScript:
-    {
-      files: ["*.js", "*.jsx", "*.mjs", "*.cjs"],
-      plugins: ["solid", ...(base.plugins ?? [])],
-      extends: ["plugin:solid/recommended", ...(base.extends ?? [])],
-    },
-    // TypeScript:
-    {
-      ...tsConfig,
-      plugins: ["solid", ...(tsConfig.plugins ?? [])],
-      extends: ["plugin:solid/typescript", ...(tsConfig.extends ?? [])],
-      rules: tsConfig.rules,
-    },
-    // The rest is the same
-    ...(base.overrides?.slice(1) ?? []),
-  ],
+const solidTypeScript: Linter.Config = {
+  ...tsConfig,
+  ...(solid.configs["flat/typescript"] as unknown as Linter.Config),
 }
+
+const nonStrictConfig: Linter.Config[] = [
+  ...base,
+  // JavaScript:
+  solid.configs["flat/recommended"] as unknown as Linter.Config,
+  // TypeScript:
+  solidTypeScript,
+]
 
 export default nonStrictConfig

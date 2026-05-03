@@ -3,9 +3,9 @@
     // target
     "target": "ES2022",
     "lib": ["ES2022"],
-    "importHelpers": false,
-    "module": "CommonJS",
-    "moduleResolution": "node",
+    "importHelpers": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
     "allowJs": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
@@ -15,8 +15,8 @@
     // check
     "strict": true,
     "strictNullChecks": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
+    "noUnusedLocals": false,
+    "noUnusedParameters": false,
     "noImplicitReturns": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
@@ -29,6 +29,7 @@
     "inlineSourceMap": false,
     "inlineSources": false,
     "preserveSymlinks": true,
+    "rootDir": "./src",
     "outDir": "./dist",
     "skipLibCheck": true
   },

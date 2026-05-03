@@ -1,4 +1,4 @@
-import { Linter } from "eslint"
+import type { Linter } from "eslint"
 
 /**
  * The official Eslint rules that are constructive and not included in recommended. The formatting/stylistic rules are

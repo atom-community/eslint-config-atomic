@@ -16,3 +16,11 @@ spec/fixtures/atom-community
 spec/fixtures/atom-minimap
 spec/fixtures/aminya
 spec/fixtures/steelbrain
+
+*.tar.gz
+*.tgz
+
+.claude/
+.code-review-graph/
+CLAUDE.md
+.mcp.json
