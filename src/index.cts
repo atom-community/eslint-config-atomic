@@ -8,6 +8,7 @@ import semverMajor from "semver/functions/major"
 import { getEslintVersion } from "./eslint-version.cjs"
 import { astroConfig } from "./astro.cjs"
 import type { Linter } from "eslint"
+import onlyWarnPlugin from "eslint-plugin-only-warn"
 
 function maybeAddCoffeeScript() {
   try {
@@ -30,6 +31,7 @@ function maybeAddCoffeeScript() {
 }
 
 const config: Linter.Config[] = [
+  { plugins: { "only-warn": onlyWarnPlugin } },
   ...jsConfig,
   // pluginOptimizeRegex.configs.all,
   ...tsConfigs,

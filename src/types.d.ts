@@ -9,25 +9,25 @@ declare module "eslint-plugin-n" {
 declare module "eslint-plugin-import" {
   import type { Linter } from "eslint"
   const plugin: {
-    rules: Record<string, Linter.RuleEntry>,
+    rules: Record<string, Linter.RuleEntry>
     configs: {
-      recommended: Linter.LegacyConfig,
-      errors: Linter.LegacyConfig,
-      warnings: Linter.LegacyConfig,
-      stage0: Linter.LegacyConfig,
-      react: Linter.LegacyConfig,
-      'react-native': Linter.LegacyConfig,
-      electron: Linter.LegacyConfig,
-      typescript: Linter.LegacyConfig,
-    },
+      recommended: Linter.LegacyConfig
+      errors: Linter.LegacyConfig
+      warnings: Linter.LegacyConfig
+      stage0: Linter.LegacyConfig
+      react: Linter.LegacyConfig
+      "react-native": Linter.LegacyConfig
+      electron: Linter.LegacyConfig
+      typescript: Linter.LegacyConfig
+    }
     flatConfigs: {
-      recommended: Linter.Config,
-      errors: Linter.Config,
-      warnings: Linter.Config,
-      react: Linter.Config,
-      'react-native': Linter.Config,
-      electron: Linter.Config,
-      typescript: Linter.Config,
+      recommended: Linter.Config
+      errors: Linter.Config
+      warnings: Linter.Config
+      react: Linter.Config
+      "react-native": Linter.Config
+      electron: Linter.Config
+      typescript: Linter.Config
     }
   }
   export = plugin
@@ -52,6 +52,12 @@ declare module "eslint-plugin-html" {
 // }
 
 declare module "eslint-plugin-json" {
+  import type { ESLint } from "eslint"
+  const plugin: ESLint.Plugin
+  export = plugin
+}
+
+declare module "eslint-plugin-only-warn" {
   import type { ESLint } from "eslint"
   const plugin: ESLint.Plugin
   export = plugin

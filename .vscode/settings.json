@@ -2,5 +2,6 @@
   "cSpell.words": ["astrojs", "Globified", "globify"],
   "explorer.fileNesting.patterns": {
     "index.js": "*.js"
-  }
+  },
+  "js/ts.tsdk.path": "node_modules/typescript/lib"
 }
