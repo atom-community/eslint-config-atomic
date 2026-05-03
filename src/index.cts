@@ -2,7 +2,7 @@ import { jsConfig } from "./javascript.cjs"
 import { tsConfigs } from "./typescript.cjs"
 import { jsonConfig } from "./json.cjs"
 // import { yamlConfig } from "./yaml.cjs"
-// import { htmlConfig } from "./html.cjs"  // TODO: disabled — see html.cts
+import { htmlConfig } from "./html.cjs"
 // import pluginOptimizeRegex from "eslint-plugin-optimize-regex"
 import semverMajor from "semver/functions/major"
 import { getEslintVersion } from "./eslint-version.cjs"
@@ -35,7 +35,7 @@ const config: Linter.Config[] = [
   ...tsConfigs,
   jsonConfig,
   // yamlConfig,
-  // htmlConfig,  // TODO: disabled — see html.cts
+  htmlConfig,
   ...astroConfig,
   ...maybeAddCoffeeScript(),
 ]
