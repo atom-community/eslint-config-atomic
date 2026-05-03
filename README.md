@@ -1,6 +1,8 @@
 # eslint-config-atomic
 
-This includes the Eslint configuration used in atom-ide-community.
+ESLint configuration used in atom-ide-community. Supports ESLint 9 flat config.
+
+Lints JavaScript, TypeScript, JSON, HTML, YAML, and Astro files out of the box.
 
 [![CI](https://github.com/atom-community/eslint-config-atomic/actions/workflows/CI.yml/badge.svg)](https://github.com/atom-community/eslint-config-atomic/actions/workflows/CI.yml)
 
@@ -11,116 +13,76 @@ npm install --save-dev eslint-config-atomic
 ```
 
 <details>
-<summary> You should have the peer dependencies. </summary>
+<summary>Peer dependencies (pnpm users)</summary>
 
-If using `npm`, the bundled Eslint, TypeScript, Babel, etc is hoisted automatically.
-
-If using `pnpm`, either add the following to your `.npmrc` to hoist the prettier bundled with the config
+If using `pnpm`, either add the following to your `.npmrc` to hoist bundled dependencies automatically:
 
 ```
 public-hoist-pattern[]=*
 ```
 
-Or install these yourself in your `devDependencies`.
+Or install them explicitly:
 
 ```
-pnpm install -save-dev eslint typescript @babel/core
+pnpm install --save-dev eslint typescript @babel/core
 ```
 
 </details>
 
 ## Usage
 
-Create a `.eslintrc.json` file at the root of the project with the following content:
+Create an `eslint.config.cjs` at the root of your project:
 
-```json
-{
-  "extends": "eslint-config-atomic",
-  "ignorePatterns": ["dist/", "node_modules/"]
-}
+```js
+const config = require("eslint-config-atomic")
+
+module.exports = [{ ignores: ["dist/**", "node_modules/**"] }, ...config]
 ```
-
-`ignorePatterns` is the Eslint ignore paths.
 
 Add a lint script to your `package.json`:
 
 ```json
-"lint": "eslint . --fix"
+"lint": "eslint --fix --cache .",
+"test.lint": "eslint --cache ."
 ```
 
-### Options
+### Variants
 
-- **strict**:
-  You can instead use the `strict` version which throws errors instead of warning:
+All variants are non-strict by default — lint violations are reported as **warnings** (via `eslint-plugin-only-warn`). Use the `strict-*` variants to report them as **errors**.
 
-```json
-{
-  "extends": "eslint-config-atomic/strict",
-  "ignorePatterns": ["dist/", "node_modules/"]
-}
-```
+| Entry point                         | Description                                        |
+| ----------------------------------- | -------------------------------------------------- |
+| `eslint-config-atomic`              | Base config (JS + TS + JSON + HTML + YAML + Astro) |
+| `eslint-config-atomic/strict`       | Same as base, but errors instead of warnings       |
+| `eslint-config-atomic/react`        | Base + React (`eslint-plugin-react`)               |
+| `eslint-config-atomic/strict-react` | React, strict                                      |
+| `eslint-config-atomic/solid`        | Base + SolidJS (`eslint-plugin-solid`)             |
+| `eslint-config-atomic/strict-solid` | SolidJS, strict                                    |
 
-- **solid**:
-  You can instead use the `solid` version which throws errors instead of warning:
+Example using the React variant:
 
-```json
-{
-  "extends": "eslint-config-atomic/solid",
-  "ignorePatterns": ["dist/", "node_modules/"]
-}
-```
+```js
+const config = require("eslint-config-atomic/react")
 
-- **strict-solid**:
-  Same as the solid version but it is strict:
-
-```json
-{
-  "extends": "eslint-config-atomic/strict-solid",
-  "ignorePatterns": ["dist/", "node_modules/"]
-}
-```
-
-- **react**:
-  It supports react using `eslint-plugin-react`.
-
-```json
-{
-  "extends": "eslint-config-atomic/react",
-  "ignorePatterns": ["dist/", "node_modules/"]
-}
-```
-
-- **strict-react**:
-  Same as the react version but it is strict:
-
-```json
-{
-  "extends": "eslint-config-atomic/strict-react",
-  "ignorePatterns": ["dist/", "node_modules/"]
-}
+module.exports = [{ ignores: ["dist/**", "node_modules/**"] }, ...config]
 ```
 
 ## Behind the scenes
 
-This configuration lints JavaScript, TypeScript, CoffeeScript, JSON, and YAML.
+Plugins and parsers bundled with this config:
 
-The list of used plugins and dependencies:
-
-```
-  "@typescript-eslint/eslint-plugin": "^4.14.2",
-  "@typescript-eslint/parser": "^4.14.2",
-  "eslint-plugin-coffee": "^0.1.13",
-  "eslint-plugin-import": "^2.22.1",
-  "eslint-plugin-json": "^2.1.2",
-  "eslint-plugin-node": "^11.1.0",
-  "eslint-plugin-only-warn": "^1.0.2",
-  "eslint-plugin-optimize-regex": "^1.2.0",
-  "eslint-config-prettier": "^7.2.0",
-  "eslint-plugin-react": "^7.22.0",
-  "eslint-plugin-yaml": "^0.3.0",
-  "prettier": "^2",
-  "typescript": "^4",
-  "coffeescript": "^1",
-  "@babel/core": "^7",
-  "@babel/eslint-parser": "^7.13.14",
-```
+| Plugin / Parser             | Purpose                                               |
+| --------------------------- | ----------------------------------------------------- |
+| `typescript-eslint`         | TypeScript linting                                    |
+| `@typescript-eslint/parser` | TypeScript parser                                     |
+| `@babel/eslint-parser`      | JavaScript (Flow, JSX) parser                         |
+| `eslint-plugin-import`      | Import/export linting                                 |
+| `eslint-plugin-n`           | Node.js rules                                         |
+| `eslint-plugin-only-warn`   | Downgrades errors to warnings (non-strict configs)    |
+| `eslint-plugin-react`       | React rules (react/strict-react variants)             |
+| `eslint-plugin-solid`       | SolidJS rules (solid/strict-solid variants)           |
+| `eslint-plugin-json`        | JSON linting                                          |
+| `eslint-plugin-html`        | HTML linting                                          |
+| `eslint-plugin-yaml`        | YAML linting                                          |
+| `eslint-plugin-astro`       | Astro file linting                                    |
+| `eslint-config-prettier`    | Disables formatting rules that conflict with Prettier |
