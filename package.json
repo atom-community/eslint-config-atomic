@@ -24,7 +24,7 @@
     "prepublishOnly": "pnpm run clean && pnpm run build",
     "test": "tsx --tsconfig ./spec/tsconfig.json ./spec/test.mts",
     "test.format": "prettier --cache . --check",
-    "test.lint": "cross-env NODE_OPTIONS=--enable-source-maps eslint . --ignore-pattern spec/fixtures/**"
+    "test.lint": "cross-env NODE_OPTIONS=--enable-source-maps eslint ."
   },
   "prettier": "prettier-config-atomic",
   "dependencies": {
