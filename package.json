@@ -84,7 +84,7 @@
     "tsx": "^4.21.0"
   },
   "peerDependencies": {
-    "eslint": "^9"
+    "eslint": "^9 || ^10.0.0"
   },
   "optionalDependencies": {
     "coffeescript": "^1.12.7",

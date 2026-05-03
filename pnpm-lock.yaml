@@ -95,16 +95,6 @@ importers:
       typescript-eslint:
         specifier: ^8.59.1
         version: 8.59.1(eslint@9.39.4)(typescript@5.9.3)
-    optionalDependencies:
-      coffeescript:
-        specifier: ^1.12.7
-        version: 1.12.7
-      eslint-plugin-coffee:
-        specifier: ^0.1.15
-        version: 0.1.15(@typescript-eslint/parser@8.59.1(eslint@9.39.4)(typescript@5.9.3))(eslint-plugin-react-hooks@5.2.0(eslint@9.39.4))(eslint@9.39.4)
-      eslint-plugin-react-hooks:
-        specifier: ^5.2.0
-        version: 5.2.0(eslint@9.39.4)
     devDependencies:
       '@eslint/core':
         specifier: ^1.2.1
@@ -175,6 +165,16 @@ importers:
       tsx:
         specifier: ^4.21.0
         version: 4.21.0
+    optionalDependencies:
+      coffeescript:
+        specifier: ^1.12.7
+        version: 1.12.7
+      eslint-plugin-coffee:
+        specifier: ^0.1.15
+        version: 0.1.15(@typescript-eslint/parser@8.59.1(eslint@9.39.4)(typescript@5.9.3))(eslint-plugin-react-hooks@5.2.0(eslint@9.39.4))(eslint@9.39.4)
+      eslint-plugin-react-hooks:
+        specifier: ^5.2.0
+        version: 5.2.0(eslint@9.39.4)
 
 packages:
 
