@@ -1,6 +1,5 @@
 import type { Linter } from "eslint"
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-import htmlPlugin = require("eslint-plugin-html")
+import * as htmlPlugin from "eslint-plugin-html"
 
 export const htmlConfig: Linter.Config = {
   files: [

@@ -52,7 +52,7 @@ declare module "eslint-plugin-html" {
 // }
 
 declare module "eslint-plugin-json" {
-  import type { ESLint, Linter } from "eslint"
+  import type { Linter } from "eslint"
   const plugin: {
     rules: Record<string, Linter.RuleEntry>
     configs: {
