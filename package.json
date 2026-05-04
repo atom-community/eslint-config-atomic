@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-atomic",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "Eslint config used in atom-ide-community",
   "repository": "https://github.com/atom-ide-community/eslint-config-atomic",
   "license": "MIT",
@@ -16,7 +16,7 @@
   "scripts": {
     "build": "tsc --pretty",
     "bump": "ncu -u -x coffeescript,execa,read-pkg-up,make-synchronous && pnpm update && pnpm dedupe",
-    "clean": "shx rm -rf ./spec/fixtures/ ./dist",
+    "clean": "shx rm -rf ./spec/fixtures/ ./dist ./*.tsbuildinfo",
     "dev": "tsc --pretty --watch",
     "format": "prettier --cache -l --write .",
     "lint": "eslint ./ --ignore dist --fix",
