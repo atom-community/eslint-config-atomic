@@ -1,7 +1,7 @@
 import js from "@eslint/js"
-import * as tsEslint from "typescript-eslint"
 import type { Linter } from "eslint"
 import * as importPlugin from "eslint-plugin-import"
+import typeScriptPlugin from "@typescript-eslint/eslint-plugin/use-at-your-own-risk/raw-plugin"
 // import * as nodePlugin from "eslint-plugin-node"
 import type { GlobifiedEntry } from "globify-gitignore"
 import makeSynchronous from "make-synchronous"
@@ -155,10 +155,10 @@ export const tsConfig: Linter.Config = {
   },
 }
 
-export const tsConfigs = tsEslint.config([
+export const tsConfigs = [
   // TypeScript files
   js.configs.recommended,
-  tsEslint.configs.eslintRecommended,
-  ...tsEslint.configs.recommended,
+  typeScriptPlugin.flatConfigs["flat/eslint-recommended"],
+  ...typeScriptPlugin.flatConfigs["flat/recommended"],
   tsConfig,
-])
+]
