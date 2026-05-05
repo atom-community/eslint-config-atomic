@@ -15,6 +15,7 @@ import { findFilesForGroups } from "./searchFs.cjs"
 import * as eslintTypeScriptParser from "@typescript-eslint/parser"
 import { makeArray } from "./utils.cjs"
 // import { pluginNodeRules } from "./plugin-node-rules.cjs"
+import type { FlatConfig } from "@typescript-eslint/utils/ts-eslint"
 
 const tsFiles = ["**/*.tsx", "**/*.ts", "**/*.mts", "**/*.cts"]
 const tsConfigFiles = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
@@ -158,7 +159,17 @@ export const tsConfig: Linter.Config = {
 
 export const tsConfigs = [
   js.configs.recommended,
-  ...makeArray(typeScriptPlugin.flatConfigs["flat/eslint-recommended"]),
-  ...makeArray(typeScriptPlugin.flatConfigs["flat/recommended"]),
+  ...makeArray(typeScriptPlugin.flatConfigs["flat/eslint-recommended"]).map(
+    (c): FlatConfig.Config => ({
+      ...c,
+      files: tsFiles,
+    }),
+  ),
+  ...makeArray(typeScriptPlugin.flatConfigs["flat/recommended"]).map(
+    (c): FlatConfig.Config => ({
+      ...c,
+      files: tsFiles,
+    }),
+  ),
   tsConfig,
 ]
