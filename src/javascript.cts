@@ -3,19 +3,19 @@ import { eslintRulesExtra } from "./official-eslint-rules.cjs"
 // Uncomment to enable node rules using eslint-plugin-n with n/ prefix.
 // import { pluginNodeRules } from "./plugin-node-rules.cjs"
 import { pluginImportRulesExtra, pluginImportSettings } from "./plugin-import-rules.cjs"
-import type { Linter } from "eslint"
 import * as eslintBabelParser from "@babel/eslint-parser"
 import * as importPlugin from "eslint-plugin-import"
 import type { TransformOptions } from "@babel/core"
 import globals from "globals"
 
 import js from "@eslint/js"
+import { defineConfig } from "@eslint/config-helpers"
 
 const babelOptions: TransformOptions = {
   plugins: [require.resolve("@babel/plugin-syntax-flow"), require.resolve("@babel/plugin-syntax-jsx")],
 }
 
-export const jsConfig: Linter.Config[] = [
+export const jsConfig = defineConfig([
   {
     ...js.configs.recommended,
     files: ["**/*.js", "**/*.mjs", "**/*.cjs", "**/*.jsx", "**/*.flow"],
@@ -50,4 +50,4 @@ export const jsConfig: Linter.Config[] = [
       ...pluginImportSettings,
     },
   },
-]
+])
