@@ -163,6 +163,9 @@ importers:
       npm-check-updates:
         specifier: 17.1.16
         version: 17.1.16
+      prettier:
+        specifier: '=3.5.3'
+        version: 3.5.3
       prettier-config-atomic:
         specifier: ^4.0.0
         version: 4.0.0
@@ -2224,6 +2227,11 @@ packages:
 
   prettier@3.1.1:
     resolution: {integrity: sha512-22UbSzg8luF4UuZtzgiUOfcGM8s4tjBv6dJRT7j275NXsy2jb4aJa4NNveul5x4eqlF1wuhuR2RElK71RvmVaw==}
+    engines: {node: '>=14'}
+    hasBin: true
+
+  prettier@3.5.3:
+    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -5076,6 +5084,8 @@ snapshots:
       prettier: 3.1.1
 
   prettier@3.1.1: {}
+
+  prettier@3.5.3: {}
 
   prop-types@15.8.1:
     dependencies:
