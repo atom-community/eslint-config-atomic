@@ -9,17 +9,9 @@ import { getEslintVersion } from "./eslint-version.cjs"
 import { astroConfig } from "./astro.cjs"
 import type { Linter } from "eslint"
 import onlyWarnPlugin from "eslint-plugin-only-warn"
+import { htmlConfig } from "./html.cjs"
 
 const eslintMajor = semverMajor(getEslintVersion())
-
-function maybeAddHtml(): Linter.Config[] {
-  // eslint-plugin-html does not yet support ESLint 10+
-  if (eslintMajor >= 10) {
-    return []
-  }
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  return [require("./html.cjs").htmlConfig]
-}
 
 function maybeAddCoffeeScript(): Linter.Config[] {
   try {
@@ -44,7 +36,7 @@ const config = defineConfig([
   ...tsConfigs,
   ...jsonConfig,
   // yamlConfig,
-  ...maybeAddHtml(),
+  htmlConfig,
   ...astroConfig,
   ...maybeAddCoffeeScript(),
 ])
