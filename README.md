@@ -12,6 +12,9 @@ Lints JavaScript, TypeScript, JSON, HTML, YAML, and Astro files out of the box.
 npm install --save-dev eslint-config-atomic
 ```
 
+[eslint-config-atomic@^2](https://www.npmjs.com/package/eslint-config-atomic) -> Eslint 9 and higher
+[eslint-config-atomic@^1](https://www.npmjs.com/package/eslint-config-atomic/v/1.22.1) -> Eslint 8 and lower
+
 <details>
 <summary>Peer dependencies (pnpm users)</summary>
 
