@@ -1,8 +1,8 @@
-import type { Linter } from "eslint"
 import { pluginImportAstroRulesExtra } from "./plugin-import-rules.cjs"
 import * as astroPlugin from "eslint-plugin-astro"
+import { defineConfig } from "@eslint/config-helpers"
 
-export const astroConfig: Linter.Config[] = [
+export const astroConfig = defineConfig([
   // astro files — flat/all already registers the plugin, parser, parserOptions, and globals
   ...astroPlugin.configs["flat/all"],
   {
@@ -16,4 +16,4 @@ export const astroConfig: Linter.Config[] = [
       ...pluginImportAstroRulesExtra,
     },
   },
-]
+])
