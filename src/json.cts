@@ -8,8 +8,12 @@ export const jsonConfig = defineConfig([
     files: ["**/*.json"],
     ignores: ["**/package-lock.json"],
     plugins: { json: json as unknown as ESLint.Plugin },
-    language: "json/json",
+    language: "json/jsonc",
     extends: ["json/recommended"],
+    rules: {
+      // fails with sourceCode.getAllComments is not a function
+      "no-irregular-whitespace": "off",
+    },
   },
 
   // lint JSONC files
@@ -18,6 +22,9 @@ export const jsonConfig = defineConfig([
     plugins: { json: json as unknown as ESLint.Plugin },
     language: "json/jsonc",
     extends: ["json/recommended"],
+    rules: {
+      "no-irregular-whitespace": "off",
+    },
   },
 
   // lint JSON5 files
@@ -26,5 +33,8 @@ export const jsonConfig = defineConfig([
     plugins: { json: json as unknown as ESLint.Plugin },
     language: "json/json5",
     extends: ["json/recommended"],
+    rules: {
+      "no-irregular-whitespace": "off",
+    },
   },
 ])
