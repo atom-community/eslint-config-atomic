@@ -2,18 +2,19 @@ import js from "@eslint/js"
 import type { Linter } from "eslint"
 import * as importPlugin from "eslint-plugin-import"
 import typeScriptPlugin from "@typescript-eslint/eslint-plugin/use-at-your-own-risk/raw-plugin"
-// import * as nodePlugin from "eslint-plugin-node"
 import type { GlobifiedEntry } from "globify-gitignore"
 import makeSynchronous from "make-synchronous"
+// import * as nodePlugin from "eslint-plugin-node"
 import { eslintRulesExtra } from "./official-eslint-rules.cjs"
 import {
   pluginImportRulesExtra,
   pluginImportSettings,
   pluginImportTypeScriptRulesExtra,
 } from "./plugin-import-rules.cjs"
-// import { pluginNodeRules } from "./plugin-node-rules.cjs"
 import { findFilesForGroups } from "./searchFs.cjs"
 import * as eslintTypeScriptParser from "@typescript-eslint/parser"
+import { makeArray } from "./utils.cjs"
+// import { pluginNodeRules } from "./plugin-node-rules.cjs"
 
 const tsFiles = ["**/*.tsx", "**/*.ts", "**/*.mts", "**/*.cts"]
 const tsConfigFiles = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
@@ -156,9 +157,8 @@ export const tsConfig: Linter.Config = {
 }
 
 export const tsConfigs = [
-  // TypeScript files
   js.configs.recommended,
-  typeScriptPlugin.flatConfigs["flat/eslint-recommended"],
-  ...typeScriptPlugin.flatConfigs["flat/recommended"],
+  ...makeArray(typeScriptPlugin.flatConfigs["flat/eslint-recommended"]),
+  ...makeArray(typeScriptPlugin.flatConfigs["flat/recommended"]),
   tsConfig,
 ]

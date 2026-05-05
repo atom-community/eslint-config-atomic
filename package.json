@@ -19,7 +19,7 @@
     "clean": "shx rm -rf ./spec/fixtures/ ./dist ./*.tsbuildinfo",
     "dev": "tsc --pretty --watch",
     "format": "prettier --cache -l --write .",
-    "lint": "eslint ./ --ignore dist --fix",
+    "lint": "pnpm run build && eslint ./ --fix",
     "prepare": "pnpm run build",
     "prepublishOnly": "pnpm run clean && pnpm run build",
     "test": "tsx --tsconfig ./spec/tsconfig.json ./spec/test.mts",
