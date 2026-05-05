@@ -12,7 +12,7 @@ import globals from "globals"
 import js from "@eslint/js"
 
 const babelOptions: TransformOptions = {
-  plugins: ["@babel/plugin-syntax-flow", "@babel/plugin-syntax-jsx"],
+  plugins: [require.resolve("@babel/plugin-syntax-flow"), require.resolve("@babel/plugin-syntax-jsx")],
 }
 
 export const jsConfig: Linter.Config[] = [
