@@ -51,20 +51,6 @@ declare module "eslint-plugin-html" {
 //   export = plugin
 // }
 
-declare module "eslint-plugin-json" {
-  import type { Linter } from "eslint"
-  const plugin: {
-    rules: Record<string, Linter.RuleEntry>
-    configs: {
-      recommended: Linter.Config
-      "recommended-with-comments": Linter.Config
-      "recommended-legacy": Linter.LegacyConfig
-      "recommended-with-comments-legacy": Linter.LegacyConfig
-    }
-  }
-  export = plugin
-}
-
 declare module "eslint-plugin-only-warn" {
   import type { ESLint } from "eslint"
   const plugin: ESLint.Plugin

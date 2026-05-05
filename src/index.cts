@@ -1,3 +1,4 @@
+import { defineConfig } from "@eslint/config-helpers"
 import { jsConfig } from "./javascript.cjs"
 import { tsConfigs } from "./typescript.cjs"
 import { jsonConfig } from "./json.cjs"
@@ -30,16 +31,16 @@ function maybeAddCoffeeScript() {
   return []
 }
 
-const config: Linter.Config[] = [
+const config: Linter.Config[] = defineConfig([
   { plugins: { "only-warn": onlyWarnPlugin } },
   ...jsConfig,
   // pluginOptimizeRegex.configs.all,
   ...tsConfigs,
-  jsonConfig,
+  ...jsonConfig,
   // yamlConfig,
   htmlConfig,
   ...astroConfig,
   ...maybeAddCoffeeScript(),
-]
+])
 
 export default config
