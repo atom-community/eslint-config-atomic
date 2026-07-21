@@ -90,7 +90,7 @@
   "optionalDependencies": {
     "coffeescript": "^1.12.7",
     "eslint-plugin-coffee": "^0.1.15",
-    "eslint-plugin-react-hooks": "^5.2.0"
+    "eslint-plugin-react-hooks": "^7.0.0"
   },
   "keywords": [
     "eslint",
