@@ -23,7 +23,7 @@
   ],
   "scripts": {
     "build": "tsc --pretty",
-    "bump": "ncu -u -x coffeescript,execa,read-pkg-up,make-synchronous && pnpm update && pnpm dedupe",
+    "bump": "ncu -u -x coffeescript,execa && pnpm update && pnpm dedupe",
     "clean": "shx rm -rf ./spec/fixtures/ ./dist ./*.tsbuildinfo",
     "dev": "tsc --pretty --watch",
     "format": "prettier --cache -l --write .",
@@ -63,7 +63,7 @@
     "globals": "^17.6.0",
     "globify-gitignore": "^1.0.3",
     "make-synchronous": "^2.1.0",
-    "read-pkg-up": "^7.0.1",
+    "read-pkg-up": "^11.0.0",
     "semver": "^7.7.4",
     "subsume": "^3.0.0",
     "tslib": "^2.8.1",
