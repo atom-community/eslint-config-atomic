@@ -58,7 +58,7 @@
     "eslint-plugin-only-warn": "npm:@aminya/eslint-plugin-only-warn@^1.2.2",
     "eslint-plugin-optimize-regex": "github:aminya/eslint-plugin-optimize-regex#16f9506ed2",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-solid": "^0.14.5",
+    "eslint-plugin-solid": "^0.18.0",
     "eslint-plugin-yaml": "^1.1.3",
     "globals": "^17.6.0",
     "globify-gitignore": "^1.0.3",
