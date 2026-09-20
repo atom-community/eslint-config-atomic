@@ -27,20 +27,21 @@ function searchDirectory(
     const path = join(directory, file.name)
     if (file.isDirectory()) {
       // if the folder is not ignored, search it recursively
-      if (!anymatch(ignored, path)) {
-        if (searchDirectory(path, status, earlyExitSearchGroup, exhaustiveSearchGroup, ignored)) {
-          return true // exit
-        }
+      if (
+        !anymatch(ignored, path) &&
+        searchDirectory(path, status, earlyExitSearchGroup, exhaustiveSearchGroup, ignored)
+      ) {
+        return true // exit
       }
     } else {
       // check the early exit search group first
-      status[0] = status[0] || anymatch(exhaustiveSearchGroup, path)
+      status[0] = status[0] ?? anymatch(exhaustiveSearchGroup, path)
       if (status[0]) {
         return true // exit
       }
 
       // check the exhaustive search group
-      status[1] = status[1] || anymatch(exhaustiveSearchGroup, path)
+      status[1] = status[1] ?? anymatch(exhaustiveSearchGroup, path)
     }
   }
 

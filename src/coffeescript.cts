@@ -8,10 +8,11 @@ import * as eslintPluginCoffee from "eslint-plugin-coffee"
 import * as nodePlugin from "eslint-plugin-n"
 import * as coffeeParser from "eslint-plugin-coffee/parser"
 
+// @ts-expect-error old coffeescript type
 export const coffeeConfig: Linter.Config = {
   // CoffeeScript files
-  ...eslintPluginCoffee.configs!.recommended,
-  ...eslintPluginCoffee.configs!.prettier,
+  ...eslintPluginCoffee.configs!["recommended"],
+  ...eslintPluginCoffee.configs!["prettier"],
   files: ["**/*.coffee"],
   languageOptions: {
     parser: coffeeParser,

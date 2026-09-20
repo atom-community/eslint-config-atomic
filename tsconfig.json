@@ -1,34 +1,9 @@
 {
+  "extends": [
+    "./node_modules/@tsconfig/bases/node22.tsconfig.json",
+    "./node_modules/@tsconfig/bases/strictest.tsconfig.json"
+  ],
   "compilerOptions": {
-    // target
-    "target": "ES2022",
-    "lib": ["ES2022"],
-    "importHelpers": true,
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "allowJs": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    // check
-    "strict": true,
-    "strictNullChecks": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noImplicitReturns": true,
-    "noImplicitAny": true,
-    "noImplicitThis": true,
-    "noFallthroughCasesInSwitch": true,
-    "declaration": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    // build
-    "incremental": true,
-    "inlineSourceMap": false,
-    "inlineSources": false,
-    "preserveSymlinks": true,
     "rootDir": "./src",
     "outDir": "./dist",
     "skipLibCheck": true

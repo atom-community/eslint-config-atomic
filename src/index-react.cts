@@ -6,7 +6,7 @@ import globals from "globals"
 
 const reactTypeScript: Linter.Config = {
   ...tsConfigs,
-  ...reactPlugin.configs.flat.recommended,
+  ...reactPlugin.configs.flat["recommended"],
 }
 
 const nonStrictConfig: Linter.Config[] = [
@@ -14,7 +14,7 @@ const nonStrictConfig: Linter.Config[] = [
   // JavaScript:
   {
     files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}"],
-    ...reactPlugin.configs.flat.recommended,
+    ...reactPlugin.configs.flat["recommended"],
   },
   {
     files: ["**/*.{js,mjs,cjs,jsx,mjsx,ts,tsx,mtsx}"],

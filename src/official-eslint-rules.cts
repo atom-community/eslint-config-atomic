@@ -36,7 +36,7 @@ export const eslintRulesExtra: Linter.RulesRecord = {
   "default-case": "error", // require `default` cases in `switch` statements
   "default-case-last": "error", // enforce default clauses in switch statements to be last
   "default-param-last": "error", // enforce default parameters to be last
-  "dot-notation": "error", // enforce dot notation whenever possible
+  "dot-notation": "off", // enforce dot notation whenever possible = disabled due to typescript strictest
   eqeqeq: "error", // require the use of `===` and `!==`
   "grouped-accessor-pairs": "error", // require grouped accessor pairs in object literals and classes
   // "guard-for-in": "error", // require `for-in` loops to include an `if` statement

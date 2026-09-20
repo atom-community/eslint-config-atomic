@@ -23,11 +23,10 @@ const tsConfigFiles = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
 async function globifyGitIgnoreFileWithDeps(cwd: string, include: boolean) {
   try {
     // import in the function to allow makeSynchronous to work
-     
-    const { globifyGitIgnoreFile } = await import("globify-gitignore") 
-    const { existsSync } = await import("fs") 
+
+    const { globifyGitIgnoreFile } = await import("globify-gitignore")
+    const { existsSync } = await import("fs")
     const { join } = await import("path")
-     
 
     if (!existsSync(join(cwd, ".gitignore"))) {
       return []
@@ -65,7 +64,7 @@ function disableProjectBasedRules() {
   )
 
   // check if there are any ts files
-  const [hasTscConfig, hasTsFile] = findFilesForGroups(cwd, tsConfigFiles, tsFiles, ignore)
+  const [hasTscConfig = false, hasTsFile = false] = findFilesForGroups(cwd, tsConfigFiles, tsFiles, ignore)
 
   // if there is no tsconfig.json file, but there are ts files, disable the project-based rules
   const disable = !hasTscConfig && hasTsFile
