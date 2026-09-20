@@ -23,11 +23,11 @@ const tsConfigFiles = ["**/tsconfig.json", "!**/node_modules/**/tsconfig.json"]
 async function globifyGitIgnoreFileWithDeps(cwd: string, include: boolean) {
   try {
     // import in the function to allow makeSynchronous to work
-    /* eslint-disable @typescript-eslint/no-require-imports */
-    const { globifyGitIgnoreFile } = require("globify-gitignore") as typeof import("globify-gitignore") // prettier-ignore
-    const { existsSync } = require("fs") as typeof import("fs")
-    const { join } = require("path") as typeof import("path")
-    /* eslint-enable @typescript-eslint/no-require-imports */
+     
+    const { globifyGitIgnoreFile } = await import("globify-gitignore") 
+    const { existsSync } = await import("fs") 
+    const { join } = await import("path")
+     
 
     if (!existsSync(join(cwd, ".gitignore"))) {
       return []
