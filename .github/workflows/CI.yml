@@ -29,9 +29,7 @@ jobs:
           node-version: "24"
 
       - name: Setup PNPM
-        uses: pnpm/action-setup@master
-        with:
-          version: 10
+        uses: pnpm/action-setup@v6
 
       - name: Install dependencies
         run: pnpm install
@@ -45,6 +43,7 @@ jobs:
       - name: Tests
         run: |
           pnpm test || echo "Tests failed"
+
   # Release:
   #   needs: [Test]
   #   if: github.ref == 'refs/heads/master' &&
