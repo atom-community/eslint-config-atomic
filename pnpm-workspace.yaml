@@ -1,0 +1,5 @@
+allowBuilds:
+  core-js: true
+  esbuild: true
+overrides:
+  "sort-package-json": "4.0.0"

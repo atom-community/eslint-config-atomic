@@ -45,6 +45,7 @@ jobs:
       - name: Tests
         run: |
           pnpm test || echo "Tests failed"
+
   # Release:
   #   needs: [Test]
   #   if: github.ref == 'refs/heads/master' &&
