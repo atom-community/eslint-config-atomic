@@ -39,10 +39,10 @@
     "sort-package-json": "4.0.0"
   },
   "dependencies": {
-    "@babel/core": "^7.29.0",
-    "@babel/eslint-parser": "^7.28.6",
-    "@babel/plugin-syntax-flow": "^7.28.6",
-    "@babel/plugin-syntax-jsx": "^7.28.6",
+    "@babel/core": "^8.0.6",
+    "@babel/eslint-parser": "^8.0.6",
+    "@babel/plugin-syntax-flow": "^8.0.1",
+    "@babel/plugin-syntax-jsx": "^8.0.1",
     "@eslint/config-helpers": "^0.5.5",
     "@eslint/js": "^10.0.1",
     "@eslint/json": "^1.2.0",

@@ -5,13 +5,13 @@ import { eslintRulesExtra } from "./official-eslint-rules.cjs"
 import { pluginImportRulesExtra, pluginImportSettings } from "./plugin-import-rules.cjs"
 import * as eslintBabelParser from "@babel/eslint-parser"
 import * as importPlugin from "eslint-plugin-import"
-import type { TransformOptions } from "@babel/core"
+import type { InputOptions } from "@babel/core"
 import globals from "globals"
 
 import js from "@eslint/js"
 import { defineConfig } from "@eslint/config-helpers"
 
-const babelOptions: TransformOptions = {
+const babelOptions: InputOptions = {
   plugins: [require.resolve("@babel/plugin-syntax-flow"), require.resolve("@babel/plugin-syntax-jsx")],
 }
 
