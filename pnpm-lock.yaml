@@ -279,8 +279,8 @@ importers:
         specifier: ^6.11.3
         version: 6.11.3
       '@types/eslint__js':
-        specifier: ^8.42.3
-        version: 8.42.3
+        specifier: ^9.0.0
+        version: 9.14.0(eslint@10.11.0(supports-color@2.0.0))
       '@types/execa':
         specifier: ^2.0.2
         version: 2.0.2
@@ -288,11 +288,11 @@ importers:
         specifier: ~11.0.4
         version: 11.0.4
       '@types/minimatch':
-        specifier: ^5.1.2
-        version: 5.1.2
+        specifier: ^6.0.0
+        version: 6.0.0
       '@types/node':
-        specifier: ^22.19.17
-        version: 22.20.4
+        specifier: ^26.0.0
+        version: 26.6.2
       '@types/read-pkg-up':
         specifier: ^6.0.0
         version: 6.0.0
@@ -309,32 +309,32 @@ importers:
         specifier: 'link:'
         version: 'link:'
       execa:
-        specifier: ^5.1.1
-        version: 5.1.1
+        specifier: ^10.0.0
+        version: 10.0.1
       fs-extra:
         specifier: ^11.3.4
-        version: 11.4.0
+        version: 11.4.1
       gitly:
         specifier: ^3.2.4
         version: 3.2.4(debug@4.4.3(supports-color@2.0.0))(supports-color@2.0.0)
       npm-check-updates:
-        specifier: 17.1.16
-        version: 17.1.16
+        specifier: 23.1.0
+        version: 23.1.0
       prettier:
-        specifier: '=3.5.3'
-        version: 3.5.3
+        specifier: '=3.9.9'
+        version: 3.9.9
       prettier-config-atomic:
         specifier: ^4.0.0
-        version: 4.0.0(supports-color@2.0.0)
+        version: 4.1.0(supports-color@2.0.0)
       shelljs:
-        specifier: ^0.9.2
-        version: 0.9.2
+        specifier: ^0.10.0
+        version: 0.10.0
       shx:
         specifier: ^0.4.0
         version: 0.4.0
       tsx:
         specifier: ^4.21.0
-        version: 4.23.13
+        version: 4.23.15
     optionalDependencies:
       coffeescript:
         specifier: ^1.12.7
@@ -821,8 +821,9 @@ packages:
   '@types/eslint@9.6.1':
     resolution: {integrity: sha512-FXx2pKgId/WyYo2jXw63kk7/+TY7u7AziEJxJAnSFzHlqTAS3Ync6SvgYAN/k4/PQpnnVuzoMuVnByKK2qp0ag==}
 
-  '@types/eslint__js@8.42.3':
-    resolution: {integrity: sha512-alfG737uhmPdnvkrLdZLcEKJ/B8s9Y4hrZ+YAdzUeoArBlSUERA2E87ROfOaS4jd/C45fzOoZzidLc1IPwLqOw==}
+  '@types/eslint__js@9.14.0':
+    resolution: {integrity: sha512-s0jepCjOJWB/GKcuba4jISaVpBudw3ClXJ3fUK4tugChUMQsp6kSwuA8Dcx6wFd/JsJqcY8n4rEpa5RTHs5ypA==}
+    deprecated: This is a stub types definition. @eslint/js provides its own type definitions, so you do not need this installed.
 
   '@types/esrecurse@4.3.1':
     resolution: {integrity: sha512-xJBAbDifo5hpffDBuHl0Y8ywswbiAp/Wi7Y/GtAgSlZyIABppyurxVueOPE8LUQOxdlgi6Zqce7uoEpqNTeiUw==}
@@ -858,14 +859,15 @@ packages:
   '@types/mdast@4.0.4':
     resolution: {integrity: sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA==}
 
-  '@types/minimatch@5.1.2':
-    resolution: {integrity: sha512-K0VQKziLUWkVKiRVrx4a40iPaxTUefQmjtkQofBkYRcoaaL/8rhwDWww9qWbrgicNOgnpIsMxyNIUM4+n6dUIA==}
+  '@types/minimatch@6.0.0':
+    resolution: {integrity: sha512-zmPitbQ8+6zNutpwgcQuLcsEpn/Cj54Kbn7L5pX0Os5kdWplB7xPgEh/g+SWOB/qmows2gpuCaPyduq8ZZRnxA==}
+    deprecated: This is a stub types definition. minimatch provides its own type definitions, so you do not need this installed.
 
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@22.20.4':
-    resolution: {integrity: sha512-zJRE40jpHtKqE/C4fgHrAKQLJuSpzEnP9ff9Y7YtoR3Wd2pwqzlekDeEuUQXjRd+QCYnVnNwuJYmhdk9XV8gvA==}
+  '@types/node@26.6.2':
+    resolution: {integrity: sha512-X1P21scMv4zGKLYqjdGjaKa7COa0RKVYYZZN/NfvLQ1JegxFhdhpZG/Lyn8AXx6CDUavKAd11v6BvfpkDByK8g==}
 
   '@types/normalize-package-data@2.4.4':
     resolution: {integrity: sha512-37i+OaWTh9qeK4LSHPsyRC7NahnGotNuZvjLSgcPzblpHB3rrCJxAOgI5gCdKm7coonsaX1Of0ILiTcnZjbfxA==}
@@ -1727,8 +1729,8 @@ packages:
     resolution: {integrity: sha512-vKatAh4SlVfgbv+YtmhiRjhEMJsYpsG1Y2rMQtR+SVSbytsSD1YGzDIcrAJmdFec88u/+VoGmxnl+80gL1tRCQ==}
     engines: {node: '>= 6'}
 
-  fs-extra@11.4.0:
-    resolution: {integrity: sha512-EQsFzMUJkCKGr1ePqlYADkIUmHW1s3ZXr5Yqy6wbGrfUCphpl2maM/kyOIRA2HpP3AaFQTZXD4ldjek+nccddA==}
+  fs-extra@11.4.1:
+    resolution: {integrity: sha512-KYAb4c9BJQI6QqGKthV68OHe0badztdXJWKo0WtBA9IuCFPTKvE5ZdUBglP833aMjhaSPNO4A5j/EkzZtGlKjA==}
     engines: {node: '>=14.14'}
 
   fs.realpath@1.0.0:
@@ -2355,9 +2357,9 @@ packages:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
 
-  npm-check-updates@17.1.16:
-    resolution: {integrity: sha512-9nohkfjLRzLfsLVGbO34eXBejvrOOTuw5tvNammH73KEFG5XlFoi3G2TgjTExHtnrKWCbZ+mTT+dbNeSjASIPw==}
-    engines: {node: ^18.18.0 || >=20.0.0, npm: '>=8.12.1'}
+  npm-check-updates@23.1.0:
+    resolution: {integrity: sha512-u6Odx/JDpDXNqXp5pPsVN0RhuWkNrBe4Sz26J7yWJcEadopKhQgcB+bFq2PK35iJY6vc6h1PbnXmnwfiOFQl/w==}
+    engines: {node: ^22.22.2 || ^24.15.0 || >=26.0.0, npm: '>=10.0.0'}
     hasBin: true
 
   npm-run-path@2.0.2:
@@ -2493,8 +2495,8 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
-  prettier-config-atomic@4.0.0:
-    resolution: {integrity: sha512-KOMbSvc9EASrNrzEJ2X6h0eN0Sg9QZDO3Pg3KTmiLBz5N0cumy9k8MOMtB22Eyd0lxe9c+M+L5Ynjvlnwx7isA==}
+  prettier-config-atomic@4.1.0:
+    resolution: {integrity: sha512-vGwYFJ8yu7v6miQzJILsY8x/ZMQ6gemrwcUgsQUUu3G8Lw8oh1pD1DiNqmlF7VKIv/iD6/Lf48jXMM/YbKPbXQ==}
 
   prettier-plugin-jsdoc@1.8.1:
     resolution: {integrity: sha512-XuMqBWTc3b/8eCOe+OlZlFy9Z413a7WOmF4i5hDGtjbtIFOdvRrVtGjXR2Feye3TrLWhkkkHheNXPTyYKxw3nA==}
@@ -2502,21 +2504,16 @@ packages:
     peerDependencies:
       prettier: ^3.0.0
 
-  prettier-plugin-packagejson@2.5.22:
-    resolution: {integrity: sha512-G6WalmoUssKF8ZXkni0+n4324K+gG143KPysSQNW+FrR0XyNb3BdRxchGC/Q1FE/F702p7/6KU7r4mv0WSWbzA==}
+  prettier-plugin-packagejson@3.0.2:
+    resolution: {integrity: sha512-kmoj3hEynXwoHDo8ZhmWAIjRBoQWCDUVackiWfSDWdgD0rS3LGB61T9zoVbume/cotYdCoadUh4sqViAmXvpBQ==}
     peerDependencies:
-      prettier: '>= 1.16.0'
+      prettier: ^3
     peerDependenciesMeta:
       prettier:
         optional: true
 
-  prettier@3.1.1:
-    resolution: {integrity: sha512-22UbSzg8luF4UuZtzgiUOfcGM8s4tjBv6dJRT7j275NXsy2jb4aJa4NNveul5x4eqlF1wuhuR2RElK71RvmVaw==}
-    engines: {node: '>=14'}
-    hasBin: true
-
-  prettier@3.5.3:
-    resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
+  prettier@3.9.9:
+    resolution: {integrity: sha512-Z/CJHIkdujO/OtN7nXUii0Rf3VT5SRuhjBA82Xvu2XhBUgX3nhP67T0LHceBdQLex7OOFGTox+Q5Yg8Jk2Qivg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2839,8 +2836,8 @@ packages:
   tslib@2.8.1:
     resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
-  tsx@4.23.13:
-    resolution: {integrity: sha512-BL5MGkRln6aDYhb0xbQlEAGw743BaZYWdbWtdJOBriYJboKgUUYCadFp2/FpBBZquBC/ezNBn7wMMPx7FDZUDw==}
+  tsx@4.23.15:
+    resolution: {integrity: sha512-Yiex1Ovn8z2xPpOWckIiysV1SSyRMY9BkLF++q0yKiDxCqRhosKfMg3janKkiLBwZ5c/YryloKwGZcrEmtwxKw==}
     engines: {node: '>=18.0.0'}
     hasBin: true
 
@@ -2892,8 +2889,8 @@ packages:
     resolution: {integrity: sha512-nWJ91DjeOkej/TA8pXQ3myruKpKEYgqvpw9lz4OPHj/NWFNluYrjbz9j01CJ8yKQd2g4jFoOkINCTW2I5LEEyw==}
     engines: {node: '>= 0.4'}
 
-  undici-types@6.21.0:
-    resolution: {integrity: sha512-iwDZqg0QAGrg9Rav5H4n0M64c3mkR59cJ6wQp+7C4nI0gsmExaedaYLNO44eT4AtBBwjbTiGPMlt2Md0T9H9JQ==}
+  undici-types@8.9.0:
+    resolution: {integrity: sha512-KTDyRTYX8sWmKXAikPHHSyc63CRPETMctyjKFupcC6OBLXT3xsN0e9aF7m+mIXutFWpUXuedtowG7iLOzp0kQg==}
 
   unicorn-magic@0.1.0:
     resolution: {integrity: sha512-lRfVq8fE8gz6QMBuDM6a+LO3IAzTi05H6gCVaUpir2E1Rwpo4ZUog45KpNXKC/Mn3Yb9UDuHumeFTo9iV/D9FQ==}
@@ -3465,9 +3462,11 @@ snapshots:
       '@types/estree': 1.0.9
       '@types/json-schema': 7.0.15
 
-  '@types/eslint__js@8.42.3':
+  '@types/eslint__js@9.14.0(eslint@10.11.0(supports-color@2.0.0))':
     dependencies:
-      '@types/eslint': 9.6.1
+      '@eslint/js': 10.0.1(eslint@10.11.0(supports-color@2.0.0))
+    transitivePeerDependencies:
+      - eslint
 
   '@types/esrecurse@4.3.1': {}
 
@@ -3482,7 +3481,7 @@ snapshots:
   '@types/fs-extra@11.0.4':
     dependencies:
       '@types/jsonfile': 6.1.4
-      '@types/node': 22.20.4
+      '@types/node': 26.6.2
 
   '@types/gensync@1.0.5': {}
 
@@ -3494,19 +3493,21 @@ snapshots:
 
   '@types/jsonfile@6.1.4':
     dependencies:
-      '@types/node': 22.20.4
+      '@types/node': 26.6.2
 
   '@types/mdast@4.0.4':
     dependencies:
       '@types/unist': 3.0.3
 
-  '@types/minimatch@5.1.2': {}
+  '@types/minimatch@6.0.0':
+    dependencies:
+      minimatch: 10.2.6
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@22.20.4':
+  '@types/node@26.6.2':
     dependencies:
-      undici-types: 6.21.0
+      undici-types: 8.9.0
 
   '@types/normalize-package-data@2.4.4': {}
 
@@ -3518,7 +3519,7 @@ snapshots:
 
   '@types/shelljs@0.10.0':
     dependencies:
-      '@types/node': 22.20.4
+      '@types/node': 26.6.2
       fast-glob: 3.3.3
 
   '@types/unist@3.0.3': {}
@@ -4713,7 +4714,7 @@ snapshots:
       hasown: 2.0.4
       mime-types: 2.1.35
 
-  fs-extra@11.4.0:
+  fs-extra@11.4.1:
     dependencies:
       graceful-fs: 4.2.11
       jsonfile: 6.2.1
@@ -5432,7 +5433,7 @@ snapshots:
 
   normalize-path@3.0.0: {}
 
-  npm-check-updates@17.1.16: {}
+  npm-check-updates@23.1.0: {}
 
   npm-run-path@2.0.2:
     dependencies:
@@ -5566,33 +5567,31 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-config-atomic@4.0.0(supports-color@2.0.0):
+  prettier-config-atomic@4.1.0(supports-color@2.0.0):
     dependencies:
-      prettier: 3.1.1
-      prettier-plugin-jsdoc: 1.8.1(prettier@3.1.1)(supports-color@2.0.0)
-      prettier-plugin-packagejson: 2.5.22(prettier@3.1.1)
+      prettier: 3.9.9
+      prettier-plugin-jsdoc: 1.8.1(prettier@3.9.9)(supports-color@2.0.0)
+      prettier-plugin-packagejson: 3.0.2(prettier@3.9.9)
       sort-package-json: 4.0.0
     transitivePeerDependencies:
       - supports-color
 
-  prettier-plugin-jsdoc@1.8.1(prettier@3.1.1)(supports-color@2.0.0):
+  prettier-plugin-jsdoc@1.8.1(prettier@3.9.9)(supports-color@2.0.0):
     dependencies:
       binary-searching: 2.0.5
       comment-parser: 1.4.9
       mdast-util-from-markdown: 2.0.3(supports-color@2.0.0)
-      prettier: 3.1.1
+      prettier: 3.9.9
     transitivePeerDependencies:
       - supports-color
 
-  prettier-plugin-packagejson@2.5.22(prettier@3.1.1):
+  prettier-plugin-packagejson@3.0.2(prettier@3.9.9):
     dependencies:
       sort-package-json: 4.0.0
     optionalDependencies:
-      prettier: 3.1.1
+      prettier: 3.9.9
 
-  prettier@3.1.1: {}
-
-  prettier@3.5.3: {}
+  prettier@3.9.9: {}
 
   pretty-ms@9.3.1:
     dependencies:
@@ -5983,7 +5982,7 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  tsx@4.23.13:
+  tsx@4.23.15:
     dependencies:
       esbuild: 0.28.2
     optionalDependencies:
@@ -6060,7 +6059,7 @@ snapshots:
       has-symbols: 1.1.0
       which-boxed-primitive: 1.1.1
 
-  undici-types@6.21.0: {}
+  undici-types@8.9.0: {}
 
   unicorn-magic@0.1.0: {}
 
