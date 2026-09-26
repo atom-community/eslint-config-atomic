@@ -105,7 +105,7 @@
     "eslint-plugin-coffee": "^0.1.15",
     "eslint-plugin-react-hooks": "^7.1.1"
   },
-  "packageManager": "pnpm@12.5.1",
+  "packageManager": "pnpm@12.6.0",
   "react": "react.js",
   "strict": "strict.js",
   "strict-react": "strict-react.js"
