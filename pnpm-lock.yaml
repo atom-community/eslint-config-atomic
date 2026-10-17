@@ -163,7 +163,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  sort-package-json: 4.0.0
+  sort-package-json: 4.1.0
 
 importers:
 
@@ -2701,8 +2701,8 @@ packages:
   sort-object-keys@2.1.0:
     resolution: {integrity: sha512-SOiEnthkJKPv2L6ec6HMwhUcN0/lppkeYuN1x63PbyPRrgSPIuBJCiYxYyvWRTtjMlOi14vQUCGUJqS6PLVm8g==}
 
-  sort-package-json@4.0.0:
-    resolution: {integrity: sha512-6aYOlYI9AWioZ+rzu+4zKLmoFqJP0/fHDxrd7X04yqEibikY+5YVF0EYlyGn4v6X2PJY7yAUWV7oeP+i5rOm/g==}
+  sort-package-json@4.1.0:
+    resolution: {integrity: sha512-CI7HgkV5rCE5dbYYJMuXkxgiSLc3uJczff9ic3kHuY5QRYKUbfsDSKN4DjTpvqejdJEkKLusQ64ykTte5ypr1A==}
     engines: {node: '>=22'}
     hasBin: true
 
@@ -5571,7 +5571,7 @@ snapshots:
       prettier: 3.1.1
       prettier-plugin-jsdoc: 1.8.1(prettier@3.1.1)(supports-color@2.0.0)
       prettier-plugin-packagejson: 2.5.22(prettier@3.1.1)
-      sort-package-json: 4.0.0
+      sort-package-json: 4.1.0
     transitivePeerDependencies:
       - supports-color
 
@@ -5586,7 +5586,7 @@ snapshots:
 
   prettier-plugin-packagejson@2.5.22(prettier@3.1.1):
     dependencies:
-      sort-package-json: 4.0.0
+      sort-package-json: 4.1.0
     optionalDependencies:
       prettier: 3.1.1
 
@@ -5817,7 +5817,7 @@ snapshots:
 
   sort-object-keys@2.1.0: {}
 
-  sort-package-json@4.0.0:
+  sort-package-json@4.1.0:
     dependencies:
       detect-indent: 7.0.2
       detect-newline: 4.0.1
